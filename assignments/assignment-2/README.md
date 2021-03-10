@@ -1,5 +1,5 @@
 # Opdracht 2 💔 Breek het Web
-## [Live link :rocket:](https://ralfz123.github.io/browser-technologies-2021/assignments/assignment-1/)
+## [Live link :rocket:](https://ralfz123.github.io/browser-technologies-2021/assignments/assignment-2/)
 
 Voor opdracht 2 ga je proberen het Web te laten 'breken' door (browser) features bewust uit te zetten. Wat gebeurt er als images, custom fonts, JavaScript, kleur, breedband internet niet optimaal werken?
 

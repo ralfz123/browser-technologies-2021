@@ -241,8 +241,13 @@ In het vak Browser Technologies gaan we onderzoeken wat Progressive Enhancement 
 
 ## Assigment 1
 Research to Progressive Enhancement  
-[Live link](https://github.com/ralfz123/browser-technologies-2021/blob/master/asignments/assignment-1/index.html)  
-[More info](https://github.com/ralfz123/browser-technologies-2021/blob/master/assignments/assignment-1/README.md)   
+[&rarr; Live link :rocket:](https://github.com/ralfz123/browser-technologies-2021/blob/master/assignments/assignment-1/index.html)  
+[&rarr; More info ](https://github.com/ralfz123/browser-technologies-2021/blob/master/assignments/assignment-1/README.md)   
+
+## Assigment 2
+lorem
+[&rarr; Live link :rocket:](https://github.com/ralfz123/browser-technologies-2021/blob/master/assignments/assignment-2/index.html)  
+[&rarr; More info ](https://github.com/ralfz123/browser-technologies-2021/blob/master/assignments/assignment-2/README.md)  
 
 ## :heart_eyes: Concept
 

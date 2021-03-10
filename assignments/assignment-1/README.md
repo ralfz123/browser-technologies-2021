@@ -1,6 +1,6 @@
 # Opdracht 1 🛹 NPM install Progressive- enhancement
 
-## [Live link :rocket:](https://ralfz123.github.io/browser-technologies-2021/assignments/assignment-1/)
+## [Live link :rocket:](https://ralfz123.github.io/browser-technologies-2021/assignments/assignment-1/index.html)
 
 Voor de eerste opdracht gaan we onderzoeken wat Progressive Enhancement is.
 

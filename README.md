@@ -1,12 +1,22 @@
-# Browser Technologies @cmda-minor-web 20-21
+##### Browser Technologies @cmda-minor-web 2020 - 2021
 
-//Robuuste, toegankelijke websites ontwerpen en maken …
+![Badge stating project is licensed under MIT license](https://img.shields.io/github/license/ralfz123/browser-technologies-2021) ![Badge stating amount of issues open](https://img.shields.io/github/issues/ralfz123/browser-technologies-2021) [![](https://img.shields.io/badge/site--status-up-success)](https://ralfz123.github.io/browser-technologies-2021) [![Badges via shields.io](https://img.shields.io/badge/badges%20via-shields.io-brightgreen)](shields.io)
 
-Één van de mooiste [principes](https://www.w3.org/DesignIssues/Principles.html) van het web is dat iedereen met een computer en een browser het web kan gebruik. [Het web is voor iedereen](https://www.youtube.com/watch?v=UMNFehJIi0E). Het is geen gecontroleerde (programmeer) omgeving, je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij in je browser ziet. Er zijn technische beperkingen, zoals afmetingen van de browser, grootte van het apparaat, manier van interactie, kwaliteit van de hardware, kwaliteit van het netwerk en er zijn mensen, allemaal verschillende mensen ...
+# [title project]
+_Browser Technologies, a course of the minor Web Design & Development. It is a minor of the third year from the study [CMD](https://www.cmd-amsterdam.nl/)._
 
-In het vak Browser Technologies gaan we onderzoeken wat Progressive Enhancement is en hoe je dit kan toepassen om goede, robuuste, toegankelijke websites te maken. Voor iedereen. Het web is voor iedereen, in dit vak leer je hoe je daarvoor kan zorgen.
 
-## Opdrachten
+*** 
+# Course info for me [begin]
+
+[Rubric](https://docs.google.com/spreadsheets/d/1MV3BWwwg_Zz1n-S_qOM4iSm4gA4M6g0xAxGacyaPuac/)
+
+# Program
+<details>
+    <summary>
+        Opdrachten
+    </summary>
+
 
 het vak bestaat uit 3 opdrachten. In week 1 werken we aan opdracht 1 en 2. Vanaf week 2 werken we aan de eindopdracht.
 
@@ -28,13 +38,13 @@ Voor de eindopdracht ontwerp en maak je een interactieve toepassing volgens het 
 
 - [De eindopdracht - Progressive Enhanced Browser Technologie](course/Eindopdracht.md)
 
+</details>
 
-### Leerdoelen
-- _je leert wat Progressive enhancement is en hoe je dit kan toepassen._
-- _je leert Browser Technologies te onderzoeken, testen en implementeren als enhancement._
-- _je leert hoe je Feature Detection doet en wat je kan doen als een 'feature' niet werkt of wordt ondersteund._
 
-[Rubric](https://docs.google.com/spreadsheets/d/1MV3BWwwg_Zz1n-S_qOM4iSm4gA4M6g0xAxGacyaPuac/)
+<details>
+<summary>
+Whole agenda
+</summary>
 
 ## Planning & programma
 
@@ -192,21 +202,138 @@ In week 4 wordt de eindopdracht beoordeeld. Dan gaan we je werk bekijken, bespre
 | Donderdag 1/4 | Wat  |
 |---|---|
 | 14:00 | [Weekly Nerd 2️⃣](https://github.com/cmda-minor-web/weekly-nerd-2021)|
+</details>
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+### Leerdoelen
+- _je leert wat Progressive enhancement is en hoe je dit kan toepassen._
+- _je leert Browser Technologies te onderzoeken, testen en implementeren als enhancement._
+- _je leert hoe je Feature Detection doet en wat je kan doen als een 'feature' niet werkt of wordt ondersteund._
 
-<!-- ☝️ replace this description with a description of your own work -->
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
 
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 
-<!-- Maybe a table of contents here? 📚 -->
 
-<!-- How about a section that describes how to install this project? 🤓 -->
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+# Course info for me [end]
+***
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+[Link to live version :rocket:](https://ralfz123.github.io/browser-technologies-2021)
+### Table of Contents
+<table style="margin-left: auto; margin-right: auto;">
+    <tr>
+        <td align="center"><a href="#rocket-purpose-of-project">🚀 Purpose of Project<a></td>
+        <td align="center"><a href="#heart_eyes-concept">😍 Concept<a></td>
+        <td align="center"><a href="#1234-data">🔢 Data<a></td>
+        <td align="center"><a href="#nerd_face-technical-summary">🤓  Technical summary<a></td>
+        <td align="center"><a href="#gear-installation">⚙️ Installation<a></td>
+        <td align="center"><a href="#file_folder-sources">📁 Sources<a></td>
+        <td align="center"><a href="#cop-license">👮 License<a></td>
+    </tr> 
+</table>
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+## :rocket: Purpose of Project
+//Robuuste, toegankelijke websites ontwerpen en maken …
+
+Één van de mooiste [principes](https://www.w3.org/DesignIssues/Principles.html) van het web is dat iedereen met een computer en een browser het web kan gebruik. [Het web is voor iedereen](https://www.youtube.com/watch?v=UMNFehJIi0E). Het is geen gecontroleerde (programmeer) omgeving, je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij in je browser ziet. Er zijn technische beperkingen, zoals afmetingen van de browser, grootte van het apparaat, manier van interactie, kwaliteit van de hardware, kwaliteit van het netwerk en er zijn mensen, allemaal verschillende mensen ...
+
+In het vak Browser Technologies gaan we onderzoeken wat Progressive Enhancement is en hoe je dit kan toepassen om goede, robuuste, toegankelijke websites te maken. Voor iedereen. Het web is voor iedereen, in dit vak leer je hoe je daarvoor kan zorgen.
+
+
+## Assigment 1
+Research to Progressive Enhancement
+[Live link]()
+[More info]()
+
+## :heart_eyes: Concept
+
+### [Live version here :red_circle:](https://ralfz123.github.io/browser-technologies-2021)
+
+
+#### Features
+
+
+## :1234: Data  
+### APIs are:
+1. lorem
+
+The data variables I used, are:
+#### 1. Lorem
+- `id`
+### Dataset structure
+#### 1. Lorem
+
+```js
+
+{
+    id: "lorem",
+}
+```
+
+
+## :nerd_face: Technical summary
+This app is built, using:
+- [npm](https://www.npmjs.com/)
+
+# Commands building
+## Challenges / Inventions:
+
+
+## To-Do's :pencil:
+<details>
+<summary>Expand</summary>
+
+#### App:
+- [x] UI is like the non-render-server-side app (WAFS)
+- [ ] static favicon rendered
+- [x] Added error state
+
+#### Code:
+- [x] Render data home
+- [ ] Not fetch when coming back at home
+- [x] Pass data via views 
+- [x] Server side fetch with npm package 
+- [ ] responsive css added
+- [ ] Rollup (toolip / static site generator)
+    - [ ] minify
+- [x] Page renders data
+- [x] Add fav and fav list renders fav items
+- [x] Detailpage renders data
+- [x] Core feature works :white_check_mark:
+- [ ] Put favouritesArray in a db like MongoDB (with session)
+#### Readme:
+
+</details>
+
+
+## :gear: Installation
+1. Clone the repository:  
+```
+git clone https://github.com/ralfz123/browser-technologies-2021.git
+```
+
+2. Install dependencies   
+```
+npm install
+```
+
+3. To run the app   
+```
+npm start
+```
+
+4. Go to [localhost](http://localhost:5000/) in the browser and voilà :sparkles:
+```
+http://localhost:5000/
+```
+
+## :file_folder: Sources
+Credits to [Koop](https://github.com/KoopReynders) && Peter Paul Koch && [Aaron Gustafson](https://github.com/aarongustafson) && [Heydon Pickering](https://github.com/Heydon) for giving interesting lectures about Browser Technologies and Progressive Enhancement and how to deal with it.
+
+### Code sources
+- Stackoverflow (n.d.). Searching for answers on dev questions - Stackoverflow. Retrieved 8 March 2021 from https://www.stackoverflow.com
+
+- npm (n.d.). Package manager with many packages - npm. Retrieved 8 March 2021 from https://www.npmjs.com
+
+## :cop: License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+This project from [Ralf](https://github.com/ralfz123) has a [MIT © License](https://github.com/ralfz123/browser-technologies-2021/blob/main/LICENSE)

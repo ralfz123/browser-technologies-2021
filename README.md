@@ -250,6 +250,15 @@ Research about features from websites on the web
 
 
 ## :heart_eyes: Concept
+Photo viewer/uploader - collage maker
+
+wat als geenjs is?
+
+Welke browsers:
+- Chrome
+
+## Proces
+<img src="assets/concept/sketch-v1.JPG" width=700px />
 
 ### [Live version here :red_circle:](https://ralfz123.github.io/browser-technologies-2021)
 

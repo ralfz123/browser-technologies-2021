@@ -1,12 +1,12 @@
 # Opdracht 2 💔 Breek het Web
-## [Live link :rocket:](https://ralfz123.github.io/browser-technologies-2021/assignments/assignment-2/)
+Ik heb Custom fonts en muis/trackpad onderzocht. Daarvoor heb ik in de wiki (link hieronder) mijn onderzoek gedaan. We hebben met het hele team al onze onderzoekjes bij elkaar gestopt in een wiki. Die is [hier](https://github.com/sjagoori/pe/wiki) te vinden.
+## [Live link :rocket:](https://github.com/ralfz123/browser-technologies-2021/wiki)
 
 Voor opdracht 2 ga je proberen het Web te laten 'breken' door (browser) features bewust uit te zetten. Wat gebeurt er als images, custom fonts, JavaScript, kleur, breedband internet niet optimaal werken?
 
 Het Web laten 'breken' door features van het platform bewust uit te zetten. Images, custom fonts, JavaScript, kleur, breedband internet.
 
 ### Doel van deze opdracht
-
 Het doel van deze opdracht is om erachter komen dat je misschien aannames hebt die niet kloppen, en om je in te laten leven in de eindgebruiker.
 
 ### Uitleg

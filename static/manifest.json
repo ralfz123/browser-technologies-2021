@@ -1,0 +1,9 @@
+{
+  "name": "iPic",
+  "short_name": "iPic",
+  "theme_color": "#f7f7f7",
+  "background_color": "#2c28bb",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/"
+}

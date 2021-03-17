@@ -250,11 +250,14 @@ Research about features from websites on the web
 
 
 ## :heart_eyes: Concept
-Photo viewer/uploader - collage maker
-
+### Omschrijving
+Photo viewer/uploader - collage maker.  
 
 - Wat als er geen JS is?
 - Wat is de core functionaliteit?
+
+Browser technology:
+- idk yet
 
 #### Welke browsers:
 - Chrome
@@ -350,7 +353,7 @@ http://localhost:5000/
 ```
 
 ## :file_folder: Sources
-Credits to [Koop](https://github.com/KoopReynders) && Peter Paul Koch && [Aaron Gustafson](https://github.com/aarongustafson) && [Heydon Pickering](https://github.com/Heydon) for giving interesting lectures about Browser Technologies and Progressive Enhancement and how to deal with it.
+Credits to [Koop](https://github.com/KoopReynders) && [Peter Paul Koch](https://www.quirksmode.org/about/) && [Aaron Gustafson](https://github.com/aarongustafson) && [Heydon Pickering](https://github.com/Heydon) for giving interesting lectures about Browser Technologies and Progressive Enhancement and how to deal with it.
 
 ### Code sources
 - Stackoverflow (n.d.). Searching for answers on dev questions - Stackoverflow. Retrieved 8 March 2021 from https://www.stackoverflow.com

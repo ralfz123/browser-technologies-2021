@@ -252,19 +252,28 @@ Research about features from websites on the web
 ## :heart_eyes: Concept
 Photo viewer/uploader - collage maker
 
-wat als geenjs is?
 
-Welke browsers:
+- Wat als er geen JS is?
+- Wat is de core functionaliteit?
+
+#### Welke browsers:
 - Chrome
 
-## Proces
-<img src="assets/concept/sketch-v1.JPG" width=700px />
+### Schets
+<img src="assets/concept/sketch-v1-a.JPG" width=1000px />
+<img src="assets/concept/sketch-v1-b.JPG" width=1000px />
 
 ### [Live version here :red_circle:](https://ralfz123.github.io/browser-technologies-2021)
 
 
 #### Features
-
+-	Foto toevoegen aan een verzameling met meta-info zoals beschrijving, locatie, fotograaf, alt-tekst
+-	Detailpagina foto 
+-	Overzichtspagina alle foto's
+-	Serie samenstellen (welke foto's en in welke volgorde)
+-	Overzichtspagina van een serie 
+-	Serie als carrousel aanbieden
+-	Serie als slideshow aanbieden
 
 ## :1234: Data  
 ### APIs are:

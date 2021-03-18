@@ -38,6 +38,15 @@ header h1 {
   font-weight: 500;
 }
 
+header h1:hover::after {
+  content: '📸';
+  display: inline-block;
+}
+
+header h1:hover span {
+  display: none;
+}
+
 /* ------------------------------------------- */
 /*                   MAIN                      */
 /* ------------------------------------------- */

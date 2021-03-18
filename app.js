@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
-let favouritesArray = []; // Empty array that will filled with objects through the hit like button
+let photosArray = []; // Empty array that will filled with objects through the hit like button
 
 // **** MIDDLEWARE SET-UP **** //
 // Using static files from static directory

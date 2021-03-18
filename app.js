@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 // !!! const multer = require('multer')
 // static upload folder
+const { v4: uuidv4 } = require('uuid');
 
 let photosArray = []; // Empty array that will filled with objects through the hit like button
 
@@ -37,8 +38,7 @@ app.post('/upload', function (req, res) {
     description: req.body.description,
     photographer: req.body.photographer,
     location: req.body.location,
-    // id: countObjectArray(1),
-    id: 1,
+    id: idCreator(),
   };
 
   photosArray.push(photoObject);
@@ -47,9 +47,9 @@ app.post('/upload', function (req, res) {
 });
 
 // Makes an unique ID for each data object
-function countObjectArray(numberObject) {
-  const teller = 1;
-  let num = numberObject + teller;
+function idCreator() {
+  const id = uuidv4();
+  return id;
 }
 
 app.get('/photos', function (req, res) {

@@ -9,19 +9,27 @@
 }
 
 html {
-  background: #6e8396;
-  --font-headers: 'Montserrat', sans-serif;
-  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-family: var(--font-headers);
+  background: #eef7ff;
+  --font-body: 'Montserrat', sans-serif;
+  /* --font-header: 'Pacifico', cursive; */
 }
 
 /* ------------------------------------------- */
 /*                   BODY                      */
 /* ------------------------------------------- */
+
 body {
   margin: 0 auto;
   overflow-y: hidden;
   overflow-x: hidden;
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-header);
 }
 
 /* ------------------------------------------- */
@@ -36,6 +44,8 @@ header {
 
 header h1 {
   font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.4;
 }
 
 header h1:hover::after {
@@ -57,34 +67,33 @@ main button {
   margin: 0;
   text-decoration: none;
   border: none;
-  font-family: var(--font-body);
   color: white;
+  background-color: rgb(42, 42, 139);
+  padding: 10px;
   font-size: 1rem;
   border-radius: 10px;
   transition: 0.1s;
   text-align: center;
 }
 
-main button:hover {
+main button:hover,
+main button:focus {
   transform: scale(1.05);
   cursor: pointer;
-}
-
-main button:focus {
-  outline: none;
+  background: rgb(18, 18, 175);
 }
 
 /* --/* --  Default <a> styling --/* -- */
 
 main a {
-  border-radius: 10px;
+  /* border-radius: 10px;
   background: #2c28bb;
   color: white;
   font-weight: 500;
   padding: 0.5em 0.75em;
   text-decoration: none;
   border: 1px solid transparent;
-  text-transform: uppercase;
+  text-transform: uppercase; */
 }
 
 main a:hover {
@@ -103,9 +112,19 @@ main section {
 /*                   HOME                      */
 /* ------------------------------------------- */
 
+/* upload */
+
+main section form {
+  width: 40em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
 /* ------------------------------------------- */
 /*                   FOOTER                    */
 /* ------------------------------------------- */
+
 footer {
   background-color: #767c7f0d;
   font-size: 0.8rem;

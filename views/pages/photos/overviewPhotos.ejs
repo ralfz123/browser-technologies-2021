@@ -1,6 +1,6 @@
 <head>
   <%- include ('../../partials/head') %>
-  <title>Photos| iPic</title>
+  <title>Photos | iPic</title>
 </head>
 <body>
   <%- include ('../../partials/header') %>
@@ -8,8 +8,24 @@
   <main>
     <section>
       <h1>All photos</h1>
-      <a href="/photos/1">Photo 1</a>
       <a href="/">Back</a>
+      <ol>
+        <% if(photosArray.length > 0){ %>
+
+          <% photosArray.forEach(({photo, title, altText, description, photographer, location, id}) => { %>
+          <li>
+            <a href="/photos/<%= id %>">
+              <img src="<%= photo %>" alt="" />
+              <p><%= title %></p>
+
+           </a>
+          </li>
+          <% }) %> 
+          
+          <% }else{ %>
+          <p>No photos yet 🙁</p>
+          <% }%>
+      </ol>
     </section>
   </main>
 

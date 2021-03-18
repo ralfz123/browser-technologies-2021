@@ -1,7 +1,7 @@
 {
-  "name": "browser-technologies-2021",
+  "name": "iPic",
   "version": "1.0.0",
-  "description": "photo uploader",
+  "description": "Photo uploader",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/ralfz123/browser-technologies-2021.git"
   },
-  "author": "",
+  "author": "Ralf",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ralfz123/browser-technologies-2021/issues"

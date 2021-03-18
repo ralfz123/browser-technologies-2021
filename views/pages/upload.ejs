@@ -1,17 +1,77 @@
-  <head>
-    <%- include ('../partials/head') %>
-    <title>Upload | iPic</title>
-  </head>
-  <body>
-    <%- include ('../partials/header') %>
+<head>
+  <%- include ('../partials/head') %>
+  <title>Upload | iPic</title>
+</head>
+<body>
+  <%- include ('../partials/header') %>
 
-    <main>
-      <section id="favourites">
-       <p>Upload photo</p>
-<form action="">
-  <input type="file">
-</form>
-      </section>
-    </main>
-    
-    <%- include ('../partials/footer') %>
+  <main>
+    <section>
+      <p>Upload here your photos</p>
+      <form action="/upload" method="POST">
+        <fieldset>
+          <legend>Info about the photo</legend>
+
+          <label for="photo"
+            >Photo upload
+            <input type="file" name="photo" />
+          </label>
+
+          <label for="title"
+            >Title
+            <input
+              id="title"
+              name="title"
+              type="text"
+              placeholder="Nice flower"
+            />
+          </label>
+
+          <label for="altText"
+            >alt text
+            <input
+              id="altText"
+              name="altText"
+              type="text"
+              placeholder="A picture of a nice flower"
+            />
+          </label>
+
+          <label for="description"
+            >Description
+            <input
+              id="description"
+              name="description"
+              type="text"
+              placeholder="Nice flower"
+            />
+          </label>
+
+          <label for="photographer"
+            >Photographer
+            <input
+              id="photographer"
+              name="photographer"
+              type="text"
+              placeholder="John Doe"
+            />
+          </label>
+
+          <label for="location"
+            >Location
+            <input
+              id="location"
+              name="location"
+              type="text"
+              placeholder="Paris, France"
+            />
+          </label>
+
+          <button type="submit">Save</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <%- include ('../partials/footer') %>
+</body>

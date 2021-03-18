@@ -2,7 +2,7 @@
 
 ![Badge stating project is licensed under MIT license](https://img.shields.io/github/license/ralfz123/browser-technologies-2021) ![Badge stating amount of issues open](https://img.shields.io/github/issues/ralfz123/browser-technologies-2021) [![](https://img.shields.io/badge/site--status-up-success)](https://ralfz123.github.io/browser-technologies-2021) [![Badges via shields.io](https://img.shields.io/badge/badges%20via-shields.io-brightgreen)](shields.io)
 
-# [title project]
+# iPic - _The online photo gallery creator_
 _Browser Technologies, a course of the minor Web Design & Development. It is a minor of the third year from the study [CMD](https://www.cmd-amsterdam.nl/)._
 
 
@@ -217,7 +217,7 @@ In week 4 wordt de eindopdracht beoordeeld. Dan gaan we je werk bekijken, bespre
 # Course info for me [end]
 ***
 
-[Link to live version :rocket:](https://ralfz123.github.io/browser-technologies-2021)
+[Link to live version :rocket:](https://ipic-bt-2021.herokuapp.com/)
 ### Table of Contents
 <table style="margin-left: auto; margin-right: auto;">
     <tr>
@@ -250,6 +250,7 @@ Research about features from websites on the web
 
 
 ## :heart_eyes: Concept
+[PE examples](https://github.com/cmda-minor-web/browser-technologies-2021/tree/master/docs/examples)
 ### Omschrijving
 Photo viewer/uploader - collage maker.  
 
@@ -263,10 +264,10 @@ Browser technology:
 - Chrome
 
 ### Schets
-<img src="assets/concept/sketch-v1-a.JPG" width=1000px />
-<img src="assets/concept/sketch-v1-b.JPG" width=1000px />
+<img src="static/assets/concept/sketch-v1-a.JPG" width=1000px />
+<img src="static/assets/concept/sketch-v1-b.JPG" width=1000px />
 
-### [Live version here :red_circle:](https://ralfz123.github.io/browser-technologies-2021)
+### [Live version here :red_circle:](https://ipic-bt-2021.herokuapp.com/)
 
 
 #### Features

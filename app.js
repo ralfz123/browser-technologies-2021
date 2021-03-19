@@ -35,7 +35,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/upload', function (req, res) {
-  res.render('pages/upload');
+  res.render('pages/upload', { staticData });
 });
 
 app.post('/upload', function (req, res) {

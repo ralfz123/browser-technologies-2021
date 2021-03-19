@@ -12,18 +12,18 @@
         <fieldset>
           <legend>Info about the photo</legend>
 
-          <% staticData.forEach(({photo}) => { %>
-          <label for="photo">
-            <input type="hidden" />
-            <input type="radio" id="photo" name="photo" />
-            <img width="300px" src="/assets/data/<%- photo %>" alt="" />
+          <% staticData.forEach(({photo, id}) => { %>
+          <label for="photo-<%- id%>">
+            <input type="hidden" value="<%- id%>" name="id"/>
+            <input type="radio" value="<%- photo %>" id="photo-<%- id%>" name="photo" />
+            <img width="300px" src="<%- photo %>" alt="" />
           </label>
           <% })%>
 
-          <label for="photo"
+          <!-- <label for="photo"
             >Photo upload
             <input type="file" name="photo" />
-          </label>
+          </label> -->
 
           <label for="title"
             >Title

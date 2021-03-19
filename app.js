@@ -11,11 +11,11 @@ const { v4: uuidv4 } = require('uuid');
 let photosArray = []; // Empty array that will filled with objects - photos
 let seriesArray = []; // Empty array that will filled with objects - series
 let staticData = [
-  { photo: 'landscape-1.jpeg' },
-  { photo: 'landscape-2.jpeg' },
-  { photo: 'landscape-3.jpeg' },
-  { photo: 'landscape-4.jpeg' },
-  { photo: 'landscape-5.jpeg' },
+  { photo: '/assets/data/landscape-1.jpeg', id: 1 },
+  { photo: '/assets/data/landscape-2.jpeg', id: 2 },
+  { photo: '/assets/data/landscape-3.jpeg', id: 3 },
+  { photo: '/assets/data/landscape-4.jpeg', id: 4 },
+  { photo: '/assets/data/landscape-5.jpeg', id: 5 },
 ];
 
 // **** MIDDLEWARE SET-UP **** //
@@ -46,7 +46,8 @@ app.post('/upload', function (req, res) {
     description: req.body.description,
     photographer: req.body.photographer,
     location: req.body.location,
-    idPhoto: idCreator(),
+    // idPhoto: idCreator(),
+    // id: req.body.id
   };
 
   photosArray.push(photoObject);
@@ -135,7 +136,7 @@ app.get('/series/new', function (req, res) {
 
 app.post('/series/new', function (req, res) {
   const serieObject = {
-    idSerie: idCreator(),
+    // idSerie: idCreator(),
     titleSerie: req.body.titleSerie,
     selectedPhotos: req.body.selectedPhotos, // IDs of all photos
   };

@@ -270,6 +270,12 @@ Browser technology:
 ### [Live version here :red_circle:](https://ipic-bt-2021.herokuapp.com/)
 
 
+To-Do:
+- multer
+- slideshow
+- order page 3.4 html tags
+- forEach for the staticData
+
 #### Features
 -	Foto toevoegen aan een verzameling met meta-info zoals beschrijving, locatie, fotograaf, alt-tekst
 -	Detailpagina foto 

@@ -23,6 +23,9 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
 h1,
@@ -115,7 +118,7 @@ main section {
 /* upload */
 
 main section form {
-  width: 40em;
+  width: 22em;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -126,11 +129,17 @@ main section form {
 /* ------------------------------------------- */
 
 footer {
-  background-color: #767c7f0d;
-  font-size: 0.8rem;
-  text-align: center;
+  position: fixed;
+  font-size: 0.7rem;
+  padding: 0;
+  height: 34px;
   padding: 5px 0px;
-  margin-top: 10px;
+  background-color: #767c7f0d;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
 }
 
 footer p {

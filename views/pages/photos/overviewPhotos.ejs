@@ -12,9 +12,9 @@
       <ol>
         <% if(photosArray.length > 0){ %>
 
-          <% photosArray.forEach(({photo, title, altText, description, photographer, location, id}) => { %>
+          <% photosArray.forEach(({photo, title, altText, description, photographer, location, idPhoto}) => { %>
           <li>
-            <a href="/photos/<%= id %>">
+            <a href="/photos/<%= idPhoto %>">
               <img src="<%= photo %>" alt="" />
               <p><%= title %></p>
 
@@ -26,6 +26,9 @@
           <p>No photos yet 🙁</p>
           <% }%>
       </ol>
+      <a href="/upload">Add photos</a>
+      <a href="/series/new">Create serie</a>
+      <a href="/series/overview">Series</a>
     </section>
   </main>
 

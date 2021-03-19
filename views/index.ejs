@@ -9,10 +9,12 @@
     <section>
       <h2>Hi</h2>
       <h3>Upload your photos to create your own gallery</h3>
-    <br />
-      <a href="/upload">Upload</a>
-      <!-- <a href="/photos">ALL PHOTOS</a> -->
-      <!-- <a href="/series">ALL SERIES</a> -->
+      <img width="200px" src="/assets/data/<%= staticData[0].photo %>" alt="">
+      <p>Photo URL: <%= staticData[0].photo %></p>
+      <br />
+      <a style="display: block" href="/upload">Upload</a>
+      <a style="display: block" href="/photos">PHOTOS OVERVIEW</a>
+      <a style="display: block" href="/series/overview">SERIES OVERVIEW</a>
     </section>
   </main>
 

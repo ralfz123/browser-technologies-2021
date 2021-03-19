@@ -8,8 +8,21 @@
   <main>
     <section>
       <h1>All series</h1>
-      <a href="/series/1">Serie 1</a>
-      <a href="/">Back</a>
+      <a href="/photos">Back</a>
+
+      <% if(seriesArray.length > 0){ %> <% seriesArray.forEach(({selectedPhotos, titleSerie,
+      idSerie}) => { %>
+
+      <a href="/series/detail/<%- idSerie%>">
+        <img src="selectedPhotos[0].photo" alt="">
+        <h2><%= titleSerie%></h2>
+      </a>
+
+      <% }) %> <% }else{ %>
+      <p>No series yet 🙁</p>
+      <% }%>
+
+      <a href="/series/new">Create serie</a>
     </section>
   </main>
 

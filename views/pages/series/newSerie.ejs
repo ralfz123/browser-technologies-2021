@@ -1,0 +1,57 @@
+<head>
+  <%- include ('../../partials/head') %>
+  <title>Upload | iPic</title>
+</head>
+<body>
+  <%- include ('../../partials/header') %>
+
+  <main>
+    <section>
+      <h2>New Serie</h2>
+
+      <form action="/series/new" method="POST">
+        <fieldset>
+          <legend>Info about the photo</legend>
+
+          <% if(photosArray.length > 0){ %>
+          <label for="titleSerie"
+            >Title serie
+            <input
+              id="titleSerie"
+              name="titleSerie"
+              type="text"
+              placeholder="e.g. Holiday 2019"
+            />
+          </label>
+          <% photosArray.forEach(({photo, title, altText, description,
+          photographer, location, idPhoto}) => { %>
+
+          <h3>Which pics</h3>
+          <label for="selectedPhotos">
+            <input
+              type="checkbox"
+              value="<%- idPhoto%>"
+              name="selectedPhotos"
+              id="selectedPhotos"
+            />
+            <img src="photoSRC" alt="<%- altText%>" />
+            <p><%= title%></p>
+
+          </label>
+
+          <% }) %> <% }else{ %>
+          <p>No photos yet 🙁</p>
+          <a href="/upload">Upload photos</a>
+          <% }%>
+
+          <h3>Order pics</h3>
+          <p>HTML tags - ?</p>
+
+          <button type="submit">Save serie</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <%- include ('../../partials/footer') %>
+</body>

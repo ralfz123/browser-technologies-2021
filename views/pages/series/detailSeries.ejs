@@ -1,17 +1,25 @@
 <head>
-<%- include ('../../partials/head') %>
-    <title>Series #1 | iPic</title>
-  </head>
-  <body>
-<%- include ('../../partials/header') %>
-  
-    <main>
-      <section>
-        <h1>Serie #1</h1>
-        <a href="/series">Back</a>
-      </section>
-    </main>
-  
-<%- include ('../../partials/footer') %>
-  </body>
-  
+  <%- include ('../../partials/head') %>
+  <title>Series #1 | iPic</title>
+</head>
+<body>
+  <%- include ('../../partials/header') %>
+
+  <main>
+    <section>
+      <a href="/series/overview">Back</a>
+
+      <a href="/series/detail/<%- serieData.idSerie%>/show">Show serie in style</a>
+
+      <h1>Serie title: <%= serieData.titleSerie %></h1>
+      <p>id photo object: <%= serieData.selectedPhotos%></p>
+      <ol>
+        <li><p>ForEach photoObject - photo</p></li>
+      </ol>
+
+      <a href="">Edit serie</a>
+    </section>
+  </main>
+
+  <%- include ('../../partials/footer') %>
+</body>

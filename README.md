@@ -258,7 +258,7 @@ iPic is a online photo album where you can upload photos and it generates a phot
 The user can upload/add a photo to the online album.
 
 #### Browser technology
-- idk yet
+- [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 
 #### Enhancements
 with JS
@@ -267,10 +267,15 @@ with JS
 without JS
 - User can see the name of the uploaded file
 #### Browser-testing browsers
+##### iOS
+- Chrome
+- Safari
+- (_Some non-chromium browsers?_ )
+##### Android
 - Chrome
 - Firefox
-- Safari
-- _Some non-chromium browsers?_
+- (_Some non-chromium browsers?_ )
+
 
 ### Wireflow
 <img src="static/assets/concept/sketch-v1-a.JPG" width=1000px />

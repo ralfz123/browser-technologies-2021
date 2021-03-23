@@ -251,19 +251,28 @@ Research about features from websites on the web
 
 ## :heart_eyes: Concept
 [PE examples](https://github.com/cmda-minor-web/browser-technologies-2021/tree/master/docs/examples)
-### Omschrijving
-Photo viewer/uploader - collage maker.  
+### What's it?
+iPic is a online photo album where you can upload photos and it generates a photo album for you. You can make photo series from your album and you can see them in a slideshow and carousel.
 
-- Wat als er geen JS is?
-- Wat is de core functionaliteit?
+#### Core feature
+The user can upload/add a photo to the online album.
 
-Browser technology:
+#### Browser technology
 - idk yet
 
-#### Welke browsers:
-- Chrome
+#### Enhancements
+with JS
+- User can see his uploaded image.
 
-### Schets
+without JS
+- User can see the name of the uploaded file
+#### Browser-testing browsers
+- Chrome
+- Firefox
+- Safari
+- _Some non-chromium browsers?_
+
+### Wireflow
 <img src="static/assets/concept/sketch-v1-a.JPG" width=1000px />
 <img src="static/assets/concept/sketch-v1-b.JPG" width=1000px />
 

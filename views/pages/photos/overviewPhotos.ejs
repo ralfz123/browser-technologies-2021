@@ -6,16 +6,15 @@
   <%- include ('../../partials/header') %>
 
   <main>
-    <section>
+    <section id="photos-overview">
       <h1>All photos</h1>
-      <a href="/">Back</a>
       <ol>
         <% if(data.length > 0){ %> <% data.forEach(({image, title, description,
         photographer, location, _id}) => { %>
         <li>
           <a href="/photos/<%=_id%>">
             <figure>
-              <img src="uploads/<%=image%>" alt="<%=title%>" />
+              <img src="uploads/<%=image%>" alt="<%=title%>" width="100px"/>
               <figcaption><%= title %></figcaption>
             </figure>
           </a>
@@ -24,9 +23,7 @@
         <p>No photos yet 🙁</p>
         <% }%>
       </ol>
-      <a href="/upload">Add photo</a>
-      <a href="/series/new">Create serie</a>
-      <a href="/series/overview">Series</a>
+      <a class="link" href="/upload">Add photo</a>
     </section>
   </main>
 

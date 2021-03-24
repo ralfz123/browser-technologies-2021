@@ -261,6 +261,7 @@ The user can upload/add a photo to the online album.
 - [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 
 #### Enhancements
+##### 1. [title]
 with JS
 - User can see his uploaded image.
 
@@ -271,10 +272,13 @@ without JS
 - Chrome
 - Safari
 - (_Some non-chromium browsers?_ )
+- Flow?
 ##### Android
 - Chrome
 - Firefox
 - (_Some non-chromium browsers?_ )
+
+- Results:
 
 
 ### Wireflow
@@ -296,10 +300,13 @@ To-Do:
     - [ ] show
         - [ ] carousel
         - [ ] slideshow
-
+- deploy works not
 - slideshow
 - order page 3.4 html tags
-- forEach for the staticData
+
+### Readme
+- [ ] Enhancements / Web API's?
+- [ ] Test results
 
 #### Backlog 
 - [ ] Login, so each user has own pics

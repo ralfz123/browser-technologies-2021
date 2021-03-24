@@ -6,9 +6,8 @@
   <%- include ('../../partials/header') %>
 
   <main>
-    <section>
+    <section id="series-overview">
       <h1>All series</h1>
-      <a href="/photos">Back</a>
 
       <ol>
         <% if(data.length > 0){ %> <% data.forEach(({_id, titleSerie, images}) => {
@@ -31,7 +30,7 @@
         <% }%>
       </ol>
 
-      <a href="/series/new">New serie</a>
+      <a class="link" href="/series/new">New serie</a>
     </section>
   </main>
 

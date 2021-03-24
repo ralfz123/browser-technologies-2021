@@ -10,17 +10,25 @@
       <h1>All series</h1>
       <a href="/photos">Back</a>
 
-      <% if(seriesArray.length > 0){ %> <% seriesArray.forEach(({selectedPhotos, titleSerie,
-      idSerie}) => { %>
-
-      <a href="/series/detail/<%- idSerie%>">
-        <img src="selectedPhotos[0].photo" alt="">
-        <h2><%= titleSerie%></h2>
-      </a>
-
-      <% }) %> <% }else{ %>
-      <p>No series yet 🙁</p>
-      <% }%>
+      <ol>
+        <% if(data.length > 0){ %> <% data.forEach(({_id, titleSerie, images}) => {
+        %>
+        <li>
+          <a href="/series/detail/<%= _id%>">
+            <figure>
+              <img
+                src="/uploads/<%=images%>"
+                alt="<%=titleSerie%>"
+                width="300"
+              />
+              <figcaption><%= titleSerie %></figcaption>
+            </figure>
+          </a>
+        </li>
+        <% }) %> <% }else{ %>
+        <p>No series yet 🙁</p>
+        <% }%>
+      </ol>
 
       <a href="/series/new">Create serie</a>
     </section>

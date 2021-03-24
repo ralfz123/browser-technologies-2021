@@ -13,7 +13,7 @@
         <% if(data.length > 0){ %> <% data.forEach(({image, title, description,
         photographer, location, _id}) => { %>
         <li>
-          <a href="/<%=_id%>">
+          <a href="/photos/<%=_id%>">
             <figure>
               <img src="uploads/<%=image%>" alt="<%=title%>" width="300" />
               <figcaption><%= title %></figcaption>
@@ -24,7 +24,7 @@
         <p>No photos yet 🙁</p>
         <% }%>
       </ol>
-      <a href="/upload">Add photos</a>
+      <a href="/upload">Add photo</a>
       <a href="/series/new">Create serie</a>
       <a href="/series/overview">Series</a>
     </section>

@@ -75,16 +75,19 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     description: req.body.description,
     photographer: req.body.photographer,
     location: req.body.location,
-    // idPhoto: idCreator(),
+    series: false,
   };
 
+  // checker when the inputs are null, then don't make object
+
   db.collection('data').insertOne(photoObject, renderPage());
+  // checker when the inputs are null, then don't make object
 
   function renderPage(err, data) {
     if (err) {
       next(err);
     } else {
-      res.redirect('/');
+      res.redirect('/photos');
     }
   }
 });
@@ -99,12 +102,15 @@ app.get('/photos', async function (req, res, next) {
   const allData = await db.collection('data').find().toArray();
   allData.reverse();
 
-  renderPage(allData);
+  const photos = allData.filter((data) => {
+    return data.series === false;
+  });
 
-  function renderPage(allData) {
-    console.log('this is all data', allData);
+  renderPage(photos);
+  console.log('OW - serieData: ', photos);
+  function renderPage(photos) {
     res.render('pages/photos/overviewPhotos', {
-      data: allData,
+      data: photos,
     });
   }
 });
@@ -135,50 +141,98 @@ app.get('/photos/:id', function (req, res, next) {
   );
 });
 
-// // Finds the right object that is equal to the given id parameter
-// function findObject(id, idType, array) {
-//   if (idType == 'idSerie') {
-//     const correctObject = array.find((object) => {
-//       return object.idSerie == id;
-//     });
-//     return correctObject;
-//   } else if ((idType = 'idPhoto')) {
-//     const correctObject = array.find((object) => {
-//       return object.idPhoto == id;
-//     });
-//     return correctObject;
-//   }
-// }
+// Get all series trough searching trhougin object with id of photos
+app.get('/series/overview', async function (req, res) {
+  const allData = await db.collection('data').find().toArray();
+  allData.reverse();
 
-// // Get all series trough searching trhougin object with id of photos
-// app.get('/series/overview', function (req, res) {
-//   res.render('pages/series/overviewSeries', { seriesArray });
-// });
+  const series = allData.filter((data) => {
+    return data.series === true;
+  });
 
-// app.get('/series/detail/:id', function (req, res) {
-//   const idSerie = req.params.id;
-//   const serieData = findObject(idSerie, 'idSerie', seriesArray);
-//   if (serieData) {
-//     // Show correct id object from array
-//     res.render('pages/series/detailSeries', { serieData }); // + the photoObject data
-//   } else {
-//     res.redirect('/error');
-//   }
-// });
+  renderPage(series);
+  console.log('OW - serieData: ', series);
+  function renderPage(series) {
+    res.render('pages/series/overviewSeries', {
+      data: series,
+    });
+  }
+});
+
+app.get('/series/new', async function (req, res) {
+  const allData = await db.collection('data').find().toArray();
+  allData.reverse();
+
+  const photos = allData.filter((data) => {
+    return data.series === false;
+  });
+
+  renderPage(photos);
+  console.log('OW - serieData: ', photos);
+  function renderPage(photos) {
+    res.render('pages/series/newSerie', {
+      data: photos,
+    });
+  }
+
+  // renderPage(allData);
+
+  // function renderPage(allData) {
+  //   res.render('pages/series/newSerie', {
+  //     data: allData,
+  //   });
+  // }
+});
+
+app.post('/series/new', function (req, res) {
+  const serieObject = {
+    titleSerie: req.body.titleSerie,
+    series: true,
+    images: req.body.selectedPhotos,
+  };
+
+  // checker when the inputs are null, then don't make object
+
+  db.collection('data').insertOne(serieObject, renderPage());
+  // checker when the inputs are null, then don't make object
+
+  function renderPage(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.redirect('/series/overview');
+    }
+  }
+});
+
+app.get('/series/detail/:id', function (req, res) {
+  let ObjectId = mongo.ObjectId;
+  let id = req.params.id;
+  let searchID = new ObjectId(id);
+
+  db.collection('data').findOne(
+    {
+      _id: searchID,
+    },
+    (err, data) => {
+      if (err) {
+        console.log('MongoDB Error:' + err);
+      }
+      if (data) {
+        console.log(data);
+        res.render('pages/series/detailSeries', {
+          data: data,
+        });
+      } else {
+        console.log('Error: client ID could not been found!');
+        res.send('cant find serie');
+      }
+    }
+  );
+});
 
 // app.get('/series/detail/:id/show', function (req, res) {
 //   res.render('pages/series/show/choice', { serieData });
-//   console.log;
-
-//   // const idSerie = req.params.id;
-//   // const serieData = findObject(idSerie, 'idSerie', seriesArray);
-//   // if (serieData) {
-//   //   // Show correct id object from array
-//   //   console.log(serieData);
-//   //   res.render('pages/series/detailSeries', { serieData }); // + the photoObject data
-//   // } else {
-//   //   res.redirect('/error');
-//   // }
 // });
 
 // app.get('/series/detail/:id/show/carousel', function (req, res) {
@@ -187,22 +241,6 @@ app.get('/photos/:id', function (req, res, next) {
 
 // app.get('/series/detail/:id/show/slideshow', function (req, res) {
 //   res.render('pages/series/show/slideshow', { serieData });
-// });
-
-// app.get('/series/new', function (req, res) {
-//   res.render('pages/series/newSerie', { photosArray });
-// });
-
-// app.post('/series/new', function (req, res) {
-//   const serieObject = {
-//     // idSerie: idCreator(),
-//     titleSerie: req.body.titleSerie,
-//     selectedPhotos: req.body.selectedPhotos, // IDs of all photos
-//   };
-
-//   seriesArray.push(serieObject);
-//   console.log('seriesArray', seriesArray);
-//   res.redirect('/series/overview');
 // });
 
 app.get('/error', function (req, res) {

@@ -10,13 +10,20 @@
       <form action="/photoDelete" method="POST">
         <fieldset>
           <legend>Info photo</legend>
+          <figure>
+            <img
+              src="/uploads/<%= data.image%>"
+              alt="<%=data.title%>"
+              width="300"
+            />
+          </figure>
+          <h2><%= data.title%></h2>
 
-          <h2><%= photoData.title%></h2>
-          <p><%= photoData.description%></p>
-          <p><%= photoData.photographer%></p>
-          <p><%= photoData.location%></p>
+          <p editable>Description: <%= data.description%></p>
+          <p>Photographer: <%= data.photographer%></p>
+          <p>Location: <%= data.location%></p>
 
-          <button type="submit">Delete photo</button>
+          <button type="button">Delete</button>
           <button type="button">Edit</button>
         </fieldset>
       </form>

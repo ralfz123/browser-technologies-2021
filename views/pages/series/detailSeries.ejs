@@ -9,15 +9,30 @@
     <section>
       <a href="/series/overview">Back</a>
 
-      <a href="/series/detail/<%- serieData.idSerie%>/show">Show serie in style</a>
+      <!-- <a href="/series/detail/<%- data.idSerie%>/show">Show serie in style</a> -->
 
-      <h1>Serie title: <%= serieData.titleSerie %></h1>
-      <p>id photo object: <%= serieData.selectedPhotos%></p>
+      <h1><%= data.titleSerie %></h1>
+
       <ol>
-        <li><p>ForEach photoObject - photo</p></li>
+        <% if(data.images.length > 0){ %> <% for (let i = 0; i <
+        data.images.length; i++) { %>
+
+        <li>
+          <figure>
+            <figure>
+              <img src="/uploads/<%=data.images[i]%>" width="300px" />
+            </figure>
+            <figcaption>lorem</figcaption>
+          </figure>
+        </li>
+        <% } %> <% }else{ %>
+
+        <!--     <p>No photos in this serie yet 🙁</p>
+  <a href="/upload">Upload photos</a>
+  <% }%> -->
       </ol>
 
-      <a href="">Edit serie</a>
+      <!-- <a href="">Edit serie</a> -->
     </section>
   </main>
 

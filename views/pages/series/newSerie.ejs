@@ -1,6 +1,6 @@
 <head>
   <%- include ('../../partials/head') %>
-  <title>Upload | iPic</title>
+  <title>Create serie | iPic</title>
 </head>
 <body>
   <%- include ('../../partials/header') %>
@@ -13,7 +13,7 @@
         <fieldset>
           <legend>Info about the photo</legend>
 
-          <% if(photosArray.length > 0){ %>
+          <% if(data.length > 0){ %>
           <label for="titleSerie"
             >Title serie
             <input
@@ -23,20 +23,22 @@
               placeholder="e.g. Holiday 2019"
             />
           </label>
-          <% photosArray.forEach(({photo, title, altText, description,
-          photographer, location, idPhoto}) => { %>
 
-          <h3>Which pics</h3>
-          <label for="selectedPhotos">
+          <h3>Choose images</h3>
+          <% data.forEach(({image, title, description, photographer, location,
+          _id}) => { %>
+
+          <label for="<%- _id%>">
             <input
               type="checkbox"
-              value="<%- idPhoto%>"
+              value="<%- image%>"
               name="selectedPhotos"
-              id="selectedPhotos"
+              id="<%- _id%>"
             />
-            <img src="photoSRC" alt="<%- altText%>" />
-            <p><%= title%></p>
-
+            <figure>
+              <img src="/uploads/<%= image%>" alt="<%- title%>" width="300px" />
+              <figcaption><%= title%></figcaption>
+            </figure>
           </label>
 
           <% }) %> <% }else{ %>
@@ -44,8 +46,8 @@
           <a href="/upload">Upload photos</a>
           <% }%>
 
-          <h3>Order pics</h3>
-          <p>HTML tags - ?</p>
+          <!-- <h3>Order pics</h3>
+          <p>HTML tags - ?</p> -->
 
           <button type="submit">Save serie</button>
         </fieldset>

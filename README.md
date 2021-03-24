@@ -285,7 +285,18 @@ without JS
 
 
 To-Do:
-- multer
+- [x] multer
+- [x] mongodb
+- pages
+    - [x] upload
+    - [ ] photo overview
+    - [ ] photo detail
+    - [ ] photo series
+    - [ ] photo detail
+    - [ ] show
+        - [ ] carousel
+        - [ ] slideshow
+
 - slideshow
 - order page 3.4 html tags
 - forEach for the staticData

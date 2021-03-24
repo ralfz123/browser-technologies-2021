@@ -289,10 +289,10 @@ To-Do:
 - [x] mongodb
 - pages
     - [x] upload
-    - [ ] photo overview
-    - [ ] photo detail
-    - [ ] photo series
-    - [ ] photo detail
+    - [x] photo overview
+    - [x] photo detail
+    - [x] series overview
+    - [x] series detail
     - [ ] show
         - [ ] carousel
         - [ ] slideshow
@@ -300,6 +300,9 @@ To-Do:
 - slideshow
 - order page 3.4 html tags
 - forEach for the staticData
+
+#### Backlog 
+- [ ] Login, so each user has own pics
 
 #### Features
 -	Foto toevoegen aan een verzameling met meta-info zoals beschrijving, locatie, fotograaf, alt-tekst

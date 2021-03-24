@@ -135,14 +135,14 @@ app.get('/photos/:id', function (req, res, next) {
         });
       } else {
         console.log('Error: client ID could not been found!');
-        res.send('cant find photo');
+        res.redirect('/error');
       }
     }
   );
 });
 
 // Get all series trough searching trhougin object with id of photos
-app.get('/series/overview', async function (req, res) {
+app.get('/series/overview', async function (req, res, next) {
   const allData = await db.collection('data').find().toArray();
   allData.reverse();
 
@@ -225,7 +225,7 @@ app.get('/series/detail/:id', function (req, res) {
         });
       } else {
         console.log('Error: client ID could not been found!');
-        res.send('cant find serie');
+        res.redirect('/error');
       }
     }
   );

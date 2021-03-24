@@ -16,12 +16,13 @@
         <li>
           <a href="/series/detail/<%= _id%>">
             <figure>
+              <h3><%= titleSerie%></h3>
               <img
                 src="/uploads/<%=images%>"
                 alt="<%=titleSerie%>"
-                width="300"
+                width="150" 
+                height="150"
               />
-              <figcaption><%= titleSerie %></figcaption>
             </figure>
           </a>
         </li>
@@ -30,7 +31,7 @@
         <% }%>
       </ol>
 
-      <a href="/series/new">Create serie</a>
+      <a href="/series/new">New serie</a>
     </section>
   </main>
 

@@ -12,6 +12,7 @@ html {
   background: #eef7ff;
   --font-body: 'Montserrat', sans-serif;
   /* --font-header: 'Pacifico', cursive; */
+  margin: 0;
 }
 
 /* ------------------------------------------- */
@@ -47,8 +48,8 @@ header {
 
 header h1 {
   font-weight: 500;
-  font-size: 3rem;
-  line-height: 1.4;
+  font-size: 2rem;
+  /* line-height: 1.4; */
 }
 
 header h1:hover::after {
@@ -58,6 +59,35 @@ header h1:hover::after {
 
 header h1:hover span {
   display: none;
+}
+
+header nav ul {
+  max-width: 40em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  justify-content: center;
+  list-style: none;
+  background: white;
+  height: 2em;
+  align-items: center;
+}
+
+header nav ul a {
+  padding: 0.5em;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  color: #ff8484;
+}
+
+header nav ul a:hover,
+header nav ul a:focus,
+header nav ul a:active {
+  font-weight: bold;
+  background-color: #fd9090;
+  color: white;
+  transform: scale(1.1);
 }
 
 /* ------------------------------------------- */
@@ -99,16 +129,17 @@ main a {
   text-transform: uppercase; */
 }
 
-main a:hover {
+/* main a:hover, main a:focus {
   color: #2c28bb;
   background: white;
   border: 1px solid #2c28bb;
-}
+} */
 
 main section {
   /* display: none; */
   position: relative;
-  width: 50vw;
+  /* width: 50vw; */
+  padding: 10px;
 }
 
 /* ------------------------------------------- */
@@ -123,6 +154,64 @@ main section form {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+main section ol {
+  list-style-type: none;
+}
+
+/* pages - overview */
+
+main section#pages-overview {
+}
+
+main section ol li {
+  margin: 10px;
+  width: 10em;
+}
+/* main section ol li:after {
+  content: '';
+  display: block;
+  background-color: blue;
+  width: 10px;
+  position: absolute;
+  z-index: 1;
+} */
+
+main section ol li figure {
+  width: 150%;
+  background-color: red;
+}
+main section ol li figure img {
+  width: 100%;
+  height: auto;
+}
+
+main section ol li figcaption {
+  /* visibility: hidden; */
+  transform: translateY(-100px);
+  position: absolute;
+  z-index: -1;
+  background-color: #000000;
+  color: #ffffff;
+  width: 9.5em;
+  text-align: center;
+}
+
+main section ol li:hover figcaption {
+  /* visibility: visible;
+  transition: 0.2s; */
+  transform: translateY(-20px);
+  z-index: 1;
+  transition: 0.4s;
+}
+
+/* series - overview */
+
+/* series - overview */
+
+/* series - overview */
+
+/* series - overview */
 
 /* ------------------------------------------- */
 /*                   FOOTER                    */

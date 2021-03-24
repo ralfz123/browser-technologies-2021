@@ -8,22 +8,13 @@
   <main>
     <section>
       <p>Upload here your photos</p>
-      <form action="/upload" method="POST">
+      <form action="/upload" method="POST" enctype="multipart/form-data">
         <fieldset>
           <legend>Info about the photo</legend>
 
-          <% staticData.forEach(({photo, id}) => { %>
-          <label for="photo-<%- id%>">
-            <input type="hidden" value="<%- id%>" name="id"/>
-            <input type="radio" value="<%- photo %>" id="photo-<%- id%>" name="photo" />
-            <img width="300px" src="<%- photo %>" alt="" />
+          <label for="image"
+            >Photo upload <input type="file" name="image" accept="image/*" />
           </label>
-          <% })%>
-
-          <!-- <label for="photo"
-            >Photo upload
-            <input type="file" name="photo" />
-          </label> -->
 
           <label for="title"
             >Title
@@ -32,16 +23,6 @@
               name="title"
               type="text"
               placeholder="Nice flower"
-            />
-          </label>
-
-          <label for="altText"
-            >alt text
-            <input
-              id="altText"
-              name="altText"
-              type="text"
-              placeholder="A picture of a nice flower"
             />
           </label>
 

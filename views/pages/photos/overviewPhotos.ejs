@@ -10,21 +10,19 @@
       <h1>All photos</h1>
       <a href="/">Back</a>
       <ol>
-        <% if(photosArray.length > 0){ %>
-
-          <% photosArray.forEach(({photo, title, altText, description, photographer, location, idPhoto}) => { %>
-          <li>
-            <a href="/photos/<%= idPhoto %>">
-              <img src="<%= photo %>" alt="" />
-              <p><%= title %></p>
-
-           </a>
-          </li>
-          <% }) %> 
-          
-          <% }else{ %>
-          <p>No photos yet 🙁</p>
-          <% }%>
+        <% if(data.length > 0){ %> <% data.forEach(({image, title, description,
+        photographer, location, _id}) => { %>
+        <li>
+          <a href="/<%=_id%>">
+            <figure>
+              <img src="uploads/<%=image%>" alt="<%=title%>" width="300" />
+              <figcaption><%= title %></figcaption>
+            </figure>
+          </a>
+        </li>
+        <% }) %> <% }else{ %>
+        <p>No photos yet 🙁</p>
+        <% }%>
       </ol>
       <a href="/upload">Add photos</a>
       <a href="/series/new">Create serie</a>

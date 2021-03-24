@@ -1,4 +1,5 @@
-course/
+/course
+static/uploads
 
 # Logs
 logs

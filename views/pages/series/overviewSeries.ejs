@@ -12,34 +12,21 @@
       <h1>All series</h1>
 
       <ol>
-        <% if(series.length > 0){ %> <% series.forEach(({_id, titleSerie, images}) => {%>
-          <% if(images.length = 1){ %>
+        <% if(series.length > 0){ %> 
+          <% series.forEach(({_id, titleSerie, images}) => {%>
             <li>
               <a href="/series/detail/<%= _id%>">
                 <figure>
-                  <h3><%= titleSerie%></h3>
+                  <figcaption><%= titleSerie%></figcaption>
                   <img
-                    src="/uploads/<%=images%>"
-                    alt="<%=titleSerie%>"
+                    src="/uploads/<%= images[0]%>"
+                    alt="<%= titleSerie%>"
                   />
                 </figure>
               </a>
             </li>    
-            <%} else{%>
-              <li>
-                <a href="/series/detail/<%= _id%>">
-                  <figure>
-                    <h3><%= titleSerie%></h3>
-                    <img
-                      src="/uploads/<%=images[0]%>"
-                      alt="<%=titleSerie%>"
-                    />
-                  </figure>
-                </a>
-              </li>
-      
-              <% }%>
-                <% }) %> <% }else{ %>
+                <% }) %> 
+                <% }else{ %>
         <p>No series yet 🙁</p>
         <% }%>
       </ol>

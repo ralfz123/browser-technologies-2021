@@ -1,1 +1,49 @@
-<p>Slideshow</p>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../../../partials/head') %>
+    <title>Series | iPic</title>
+  </head>
+  <body>
+    <%- include ('../../../partials/header') %>
+
+    <main>
+      <section>
+        <a class="link" href="/series/detail/<%= series._id%>">Back</a>
+
+
+        <section class="slideshow">
+            <div class="slideshow--content">
+                <% if (series.length) { %>
+                <% images.map((image, index) => { %>
+                  <figure class="slideshow--content__figure">
+                    <img 
+                      src="https://media-exp1.licdn.com/dms/image/C561BAQFGwG_I_yubDA/company-background_10000/0/1519798679721?e=2159024400&v=beta&t=NZ_SyDW_YDs1cNdohA56e9bbg1N2MnP_co4wYZf55iY",
+                      alt="alt-text"
+                      class="slideshow--content__figure__image"
+                    />
+                    <figcaption class="slideshow--content__figure__description">
+                        <%= `${index+1}/${images.length}` %>
+                    </figcaption>
+                  </figure>
+                  <% }) %>
+            </div>
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+            <% } else { %>
+              <h3>No photos in this serie yet 🙁</h3>
+              <a href="/upload">Upload Image</a>
+              <% } %>
+          </section>
+
+
+        <a href="">Edit</a>
+        <a href="">Delete</a>
+      </section>
+    </main>
+
+    <%- include ('../../../partials/footer') %>
+  </body>
+</html>

@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include ('../../partials/head') %>
-  <title>New Serie | iPic</title>
-</head>
-<body>
-  <%- include ('../../partials/header') %>
+  <head>
+    <%- include ('../../partials/head') %>
+    <title>New Serie | iPic</title>
+  </head>
+  <body>
+    <%- include ('../../partials/header') %>
 
-  <main>
-    <section>
-      <h2>New Serie</h2>
+    <main>
+      <section>
+        <h2>New Serie</h2>
 
-      <form action="/series/new" method="POST">
-        <fieldset>
-          <legend>Info about the photo</legend>
+        <form action="/series/new" method="POST">
+          <fieldset>
+            <legend>Info about the photo</legend>
 
-          <% if(images.length > 0){ %>
-          <label for="titleSerie"
-            >Title serie
-            <input
-              id="titleSerie"
-              name="titleSerie"
-              type="text"
-              placeholder="e.g. Holiday 2019"
-            />
-          </label>
+            <% if(images.length > 0){ %>
+            <label for="titleSerie"
+              >Title serie
+              <input
+                id="titleSerie"
+                name="titleSerie"
+                type="text"
+                placeholder="e.g. Holiday 2019"
+              />
+            </label>
 
-          <h3>Choose images</h3>
-          <% images.forEach(({image, title, description, photographer, location,
-          _id}) => { %>
+            <h3>Choose images</h3>
+            <% images.forEach(({image, title, description, photographer,
+            location, _id}) => { %>
 
-          <label for="<%- _id%>">
-            <input
-              type="checkbox"
-              value="<%- _id%>"
-              name="selectedPhotos"
-              id="<%- _id%>"
-            />
-            <figure>
-              <img src="/uploads/<%= image%>" alt="<%- title%>" width="300px" />
-              <figcaption><%= title%></figcaption>
-            </figure>
-          </label>
+            <label for="<%- _id%>">
+              <input
+                type="checkbox"
+                value="<%- _id%>"
+                name="selectedPhotos"
+                id="<%- _id%>"
+              />
 
-          <% }) %> <% }else{ %>
-          <p>No photos yet 🙁</p>
-          <a href="/upload">Upload photos</a>
-          <% }%>
+              <figure>
+                <img
+                  src="/uploads/<%= image%>"
+                  alt="<%- title%>"
+                  width="300px"
+                />
+                <figcaption><%= title%></figcaption>
+              </figure>
+            </label>
 
-          <!-- <h3>Order pics</h3>
+            <% }) %> <% }else{ %>
+            <p>No photos yet 🙁</p>
+            <a href="/upload">Upload photos</a>
+            <% }%>
+
+            <!-- <h3>Order pics</h3>
           <p>HTML tags - ?</p> -->
 
-          <button type="submit">Save serie</button>
-        </fieldset>
-      </form>
-    </section>
-  </main>
+            <button type="submit">Save serie</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
 
-  <%- include ('../../partials/footer') %>
-</body>
+    <%- include ('../../partials/footer') %>
+  </body>
+</html>

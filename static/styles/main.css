@@ -273,6 +273,81 @@ main section ol li:hover figcaption {
 
 /* series - overview */
 
+/* series - slideshow */
+/************* Image slideshow ************************/
+.slideshow {
+  background-color: #131212;
+  height: 70vh;
+  position: relative;
+  width: clamp(15em, 90%, 50em);
+}
+
+.slideshow--content {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slideshow--content__figure {
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+.slideshow--content__figure__image {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.slideshow--content__figure__description {
+  background: #13121285;
+  color: #008071;
+  left: 0;
+  padding: .5em 1em;
+  position: absolute;
+  top: 0;
+}
+
+.slideshow button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  color:#008071;
+  cursor: pointer;
+  display: none;
+  font-size: 3em;
+  padding: .25em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background .2s ease-in-out;
+}
+
+.slideshow button.js {
+  display: block;
+}
+
+.slideshow button:hover {
+  background: #13121280;
+}
+
+.slideshow #prev {
+  left: 0;
+}
+
+.slideshow #next {
+  right: 0;
+}
+
 /* ------------------------------------------- */
 /*                   FOOTER                    */
 /* ------------------------------------------- */

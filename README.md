@@ -58,6 +58,11 @@ lorem
 ##### 3. geo loc API
 lorem
 ##### 4. Drag & Drop
+##### 5. SlideShow
+1. Show in OL
+2. With styling and horizontal scrolling (slide)
+3. Buttons to interact with
+
 #### Browser-testing browsers
 ##### iOS
 - Chrome

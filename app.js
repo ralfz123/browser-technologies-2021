@@ -141,7 +141,24 @@ app.get('/photos/:id', async (req, res) => {
 
 app.get('/series/overview', async function (req, res, next) {
   const series = await Series.find().catch((err) => console.log(err));
-  res.render('pages/series/overviewSeries', { series });
+  // Data from the images that are in the serie, find by Id
+  // const images = await Images.find().catch((err) => console.log(err));
+
+  const imageIds = series;
+  console.log('image IDs', imageIds);
+
+  const images = getImage(imageIds);
+
+  function getImage(id) {
+    console.log('id', id);
+    Images.findById(id, (err) => console.log(err));
+  }
+
+  console.log('series', series);
+  res.render('pages/series/overviewSeries', {
+    series,
+    // ,     images
+  });
 });
 
 app.get('/series/new', async function (req, res) {
@@ -153,16 +170,16 @@ app.post('/series/new', function (req, res) {
   const serieObject = {
     titleSerie: req.body.titleSerie,
     images: req.body.selectedPhotos,
-    imagesPics: req.body.selecedPicsNames (for in ejs, /uploads/)
+    // imagesNames: req.body.imageName, //(for in ejs, /uploads/)
   };
 
   createSerie(serieObject);
-  console.log(Series);
 
-  function createSerie({ titleSerie, images }) {
+  function createSerie({ titleSerie, images, imagesNames }) {
     Series.create({
       titleSerie: titleSerie,
       images: images,
+      imagesNames: imagesNames,
     });
   }
 
@@ -174,25 +191,33 @@ app.get('/series/detail/:id', async function (req, res) {
     _id: req.params.id,
   }).catch((err) => console.log(err));
 
-  // const images = await Images.findOne({
-  //   _id: req.params.id,
-  // }).catch((err) => console.log(err));
-
   console.log('data', series);
   res.render('pages/series/detailSeries', { series });
 });
 
-// app.get('/series/detail/:id/show', function (req, res) {
-//   res.render('pages/series/show/choice', { serieData });
-// });
+app.get('/series/detail/:id/slideshow', async function (req, res) {
+  const series = await Series.findOne({
+    _id: req.params.id,
+  }).catch((err) => console.log(err));
 
-// app.get('/series/detail/:id/show/carousel', function (req, res) {
-//   res.render('pages/series/show/carousel', { serieData });
-// });
+  // function getImage({ _id }) {
+  //   Images.findById(_id, err => console.error(chalk.red(err)))
+  // }
+  // const idImages = series.images;
+  // const images = await Images.find(idImages).catch((err) =>
+  //   console.error(chalk.red(err))
+  // );
 
-// app.get('/series/detail/:id/show/slideshow', function (req, res) {
-//   res.render('pages/series/show/slideshow', { serieData });
-// });
+  // console.log(idImages);
+  // console.log(images);
+
+  console.log('Data serie', series);
+  res.render('pages/series/show/slideshow', { series });
+});
+
+app.get('/series/detail/:id/carousel', function (req, res) {
+  res.render('pages/series/carousel');
+});
 
 app.get('/error', function (req, res) {
   res.render('404');

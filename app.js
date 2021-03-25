@@ -4,10 +4,11 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
-// const { v4: uuidv4 } = require('uuid');
+const Images = require('./modules/models/image.js');
 
 const path = require('path');
-const mongo = require('mongodb');
+// const mongo = require('mongodb');
+const mongoose = require('mongoose');
 const multer = require('multer');
 const storage = multer.diskStorage({
   // This adds a name and extension to the uploaded file
@@ -29,22 +30,45 @@ const upload = multer({
 
 require('dotenv').config();
 // database connection
-let db = null;
-const uri = process.env.DB_HOST;
+// let db = null;
+// const uri = process.env.DB_HOST;
 
-mongo.MongoClient.connect(
-  uri,
-  {
-    useUnifiedTopology: true,
-  },
-  function (err, client) {
-    if (err) {
-      throw err;
+// mongo.MongoClient.connect(
+//   uri,
+//   {
+//     useUnifiedTopology: true,
+//   },
+//   function (err, client) {
+//     if (err) {
+//       throw err;
+//     }
+
+//     db = client.db(process.env.DB_NAME);
+//   }
+// );
+
+// createConnection();
+
+const db = createConnection();
+
+function createConnection() {
+  const URI = process.env.DB_HOST;
+
+  mongoose.connect(
+    URI,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    },
+    (err) => {
+      err ? console.log(err) : console.log('MongoDB is connected');
     }
+  );
 
-    db = client.db(process.env.DB_NAME);
-  }
-);
+  return mongoose.connection;
+}
 
 // **** MIDDLEWARE SET-UP **** //
 // Using static files from static directory
@@ -68,7 +92,7 @@ app.get('/upload', function (req, res) {
 
 // upload photographs to server
 app.post('/upload', upload.single('image'), function (req, res, next) {
-  const photoObject = {
+  const imageObject = {
     image: req.file ? req.file.filename : null, // zet alles na de ? uit, dan krijg je een data object. Daar kan je meer mee.
     title: req.body.title,
     description: req.body.description,
@@ -77,9 +101,29 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     series: false,
   };
 
+  const imageObjectSchema = createImage(imageObject);
+
+  function createImage({
+    image,
+    title,
+    description,
+    photographer,
+    location,
+    series,
+  }) {
+    Images.create({
+      image: image,
+      title: title,
+      description: description,
+      photographer: photographer,
+      location: location,
+      series: series,
+    });
+  }
+
   // checker when the inputs are null, then don't make object
 
-  db.collection('data').insertOne(photoObject, renderPage());
+  db.collection('data').insertOne(imageObjectSchema, renderPage());
   // checker when the inputs are null, then don't make object
 
   function renderPage(err, data) {
@@ -114,18 +158,15 @@ app.get('/photos', async function (req, res, next) {
 });
 
 app.get('/photos/:id', function (req, res, next) {
-  // create new object ID to refer to the params
-  let ObjectId = mongo.ObjectId;
-  let id = req.params.id;
-  let searchID = new ObjectId(id);
+  let id = req.params.id
+  console.log(id)
 
-  db.collection('data').findOne(
-    {
-      _id: searchID,
+  Images.findOne({
+      _id: id,
     },
     (err, data) => {
       if (err) {
-        console.log('MongoDB Error:' + err);
+        console.error('MongoDB Error:' + err);
       }
       if (data) {
         res.render('pages/photos/detailPhotos', {
@@ -170,14 +211,6 @@ app.get('/series/new', async function (req, res) {
       data: photos,
     });
   }
-
-  // renderPage(allData);
-
-  // function renderPage(allData) {
-  //   res.render('pages/series/newSerie', {
-  //     data: allData,
-  //   });
-  // }
 });
 
 app.post('/series/new', function (req, res) {
@@ -187,7 +220,7 @@ app.post('/series/new', function (req, res) {
     images: req.body.selectedPhotos,
   };
 
-  console.log(serieObject)
+  console.log(serieObject);
 
   // checker when the inputs are null, then don't make object
 
@@ -204,7 +237,7 @@ app.post('/series/new', function (req, res) {
 });
 
 app.get('/series/detail/:id', function (req, res) {
-  let ObjectId = mongo.ObjectId;
+  let ObjectId = mongoose.ObjectId;
   let id = req.params.id;
   let searchID = new ObjectId(id);
 

@@ -51,12 +51,13 @@ The user can upload/add a photo to the online album.
 #### Enhancements
 ##### 1. Photo upload
 I thought to make an enhancement so the user can directly see his uploaded image. This can be done with ... . But when there's no JS available, then filename will be shown when the file is uploaded.
+https://www.youtube.com/watch?v=w1iJWS6E8lE
 
 ##### 2. [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 lorem
 ##### 3. geo loc API
 lorem
-##### 4. lorem
+##### 4. Drag & Drop
 #### Browser-testing browsers
 ##### iOS
 - Chrome

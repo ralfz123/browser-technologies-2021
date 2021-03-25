@@ -191,11 +191,12 @@ main section ol li {
   width: 15em;
 }
 
+/* masonry grid */
 @supports (display: grid) {
   main section#photos-overview ol {
     /* width: 10em; */
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr;
   }
 }
 

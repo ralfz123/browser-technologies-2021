@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <%- include ('../../partials/head') %>
-  <title>Series #1 | iPic</title>
+  <title>Series | iPic</title>
 </head>
 <body>
   <%- include ('../../partials/header') %>
@@ -10,22 +12,34 @@
       <h1>All series</h1>
 
       <ol>
-        <% if(data.length > 0){ %> <% data.forEach(({_id, titleSerie, images}) => {
-        %>
-        <li>
-          <a href="/series/detail/<%= _id%>">
-            <figure>
-              <h3><%= titleSerie%></h3>
-              <img
-                src="/uploads/<%=images%>"
-                alt="<%=titleSerie%>"
-                width="150" 
-                height="150"
-              />
-            </figure>
-          </a>
-        </li>
-        <% }) %> <% }else{ %>
+        <% if(data.length > 0){ %> <% data.forEach(({_id, titleSerie, images}) => {%>
+          <% if(images.length = 1){ %>
+            <li>
+              <a href="/series/detail/<%= _id%>">
+                <figure>
+                  <h3><%= titleSerie%></h3>
+                  <img
+                    src="/uploads/<%=images%>"
+                    alt="<%=titleSerie%>"
+                  />
+                </figure>
+              </a>
+            </li>    
+            <%} else{%>
+              <li>
+                <a href="/series/detail/<%= _id%>">
+                  <figure>
+                    <h3><%= titleSerie%></h3>
+                    <img
+                      src="/uploads/<%=images[0]%>"
+                      alt="<%=titleSerie%>"
+                    />
+                  </figure>
+                </a>
+              </li>
+      
+              <% }%>
+                <% }) %> <% }else{ %>
         <p>No series yet 🙁</p>
         <% }%>
       </ol>

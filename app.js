@@ -43,7 +43,6 @@ mongo.MongoClient.connect(
     }
 
     db = client.db(process.env.DB_NAME);
-    // console.log('Connected correctly to MongoDB server');
   }
 );
 
@@ -107,7 +106,6 @@ app.get('/photos', async function (req, res, next) {
   });
 
   renderPage(photos);
-  console.log('OW - serieData: ', photos);
   function renderPage(photos) {
     res.render('pages/photos/overviewPhotos', {
       data: photos,
@@ -151,7 +149,6 @@ app.get('/series/overview', async function (req, res, next) {
   });
 
   renderPage(series);
-  console.log('OW - serieData: ', series);
   function renderPage(series) {
     res.render('pages/series/overviewSeries', {
       data: series,
@@ -168,7 +165,6 @@ app.get('/series/new', async function (req, res) {
   });
 
   renderPage(photos);
-  console.log('OW - serieData: ', photos);
   function renderPage(photos) {
     res.render('pages/series/newSerie', {
       data: photos,
@@ -190,6 +186,8 @@ app.post('/series/new', function (req, res) {
     series: true,
     images: req.body.selectedPhotos,
   };
+
+  console.log(serieObject)
 
   // checker when the inputs are null, then don't make object
 
@@ -219,7 +217,7 @@ app.get('/series/detail/:id', function (req, res) {
         console.log('MongoDB Error:' + err);
       }
       if (data) {
-        console.log(data);
+        console.log('detail serie', data);
         res.render('pages/series/detailSeries', {
           data: data,
         });

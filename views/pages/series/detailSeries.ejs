@@ -1,40 +1,44 @@
-<head>
-  <%- include ('../../partials/head') %>
-  <title>Series #1 | iPic</title>
-</head>
-<body>
-  <%- include ('../../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../../partials/head') %>
+    <title>Series | iPic</title>
+  </head>
+  <body>
+    <%- include ('../../partials/header') %>
 
-  <main>
-    <section>
-      <a href="/series/overview">Back</a>
+    <main>
+      <section>
+        <a class="link" href="/series/overview">Back</a>
 
-      <!-- <a href="/series/detail/<%- data.idSerie%>/show">Show serie in style</a> -->
+        <a href="/series/detail/<%- data.idSerie%>/show">Show serie in style</a>
 
-      <h1><%= data.titleSerie %></h1>
+        <h1><%= data.titleSerie %></h1>
 
-      <ol>
-        <% if(data.images.length > 0){ %> <% for (let i = 0; i <
-        data.images.length; i++) { %>
+        <ol>
+          <% if(data.images.length > 0){ %> 
+            <% for (let i = 0; i < data.images.length; i++) { %>
+            <li>
+              <figure>
+                <figure>
+                  <img src="/uploads/<%=data.images[i]%>" />
+                </figure>
+                <figcaption><%=data.images[i]%></figcaption>
+              </figure>
+            </li>
+            <% } %>
+            <% }else { %>
 
-        <li>
-          <figure>
-            <figure>
-              <img src="/uploads/<%=data.images[i]%>" width="300px" />
-            </figure>
-            <figcaption>lorem</figcaption>
-          </figure>
-        </li>
-        <% } %> <% }else{ %>
+          <p>No photos in this serie yet 🙁</p>
+          <a href="/upload">Upload photos</a>
+          <% }%>
+        </ol>
 
-        <!--     <p>No photos in this serie yet 🙁</p>
-  <a href="/upload">Upload photos</a>
-  <% }%> -->
-      </ol>
+        <a href="">Edit</a>
+        <a href="">Delete</a>
+      </section>
+    </main>
 
-      <!-- <a href="">Edit serie</a> -->
-    </section>
-  </main>
-
-  <%- include ('../../partials/footer') %>
-</body>
+    <%- include ('../../partials/footer') %>
+  </body>
+</html>

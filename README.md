@@ -124,6 +124,8 @@ This app is built, using:
 <summary>Expand</summary>
 
 #### App
+- [ ] Edit photo --> clientside JS makes form inputs not-disabled (by default disabled)
+- [ ] Delete photo
 
 #### Code
 - [x] Core feature works

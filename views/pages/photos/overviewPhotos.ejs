@@ -11,7 +11,7 @@
     <section id="photos-overview">
       <h1>All photos</h1>
       <ol>
-        <% if(data.length > 0){ %> <% data.forEach(({image, title, description,
+        <% if(images.length > 0){ %> <% images.forEach(({image, title, description,
         photographer, location, _id}) => { %>
         <li>
           <a href="/photos/<%=_id%>">

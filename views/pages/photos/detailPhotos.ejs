@@ -12,16 +12,17 @@
           <legend>Info photo</legend>
           <figure>
             <img
-              src="/uploads/<%= data.image%>"
-              alt="<%=data.title%>"
+              src="/uploads/<%= image.image%>"
+              alt="<%=image.title%>"
               width="300"
             />
           </figure>
-          <h2><%= data.title%></h2>
-
-          <p editable>Description: <%= data.description%></p>
-          <p>Photographer: <%= data.photographer%></p>
-          <p>Location: <%= data.location%></p>
+          <h2><%= image.title%></h2>
+          
+          <input type="text" value="<%= image.description%>">
+          <p>Description: <%= image.description%></p>
+          <p>Photographer: <%= image.photographer%></p>
+          <p>Location: <%= image.location%></p>
 
           <button type="button">Delete</button>
           <button type="button">Edit</button>

@@ -5,6 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const Images = require('./modules/models/image.js');
+const Series = require('./modules/models/serie');
 
 const path = require('path');
 // const mongo = require('mongodb');
@@ -101,7 +102,7 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     series: false,
   };
 
-  const imageObjectSchema = createImage(imageObject);
+  createImage(imageObject);
 
   function createImage({
     image,
@@ -121,145 +122,64 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     });
   }
 
-  // checker when the inputs are null, then don't make object
-
-  db.collection('data').insertOne(imageObjectSchema, renderPage());
-  // checker when the inputs are null, then don't make object
-
-  function renderPage(err, data) {
-    if (err) {
-      next(err);
-    } else {
-      res.redirect('/photos');
-    }
-  }
+  res.redirect('/photos');
 });
-
-// Makes an unique ID for each data object
-// function idCreator() {
-//   const id = uuidv4();
-//   return id;
-//}
 
 app.get('/photos', async function (req, res, next) {
-  const allData = await db.collection('data').find().toArray();
-  allData.reverse();
-
-  const photos = allData.filter((data) => {
-    return data.series === false;
-  });
-
-  renderPage(photos);
-  function renderPage(photos) {
-    res.render('pages/photos/overviewPhotos', {
-      data: photos,
-    });
-  }
+  const images = await Images.find().catch((err) => console.log(err));
+  res.render('pages/photos/overviewPhotos', { images });
 });
 
-app.get('/photos/:id', function (req, res, next) {
-  let id = req.params.id
-  console.log(id)
+app.get('/photos/:id', async (req, res) => {
+  const image = await Images.findOne({
+    _id: req.params.id,
+  }).catch((err) => console.log(err));
 
-  Images.findOne({
-      _id: id,
-    },
-    (err, data) => {
-      if (err) {
-        console.error('MongoDB Error:' + err);
-      }
-      if (data) {
-        res.render('pages/photos/detailPhotos', {
-          data: data,
-        });
-      } else {
-        console.log('Error: client ID could not been found!');
-        res.redirect('/error');
-      }
-    }
-  );
+  console.log('data', image);
+  res.render('pages/photos/detailPhotos', { image });
 });
 
-// Get all series trough searching trhougin object with id of photos
 app.get('/series/overview', async function (req, res, next) {
-  const allData = await db.collection('data').find().toArray();
-  allData.reverse();
-
-  const series = allData.filter((data) => {
-    return data.series === true;
-  });
-
-  renderPage(series);
-  function renderPage(series) {
-    res.render('pages/series/overviewSeries', {
-      data: series,
-    });
-  }
+  const series = await Series.find().catch((err) => console.log(err));
+  res.render('pages/series/overviewSeries', { series });
 });
 
 app.get('/series/new', async function (req, res) {
-  const allData = await db.collection('data').find().toArray();
-  allData.reverse();
-
-  const photos = allData.filter((data) => {
-    return data.series === false;
-  });
-
-  renderPage(photos);
-  function renderPage(photos) {
-    res.render('pages/series/newSerie', {
-      data: photos,
-    });
-  }
+  const images = await Images.find().catch((err) => console.log(err));
+  res.render('pages/series/newSerie', { images });
 });
 
 app.post('/series/new', function (req, res) {
   const serieObject = {
     titleSerie: req.body.titleSerie,
-    series: true,
     images: req.body.selectedPhotos,
+    imagesPics: req.body.selecedPicsNames (for in ejs, /uploads/)
   };
 
-  console.log(serieObject);
+  createSerie(serieObject);
+  console.log(Series);
 
-  // checker when the inputs are null, then don't make object
-
-  db.collection('data').insertOne(serieObject, renderPage());
-  // checker when the inputs are null, then don't make object
-
-  function renderPage(err, data) {
-    if (err) {
-      next(err);
-    } else {
-      res.redirect('/series/overview');
-    }
+  function createSerie({ titleSerie, images }) {
+    Series.create({
+      titleSerie: titleSerie,
+      images: images,
+    });
   }
+
+  res.redirect('/series/overview');
 });
 
-app.get('/series/detail/:id', function (req, res) {
-  let ObjectId = mongoose.ObjectId;
-  let id = req.params.id;
-  let searchID = new ObjectId(id);
+app.get('/series/detail/:id', async function (req, res) {
+  const series = await Series.findOne({
+    _id: req.params.id,
+  }).catch((err) => console.log(err));
 
-  db.collection('data').findOne(
-    {
-      _id: searchID,
-    },
-    (err, data) => {
-      if (err) {
-        console.log('MongoDB Error:' + err);
-      }
-      if (data) {
-        console.log('detail serie', data);
-        res.render('pages/series/detailSeries', {
-          data: data,
-        });
-      } else {
-        console.log('Error: client ID could not been found!');
-        res.redirect('/error');
-      }
-    }
-  );
+  // const images = await Images.findOne({
+  //   _id: req.params.id,
+  // }).catch((err) => console.log(err));
+
+  console.log('data', series);
+  res.render('pages/series/detailSeries', { series });
 });
 
 // app.get('/series/detail/:id/show', function (req, res) {

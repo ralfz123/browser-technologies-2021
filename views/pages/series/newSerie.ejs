@@ -15,7 +15,7 @@
         <fieldset>
           <legend>Info about the photo</legend>
 
-          <% if(data.length > 0){ %>
+          <% if(images.length > 0){ %>
           <label for="titleSerie"
             >Title serie
             <input
@@ -27,13 +27,13 @@
           </label>
 
           <h3>Choose images</h3>
-          <% data.forEach(({image, title, description, photographer, location,
+          <% images.forEach(({image, title, description, photographer, location,
           _id}) => { %>
 
           <label for="<%- _id%>">
             <input
               type="checkbox"
-              value="<%- image%>"
+              value="<%- _id%>"
               name="selectedPhotos"
               id="<%- _id%>"
             />

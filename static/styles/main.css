@@ -12,7 +12,7 @@ html {
   background: #eef7ff;
   background: #f5f5f5;
   --font-body: 'Montserrat', sans-serif;
-  /* --font-header: 'Pacifico', cursive; */
+  --font-header: 'Pacifico', cursive;
   margin: 0;
 }
 
@@ -194,9 +194,33 @@ main section ol li {
 /* masonry grid */
 @supports (display: grid) {
   main section#photos-overview ol {
-    /* width: 10em; */
+    margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+  figure {
+    grid-row: 1 / -1;
+    grid-column: 1;
+  }
+
+  figure > img {
+    grid-row: 2;
+    grid-column: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.2em 0.5em;
+    justify-self: start;
+  }
+
+  figcaption {
+    /* grid-row: 2;
+    grid-column: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.2em 0.5em;
+    justify-self: start;
+  } */
   }
 }
 
@@ -224,7 +248,7 @@ main section ol li figure img {
   height: 150px; */
 }
 
-main section ol li figcaption {
+/* main section ol li figcaption {
   transform: translateY(-100px);
   position: absolute;
   z-index: -1;
@@ -236,12 +260,10 @@ main section ol li figcaption {
 }
 
 main section ol li:hover figcaption {
-  /* visibility: visible;
-  transition: 0.2s; */
   transform: translateY(-50px);
   z-index: 1;
   transition: 0.4s;
-}
+} */
 
 /* pages - detail */
 

@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include ('../partials/head') %>
-  <title>Upload | iPic</title>
-</head>
-<body>
-  <%- include ('../partials/header') %>
+  <head>
+    <%- include ('../partials/head') %>
+    <title>Upload | iPic</title>
+  </head>
+  <body>
+    <%- include ('../partials/header') %>
 
-  <main>
-    <section id="upload">
-      <p>Upload here your photo!</p>
-      <form action="/upload" method="POST" enctype="multipart/form-data">
-        <fieldset>
-          <legend>Info about the photo</legend>
+    <main>
+      <section id="upload">
+        <p>Upload here your photo!</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <fieldset>
+            <legend>Info about the photo</legend>
 
-          <label for="image"
-            >Upload your photo here
-            <input type="file" name="image" accept="image/*" />
-          </label>
+            <label for="image"
+              ><h3>Upload your photo here</h3>
+              <input type="file" name="image" accept="image/*" />
+            </label>
 
-          <label for="title"
-            >Title
-            <input
-              id="title"
-              name="title"
-              type="text"
-              placeholder="Nice flower"
-            />
-          </label>
+            <label for="title">
+              Title
+              <input
+                id="title"
+                name="title"
+                type="text"
+                placeholder="Nice flower"
+              />
+            </label>
 
-          <label for="description"
-            >Description
-            <input
-              id="description"
-              name="description"
-              type="text"
-              placeholder="Flower in the field"
-            />
-          </label>
+            <label for="description"
+              >Description
+              <input
+                id="description"
+                name="description"
+                type="text"
+                placeholder="Flower in the field"
+              />
+            </label>
 
-          <label for="photographer"
-            >Photographer
-            <input
-              id="photographer"
-              name="photographer"
-              type="text"
-              placeholder="John Doe"
-            />
-          </label>
+            <label for="photographer"
+              >Photographer
+              <input
+                id="photographer"
+                name="photographer"
+                type="text"
+                placeholder="John Doe"
+              />
+            </label>
 
-          <label for="location"
-            >Location
-            <input
-              id="location"
-              name="location"
-              type="text"
-              placeholder="Paris, France"
-            />
-          </label>
+            <label for="location"
+              >Location
+              <input
+                id="location"
+                name="location"
+                type="text"
+                placeholder="Paris, France"
+              />
+            </label>
 
-          <button type="submit">Save</button>
-        </fieldset>
-      </form>
-    </section>
-  </main>
+            <button type="submit">Upload</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
 
-  <%- include ('../partials/footer') %>
-</body>
+    <%- include ('../partials/footer') %>
+  </body>
+</html>

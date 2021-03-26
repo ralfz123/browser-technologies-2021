@@ -31,29 +31,13 @@ const upload = multer({
 
 require('dotenv').config();
 // database connection
-// let db = null;
-// const uri = process.env.DB_HOST;
-
-// mongo.MongoClient.connect(
-//   uri,
-//   {
-//     useUnifiedTopology: true,
-//   },
-//   function (err, client) {
-//     if (err) {
-//       throw err;
-//     }
-
-//     db = client.db(process.env.DB_NAME);
-//   }
-// );
-
-// createConnection();
-
 const db = createConnection();
 
 function createConnection() {
-  const URI = process.env.DB_HOST;
+  const DB_USER = process.env.DB_USER;
+  const DB_PASS = process.env.DB_PASS;
+  const DB_NAME = process.env.DB_NAME;
+  const URI = `mongodb+srv://${DB_USER}:${DB_PASS}@${DB_NAME}.ssfa5.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
   mongoose.connect(
     URI,
@@ -127,6 +111,7 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
 
 app.get('/photos', async function (req, res, next) {
   const images = await Images.find().catch((err) => console.log(err));
+  images.reverse();
   res.render('pages/photos/overviewPhotos', { images });
 });
 

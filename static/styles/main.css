@@ -12,7 +12,8 @@ html {
   background: #eef7ff;
   background: #f5f5f5;
   --font-body: 'Montserrat', sans-serif;
-  --font-header: 'Pacifico', cursive;
+  font-weight: 300;
+  /* --font-header: 'Pacifico', cursive; */
   margin: 0;
 }
 
@@ -34,7 +35,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-header);
+  /* font-family: var(--font-header); */
+  font-weight: 400;
 }
 
 /* ------------------------------------------- */
@@ -103,20 +105,27 @@ main button {
   border: none;
   color: white;
   background-color: #063b65;
+  background: #008071;
   padding: 10px;
   font-size: 1rem;
   border-radius: 5px;
-  transition: 0.1s;
+  transition: 0.3s;
   text-align: center;
   text-transform: uppercase;
+  border: none;
+  border: 1px solid #008071;
 }
 
 main button:hover,
 main button:focus,
 main button:active {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  /* transform: translateY(5px); */
   cursor: pointer;
-  background: #0c5189;
+  background: #1074c5;
+  background: white;
+  color: #008071;
+  border: 1px solid #008071;
 }
 
 /* --/* --  Default <a> styling --/* -- */
@@ -136,7 +145,6 @@ main a.link {
   text-decoration: none;
   border: 1px solid transparent;
   text-transform: uppercase;
-
   background-color: #008071;
 }
 
@@ -159,14 +167,57 @@ main section {
 /*                   HOME                      */
 /* ------------------------------------------- */
 
-main section form {
-  width: 22em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+main section h1.hide {
+  display: none;
 }
 
-main section ol {
+main section form {
+  width: 26em;
+  margin: 2em auto 0;
+  padding: 1em;
+}
+
+main section form fieldset {
+  padding: 1em;
+  /* padding-left: 2em; */
+  border: none;
+  box-shadow: 0px 0px 13px -1px #8c8c8c;
+  border-radius: 28px;
+}
+
+main section form fieldset legend {
+  display: none;
+}
+
+main section form fieldset label {
+  display: block;
+  margin: 1em 0em;
+  width: 100%;
+}
+
+input#file-upload-button{
+  font-size: 3rem;
+}
+
+main section form fieldset label input[type='text'] {
+  padding: 0.5em;
+  width: 100%;
+  border: 1px solid #8c8c8c;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  margin: 0.3em 0px;
+}
+
+main section form fieldset button[type='submit'] {
+  /* margin: 1.2em 0; */
+  display: block;
+  width: 7em;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+main section ul {
   list-style-type: none;
 }
 
@@ -186,14 +237,26 @@ main section#photos-overview {
   margin: 0 auto;
 }
 
-main section ol li {
+main section ul li {
   /* margin: 10px; */
   width: 15em;
 }
 
+main section ul li:hover img {
+  /* transform: translateY(-2px); */
+  clip-path: circle(100%);
+}
+
+/* ! has to set to ON - clip path */
+
+main section ul img {
+  /* clip-path: circle(30%); */
+  transition: 1s ease;
+}
+
 /* masonry grid */
 @supports (display: grid) {
-  main section#photos-overview ol {
+  main section#photos-overview ul {
     margin: 0;
     display: grid;
     grid-template-rows: 1fr auto;
@@ -233,7 +296,7 @@ main section ol li {
   z-index: 1;
 } */
 
-main section ol li figure {
+main section ul li figure {
   width: 100%;
 }
 
@@ -241,7 +304,7 @@ main section img {
   border-radius: 10px;
 }
 
-main section ol li figure img {
+main section ul li figure img {
   width: 100%;
   height: auto;
   /* width: 150px;
@@ -310,7 +373,7 @@ main section ol li:hover figcaption {
   background: #13121285;
   color: #008071;
   left: 0;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   position: absolute;
   top: 0;
 }
@@ -321,15 +384,15 @@ main section ol li:hover figcaption {
   -webkit-appearance: none;
   background: transparent;
   border: none;
-  color:#008071;
+  color: #008071;
   cursor: pointer;
   display: none;
   font-size: 3em;
-  padding: .25em;
+  padding: 0.25em;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  transition: background .2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 
 .slideshow button.js {

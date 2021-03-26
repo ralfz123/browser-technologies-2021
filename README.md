@@ -49,16 +49,16 @@ The user can upload/add a photo to the online album.
 
 
 #### Enhancements
-##### 1. Photo upload
-I thought to make an enhancement so the user can directly see his uploaded image. This can be done with ... . But when there's no JS available, then filename will be shown when the file is uploaded.
-https://www.youtube.com/watch?v=w1iJWS6E8lE
+##### 1. [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+With the FileReader API, you can preview the uploaded file. In my case, you can preview the uploaded photo. That's an very enhanced way to the user of presenting the uploaded image. But when there is nog JS available, this feature will be turned off and replaced by the default `type=file`. When the file is uploaded, you can see the uploaded file as well in string; the filename will be shown.
 
-##### 2. [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+
+Resources:
+- https://www.youtube.com/watch?v=w1iJWS6E8lE
+##### 2. geo loc API
 lorem
-##### 3. geo loc API
-lorem
-##### 4. Drag & Drop
-##### 5. SlideShow
+##### 3. Drag & Drop
+##### 4. SlideShow
 1. Show in OL
 2. With styling and horizontal scrolling (slide)
 3. Buttons to interact with
@@ -162,6 +162,7 @@ This app is built, using:
 
 
 ## :gear: Installation
+>⚠️ To use the application in development, you need a MongoDB database and a URI to connect with it!
 1. Clone the repository:  
 ```
 git clone https://github.com/ralfz123/browser-technologies-2021.git

@@ -9,14 +9,14 @@
 
   <main>
     <section id="photos-overview">
-      <h1>All photos</h1>
-      <ol>
+      <h1 class="hide">All photos</h1>
+      <ul>
         <% if(images.length > 0){ %> <% images.forEach(({image, title, description,
         photographer, location, _id}) => { %>
         <li>
           <a href="/photos/<%=_id%>">
             <figure>
-              <img src="uploads/<%=image%>" alt="<%=title%>" />
+              <img src="uploads/<%=image%>" alt="<%=description%>" />
               <figcaption><%= title %></figcaption>
             </figure>
           </a>
@@ -24,7 +24,7 @@
         <% }) %> <% }else{ %>
         <p>No photos yet 🙁</p>
         <% }%>
-      </ol>
+      </ul>
       <a class="link" href="/upload">Add photo</a>
     </section>
   </main>

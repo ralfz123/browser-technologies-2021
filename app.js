@@ -112,8 +112,12 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
 app.get('/photos', async function (req, res, next) {
   const images = await Images.find().catch((err) => console.log(err));
   // images.reverse();
-  console.log(images)
-  res.render('pages/photos/overviewPhotos', { images });
+  console.log(images);
+  if (images) {
+    res.render('pages/photos/overviewPhotos', { images });
+  } else {
+    res.redirect('/404');
+  }
 });
 
 app.get('/photos/:id', async (req, res) => {

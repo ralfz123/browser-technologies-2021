@@ -116,7 +116,7 @@ app.get('/photos', async function (req, res, next) {
   if (images) {
     res.render('pages/photos/overviewPhotos', { images });
   } else {
-    res.redirect('/404');
+    res.redirect('/error');
   }
 });
 

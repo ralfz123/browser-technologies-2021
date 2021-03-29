@@ -12,33 +12,38 @@
         <a class="link" href="/series/overview">Back</a>
 
         <a href="/series/detail/<%- series._id%>/slideshow">Slideshow</a>
-        <a href="/series/detail/<%- series._id%>/carousel">Carousel</a>
+        <!-- <a href="/series/detail/<%- series._id%>/carousel">Carousel</a> -->
 
         <h1><%= series.titleSerie %></h1>
 
-        <ol>
-          <% if(series.images.length > 0){ %> 
-            <% for (let i = 0; i < series.images.length; i++) { %>
-            <li>
-              <a href="/photos/<%= series.images[i]%>">
+        <% if(series.images.length > 0){ %> <% for (let i = 0; i <
+        series.images.length; i++) { %>
+        <article>
+          <a href="/photos/<%= series.images[i]%>">
+            <figure>
               <figure>
-                <figure>
-                  <img src="/uploads/<%=series.images[i]%>" />
-                </figure>
-                <figcaption><%=series.images[i]%></figcaption>
+                <img src="/uploads/<%= images[i].image%>" alt="" width="300" />
               </figure>
-            </a>
-            </li>
-            <% } %>
-            <% }else { %>
+              <figcaption><%=images[i].title%></figcaption>
+            </figure>
+          </a>
+        </article>
+        <% } %> <% }else { %>
 
-          <p>No photos in this serie yet 🙁</p>
-          <a href="/upload">Upload photos</a>
-          <% }%>
-        </ol>
+        <p>No photos in this serie yet 🙁</p>
+        <a href="/upload">Upload photos</a>
+        <% }%>
 
         <a href="">Edit</a>
-        <a href="">Delete</a>
+        <form method="POST">
+          <button
+            formaction="/series/detail/<%= series._id%>/remove"
+            type="submit"
+            class="deleteBtn"
+          >
+            Delete
+          </button>
+        </form>
       </section>
     </main>
 

@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include ('../../partials/head') %>
-  <title>Photos | iPic</title>
-</head>
-<body>
-  <%- include ('../../partials/header') %>
+  <head>
+    <%- include ('../../partials/head') %>
+    <title>Photos | iPic</title>
+  </head>
+  <body>
+    <%- include ('../../partials/header') %>
 
-  <main>
-    <section id="photos-overview">
-      <h1 class="hide">All photos</h1>
-      <ul>
-        <% if(images.length > 0){ %> <% images.forEach(({image, title, description,
-        photographer, location, _id}) => { %>
-        <li>
+    <main>
+      <section id="photos-overview">
+        <h1 class="hide">All photos</h1>
+
+        <% if(images.length > 0){ %> <% images.forEach(({image, title,
+        description, photographer, location, _id}) => { %>
+        <article>
           <a href="/photos/<%=_id%>">
             <figure>
               <img src="uploads/<%=image%>" alt="<%=description%>" />
               <figcaption><%= title %></figcaption>
             </figure>
           </a>
-        </li>
+        </article>
         <% }) %> <% }else{ %>
         <p>No photos yet 🙁</p>
         <% }%>
-      </ul>
-      <a class="link" href="/upload">Add photo</a>
-    </section>
-  </main>
 
-  <%- include ('../../partials/footer') %>
-</body>
+        <a class="link addPhoto" href="/upload">Add photo</a>
+      </section>
+    </main>
+
+    <%- include ('../../partials/footer') %>
+  </body>
+</html>

@@ -125,30 +125,52 @@ app.get('/photos/:id', async (req, res) => {
     _id: req.params.id,
   }).catch((err) => console.log(err));
 
-  console.log('data', image);
+  console.log('image data', image);
   res.render('pages/photos/detailPhotos', { image });
 });
 
-app.get('/series/overview', async function (req, res, next) {
+app.post('/photos/:id/edit', async (req, res) => {
+  const updatedValues = {
+    title: req.body.title,
+    description: req.body.description,
+    photographer: req.body.photographer,
+    location: req.body.location,
+  };
+
+  await Images.updateOne(
+    {
+      _id: req.params.id,
+    },
+    updatedValues
+  ).catch((err) => console.log(err));
+
+  res.redirect('/photos');
+});
+
+app.post('/photos/:id/remove', async (req, res) => {
+  await Images.findByIdAndDelete(req.params.id);
   const series = await Series.find().catch((err) => console.log(err));
-  // Data from the images that are in the serie, find by Id
-  // const images = await Images.find().catch((err) => console.log(err));
+  console.log(series);
+  await Series.findByIdAndDelete({ _id: { $in: series.images } });
+  res.redirect('/photos');
+});
 
-  const imageIds = series;
-  console.log('image IDs', imageIds);
+app.get('/series/overview', async function (req, res) {
+  const series = await Series.find().catch((err) => console.log(err));
 
-  const images = getImage(imageIds);
+  if (series.length >= 1) {
+    // Catch first image of every object
+    const images = await Images.findById(series.images[0]);
+    console.log('serie - images: ', images);
+    console.log('serie data: ');
 
-  function getImage(id) {
-    console.log('id', id);
-    Images.findById(id, (err) => console.log(err));
+    res.render('pages/series/overviewSeries', {
+      series,
+      images,
+    });
   }
 
-  console.log('series', series);
-  res.render('pages/series/overviewSeries', {
-    series,
-    // ,     images
-  });
+  res.render('pages/series/overviewSeries', { series });
 });
 
 app.get('/series/new', async function (req, res) {
@@ -181,8 +203,15 @@ app.get('/series/detail/:id', async function (req, res) {
     _id: req.params.id,
   }).catch((err) => console.log(err));
 
-  console.log('data', series);
-  res.render('pages/series/detailSeries', { series });
+  const images = await Images.find({ _id: { $in: series.images } });
+
+  console.log('serie data', series);
+  res.render('pages/series/detailSeries', { series, images });
+});
+
+app.post('/series/detail/:id/remove', async function (req, res) {
+  await Series.findByIdAndDelete(req.params.id);
+  res.redirect('/series/overview');
 });
 
 app.get('/series/detail/:id/slideshow', async function (req, res) {
@@ -190,19 +219,11 @@ app.get('/series/detail/:id/slideshow', async function (req, res) {
     _id: req.params.id,
   }).catch((err) => console.log(err));
 
-  // function getImage({ _id }) {
-  //   Images.findById(_id, err => console.error(chalk.red(err)))
-  // }
-  // const idImages = series.images;
-  // const images = await Images.find(idImages).catch((err) =>
-  //   console.error(chalk.red(err))
-  // );
+  const images = await Images.find({ _id: { $in: series.images } });
 
-  // console.log(idImages);
-  // console.log(images);
-
+  console.log('Data image', images);
   console.log('Data serie', series);
-  res.render('pages/series/show/slideshow', { series });
+  res.render('pages/series/show/slideshow', { series, images });
 });
 
 app.get('/series/detail/:id/carousel', function (req, res) {

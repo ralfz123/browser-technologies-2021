@@ -5,27 +5,68 @@
 <body>
   <%- include ('../../partials/header') %>
   <main>
-    <section>
+    <section id="photos-detail">
       <a href="/photos">Back</a>
-      <form action="/photoDelete" method="POST">
+      <figure>
+        <img
+          src="/uploads/<%= image.image%>"
+          alt="<%=image.title%>"
+          width="300"
+        />
+      </figure>
+      <h2><%= image.title%></h2>
+
+      <form method="POST">
         <fieldset>
           <legend>Info photo</legend>
-          <figure>
-            <img
-              src="/uploads/<%= image.image%>"
-              alt="<%=image.title%>"
-              width="300"
-            />
-          </figure>
-          <h2><%= image.title%></h2>
-          
-          <input type="text" value="<%= image.description%>">
-          <p>Description: <%= image.description%></p>
-          <p>Photographer: <%= image.photographer%></p>
-          <p>Location: <%= image.location%></p>
 
-          <button type="button">Delete</button>
-          <button type="button">Edit</button>
+          <label for="title">
+            Title
+            <input
+              id="title"
+              value="<%= image.title%>"
+              name="title"
+              type="text"
+            />
+          </label>
+
+          <label for="description"
+            >Description
+            <input
+              id="description"
+              value="<%= image.description%>"
+              name="description"
+              type="text"
+            />
+          </label>
+
+          <label for="photographer"
+            >Photographer
+            <input
+              id="photographer"
+              name="photographer"
+              value="<%= image.photographer%>"
+              type="text"
+            />
+          </label>
+
+          <label for="location"
+            >Location
+            <input
+              id="location"
+              value="<%= image.location%>"
+              name="location"
+              type="text"
+            />
+          </label>
+
+          <button formaction="/photos/<%= image._id%>/edit" type="submit">
+            Edit
+          </button>
+
+          <button formaction="/photos/<%= image._id%>/remove" type="submit" class="deleteBtn">
+            Delete
+          </button>
         </fieldset>
       </form>
     </section>

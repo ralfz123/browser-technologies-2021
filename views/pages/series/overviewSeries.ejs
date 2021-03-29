@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include ('../../partials/head') %>
-  <title>Series | iPic</title>
-</head>
-<body>
-  <%- include ('../../partials/header') %>
+  <head>
+    <%- include ('../../partials/head') %>
+    <title>Series | iPic</title>
+  </head>
+  <body>
+    <%- include ('../../partials/header') %>
 
-  <main>
-    <section id="series-overview">
-      <h1 class="hide">All series</h1>
+    <main>
+      <section id="series-overview">
+        <h1 class="hide">All series</h1>
 
-      <ol>
-        <% if(series.length > 0){ %> 
-          <% series.forEach(({_id, titleSerie, images}) => {%>
-            <li>
-              <a href="/series/detail/<%= _id%>">
-                <figure>
-                  <figcaption><%= titleSerie%></figcaption>
-                  <img
-                    src="/uploads/<%= images[0]%>"
-                    alt="<%= titleSerie%>"
-                  />
-                </figure>
-              </a>
-            </li>    
-                <% }) %> 
-                <% }else{ %>
+        <% if(series.length > 0){ %>
+           <% series.forEach((serie) => {%>
+        <article>
+          <a href="/series/detail/<%= serie._id%>">
+            <h2><%= serie.titleSerie%></h2>
+            <figure>
+              <img
+                src="/uploads/<%= images.image%>"
+                alt="<%= serie.titleSerie%>"
+                width="300"
+              />
+            </figure>
+          </a>
+        </article>
+        <% }) %> <% }else{ %>
         <p>No series yet 🙁</p>
         <% }%>
-      </ol>
 
-      <a class="link" href="/series/new">New serie</a>
-    </section>
-  </main>
+        <a class="link" href="/series/new">New serie</a>
+      </section>
+    </main>
 
-  <%- include ('../../partials/footer') %>
-</body>
+    <%- include ('../../partials/footer') %>
+  </body>
+</html>

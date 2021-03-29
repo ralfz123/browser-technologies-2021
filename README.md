@@ -63,6 +63,7 @@ lorem
 2. With styling and horizontal scrolling (slide)
 3. Buttons to interact with
 
+##### 5. Grid replaced by flex
 #### Browser-testing browsers
 ##### iOS
 - Chrome
@@ -78,12 +79,13 @@ lorem
 
 
 ### Wireflow - Best Enhanced way
-<img src="static/assets/concept/sketch-v1-a.JPG" width=1000px />
-<img src="static/assets/concept/sketch-v1-b.JPG" width=1000px />
+<img src="assignments/assignment-3/sketch-v1-a.JPG" width=1000px />
+<img src="assignments/assignment-3/sketch-v1-b.JPG" width=1000px />
 
 #### List with layers
 Here is a list of the pages how they can be build by HTML, CSS and JS.
-<img src="static/assets/concept/build-list.JPG" width=1000px />
+<img src="assignments/assignment-3/buildlist-1.JPG" width=1000px />
+<img src="assignments/assignment-3/buildlist-2.JPG" width=1000px />
 
 ### Features
 -	Foto toevoegen aan een verzameling met meta-info zoals beschrijving, locatie, fotograaf, alt-tekst

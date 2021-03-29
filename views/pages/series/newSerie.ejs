@@ -8,7 +8,7 @@
     <%- include ('../../partials/header') %>
 
     <main>
-      <section>
+      <section id="series-new">
         <h2>New Serie</h2>
 
         <form action="/series/new" method="POST">
@@ -37,14 +37,13 @@
                 name="selectedPhotos"
                 id="<%- _id%>"
               />
-
+              <p><%= title%></p>
               <figure>
                 <img
                   src="/uploads/<%= image%>"
                   alt="<%- title%>"
-                  width="300px"
+                  class="imageSeries"
                 />
-                <figcaption><%= title%></figcaption>
               </figure>
             </label>
 

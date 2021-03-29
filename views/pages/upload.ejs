@@ -9,14 +9,14 @@
 
     <main>
       <section id="upload">
-        <p>Upload here your photo!</p>
+        <h2>New photo</h2>
         <form action="/upload" method="POST" enctype="multipart/form-data">
           <fieldset>
             <legend>Info about the photo</legend>
 
             <label for="image"
               ><h3>Upload your photo here</h3>
-              <input type="file" name="image" accept="image/*" />
+              <input type="file" name="image" accept="image/*" required />
             </label>
 
             <label for="title">
@@ -26,6 +26,7 @@
                 name="title"
                 type="text"
                 placeholder="Nice flower"
+                required
               />
             </label>
 
@@ -36,6 +37,7 @@
                 name="description"
                 type="text"
                 placeholder="Flower in the field"
+                required
               />
             </label>
 
@@ -46,6 +48,7 @@
                 name="photographer"
                 type="text"
                 placeholder="John Doe"
+                required
               />
             </label>
 
@@ -56,6 +59,7 @@
                 name="location"
                 type="text"
                 placeholder="Paris, France"
+                required
               />
             </label>
 

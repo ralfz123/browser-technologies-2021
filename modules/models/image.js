@@ -8,7 +8,6 @@ const imageSchema = new Schema({
   description: String,
   photographer: String,
   location: String,
-  series: false,
 });
 
 exports.imageSchema = imageSchema;

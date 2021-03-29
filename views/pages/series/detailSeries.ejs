@@ -8,22 +8,20 @@
     <%- include ('../../partials/header') %>
 
     <main>
-      <section>
+      <section id="series-detail">
         <a class="link" href="/series/overview">Back</a>
 
-        <a href="/series/detail/<%- series._id%>/slideshow">Slideshow</a>
+        <a class="link" href="/series/detail/<%- series._id%>/slideshow">Play slideshow</a>
         <!-- <a href="/series/detail/<%- series._id%>/carousel">Carousel</a> -->
 
-        <h1><%= series.titleSerie %></h1>
+        <h2><%= series.titleSerie %></h2>
 
         <% if(series.images.length > 0){ %> <% for (let i = 0; i <
         series.images.length; i++) { %>
         <article>
           <a href="/photos/<%= series.images[i]%>">
             <figure>
-              <figure>
-                <img src="/uploads/<%= images[i].image%>" alt="" width="300" />
-              </figure>
+              <img src="/uploads/<%= images[i].image%>" alt="" width="300" />
               <figcaption><%=images[i].title%></figcaption>
             </figure>
           </a>

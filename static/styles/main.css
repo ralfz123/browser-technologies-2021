@@ -37,6 +37,7 @@ h3,
 h4 {
   /* font-family: var(--font-header); */
   font-weight: 400;
+  text-align: center;
 }
 
 /* ------------------------------------------- */
@@ -47,6 +48,11 @@ header {
   margin: 0 auto;
   text-align: center;
   margin: 1em 0;
+}
+
+header > a {
+  color: black;
+  text-decoration: none;
 }
 
 header h1 {
@@ -65,7 +71,7 @@ header h1:hover span {
 }
 
 header nav ul {
-  max-width: 40em;
+  /* max-width: 40em; */
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -114,6 +120,7 @@ main button {
   text-transform: uppercase;
   border: none;
   border: 1px solid #008071;
+  font-family: var(--font-body);
 }
 
 main button:hover,
@@ -131,7 +138,7 @@ main button:active {
 /* --/* --  Default <a> styling --/* -- */
 
 main a {
-  width: 9em;
+  width: 10em;
   text-align: center;
 }
 
@@ -172,8 +179,10 @@ main section h1.hide {
 }
 
 main section form {
-  width: 26em;
-  margin: 2em auto 0;
+  /* width: 26em; */
+  max-width: 22em;
+  /* margin: 2em auto 0; */
+  margin: 0em auto 0;
   padding: 1em;
 }
 
@@ -213,7 +222,6 @@ main section form fieldset button[type='submit'] {
   display: block;
   width: 7em;
   margin: 0 auto;
-  letter-spacing: 1px;
   text-align: center;
 }
 
@@ -222,7 +230,12 @@ main section ul {
 }
 
 /* home */
+main section#home {
+  text-align: center;
+}
 main section#home a {
+  margin: 2em auto 0;
+  /* width: 10em; */
 }
 
 /* upload */
@@ -235,37 +248,54 @@ main section#photos-overview {
   max-width: 90vw;
   /* background: rgba(255, 0, 0, 0.122); */
   margin: 0 auto;
-  width: 10em;
 }
 
-main section#photos-overview a.addPhoto {
+a.fixedLink {
   position: fixed;
   bottom: 4em;
   right: 2em;
 }
 
-main section article {
+main section#photos-overview article {
   /* margin: 10px; */
   width: 15em;
-  width: 22em;
-  width: 10em;
+  /* width: 22em; */
   list-style: none;
 }
 
-main section article:hover img {
-  width: 10em;
-  /* transform: translateY(-2px); */
+/* main section#photos-overview article:hover img {
   clip-path: circle(100%);
 }
 
-main section article img {
-  clip-path: circle(30%);
+main section#photos-overview article img {
+  clip-path: circle(34%);
   transition: 1s ease;
+} */
+
+main section#photos-overview figure {
+  position: relative;
+}
+
+main section#photos-overview figure:hover figcaption {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+main section#photos-overview figure figcaption {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  bottom: 0;
+  padding: 10px;
+  transform: translateY(24px);
+  transition: 0.2s;
+  color: #f5f5f5;
+  visibility: hidden;
 }
 
 /* masonry grid */
 @supports (display: grid) {
-  main section#photos-overview ul {
+  main section#photos-overview {
     /* margin: 0;
     display: grid;
     grid-template-rows: 1fr auto;
@@ -276,6 +306,7 @@ main section article img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
+    justify-items: center;
   }
 
   figure {
@@ -318,15 +349,15 @@ main section article img {
   z-index: 1;
 } */
 
-main section ul li figure {
+/* main section article figure {
   width: 100%;
-}
+} */
 
 main section img {
   border-radius: 10px;
 }
 
-main section ul li figure img {
+main section article figure img {
   width: 100%;
   height: auto;
   /* width: 150px;
@@ -355,6 +386,16 @@ main section ol li:hover figcaption {
 main section#photos-detail figure,
 main section#photos-detail h2 {
   text-align: center;
+}
+
+main section#photos-detail figure {
+  width: 10em;
+  width: clamp(10em, 90%, 25em);
+  margin: 0 auto;
+}
+
+main section#photos-detail figure img {
+  width: 100%;
 }
 
 main section#photos-detail form {
@@ -392,7 +433,29 @@ main section#photos-detail form fieldset label {
 
 /* series - overview */
 
-/* series - overview */
+main section#series-overview {
+  text-align: center;
+}
+
+/* series - detail */
+main section#series-detail a.link:nth-child(2) {
+  width: 11em;
+}
+
+main section#series-detail h2 {
+  margin: 0.5em 0em;
+}
+
+main section#series-detail figure {
+  text-align: center;
+  width: 10em;
+  width: clamp(10em, 90%, 25em);
+  margin: 0 auto;
+}
+
+main section#series-detail figure img {
+  width: 100%;
+}
 
 /* series - overview */
 main section#series-new form {
@@ -401,8 +464,8 @@ main section#series-new form {
   padding: 0;
 }
 
-main section#series-new form input {
-  /* display: none; */
+main section#series-new form input[type='checkbox'] {
+  display: none;
 }
 
 figure img.imageSeries {
@@ -427,21 +490,52 @@ label input:checked ~ figure img.imageSeries {
   border: 5px solid green;
   opacity: 1;
   border-radius: 50%;
+  animation: party 1s ease-in-out;
+}
+@keyframes party {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-50px);
+  }
+  50% {
+    transform: scale(1, 1) translateY(0);
+    filter: drop-shadow(0 0 20px green);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+    filter: drop-shadow(0 0 15px green);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+    filter: drop-shadow(0 0 10px green);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+    filter: drop-shadow(0 0 0px green);
+  }
 }
 
 /* series - slideshow */
 /************* Image slideshow ************************/
 .slideshow {
   background-color: #131212;
+  background: #dcdcdc;
   height: 70vh;
-  position: relative;
   width: clamp(15em, 90%, 50em);
+  margin: 0 auto;
+  margin: 1em auto 0;
 }
 
 .slideshow--content {
   display: flex;
   height: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -webkit-scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -469,6 +563,7 @@ label input:checked ~ figure img.imageSeries {
   padding: 0.5em 1em;
   position: absolute;
   top: 0;
+  display: none;
 }
 
 .slideshow button {

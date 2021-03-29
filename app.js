@@ -83,7 +83,6 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     description: req.body.description,
     photographer: req.body.photographer,
     location: req.body.location,
-    series: false,
   };
 
   createImage(imageObject);
@@ -112,7 +111,7 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
 app.get('/photos', async function (req, res, next) {
   const images = await Images.find().catch((err) => console.log(err));
   // images.reverse();
-  console.log(images);
+  console.log('ALL images: ', images);
   if (images) {
     res.render('pages/photos/overviewPhotos', { images });
   } else {
@@ -148,10 +147,22 @@ app.post('/photos/:id/edit', async (req, res) => {
 });
 
 app.post('/photos/:id/remove', async (req, res) => {
-  await Images.findByIdAndDelete(req.params.id);
+  await Images.findByIdAndDelete(req.params.id); // Delete image from Images collection
+
+  // Delete image from Series collection (id)
   const series = await Series.find().catch((err) => console.log(err));
-  console.log(series);
-  await Series.findByIdAndDelete({ _id: { $in: series.images } });
+
+  const imageObject = series.images;
+  console.log(imageObject)
+  // Series.forEach((serie) => console.log('serie data', serie));
+  // await Series.findByIdAndDelete({ _id: { $in: req.params.id } });
+
+  // 1. Loop over Series objects (Arr)
+  // 2. Check in each object if there is in the images key thé ID
+  // 3. delete that ID findbyIdAndDelete (2+3)
+
+  // for loop - kijken of ID erinzit, zoja findby and delete
+
   res.redirect('/photos');
 });
 
@@ -160,9 +171,10 @@ app.get('/series/overview', async function (req, res) {
 
   if (series.length >= 1) {
     // Catch first image of every object
-    const images = await Images.findById(series.images[0]);
+    // lop over series
+    const images = await Images.find(series.images);
     console.log('serie - images: ', images);
-    console.log('serie data: ');
+    console.log('serie data: ', series);
 
     res.render('pages/series/overviewSeries', {
       series,
@@ -182,7 +194,6 @@ app.post('/series/new', function (req, res) {
   const serieObject = {
     titleSerie: req.body.titleSerie,
     images: req.body.selectedPhotos,
-    // imagesNames: req.body.imageName, //(for in ejs, /uploads/)
   };
 
   createSerie(serieObject);
@@ -233,4 +244,9 @@ app.get('/series/detail/:id/carousel', function (req, res) {
 app.get('/error', function (req, res) {
   res.render('404');
 });
+
+app.get('/offline', function (req, res) {
+  res.render('offline');
+});
+
 app.listen(PORT, () => console.log(`App is running on port ${PORT}`));

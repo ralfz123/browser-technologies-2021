@@ -61,12 +61,18 @@ header h1 {
   /* line-height: 1.4; */
 }
 
-header h1:hover::after {
+header h1:hover::after,
+header h1:focus::after,
+header h1:focus-within::after,
+header h1:active::after {
   content: '📸';
   display: inline-block;
 }
 
-header h1:hover span {
+header h1:hover span,
+header h1:focus span,
+header h1:focus-within span,
+header h1:active span {
   display: none;
 }
 
@@ -263,7 +269,9 @@ main section#photos-overview article {
   list-style: none;
 }
 
-/* main section#photos-overview article:hover img {
+/* main section#photos-overview article:hover img,
+main section#photos-overview article:focus img,
+main section#photos-overview article:active img {
   clip-path: circle(100%);
 }
 
@@ -276,7 +284,10 @@ main section#photos-overview figure {
   position: relative;
 }
 
-main section#photos-overview figure:hover figcaption {
+main section#photos-overview article:hover figcaption,
+main section#photos-overview article:focus figcaption,
+main section#photos-overview article:focus-within figcaption,
+main section#photos-overview article:active figcaption {
   visibility: visible;
   transform: translateY(0);
 }
@@ -363,23 +374,6 @@ main section article figure img {
   /* width: 150px;
   height: 150px; */
 }
-
-/* main section ol li figcaption {
-  transform: translateY(-100px);
-  position: absolute;
-  z-index: -1;
-  color: #ffffff;
-  width: 9.5em;
-  padding: 10px;
-  font-size: 1rem;
-  display: table;
-}
-
-main section ol li:hover figcaption {
-  transform: translateY(-50px);
-  z-index: 1;
-  transition: 0.4s;
-} */
 
 /* photos - detail */
 
@@ -587,7 +581,9 @@ label input:checked ~ figure img.imageSeries {
   display: block;
 }
 
-.slideshow button:hover {
+.slideshow button:hover,
+.slideshow button:focus,
+.slideshow button:active {
   background: #13121280;
 }
 
@@ -628,7 +624,9 @@ footer p a {
   font-style: italic;
 }
 
-footer p a:hover {
+footer p a:hover,
+footer p a:active,
+footer p a:focus {
   color: rgb(34, 34, 147);
 }
 
@@ -651,7 +649,8 @@ footer p a:hover {
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:focus ::-webkit-scrollbar-thumb:active {
   background: #2c28bb;
 }
 

@@ -6,7 +6,6 @@
 _Browser Technologies, a course of the minor Web Design & Development. It is a minor of the third year from the study [CMD](https://www.cmd-amsterdam.nl/)._
 
 [Link to live version :rocket:](https://ipic-bt-2021.herokuapp.com/)
-### [Live version here :red_circle:](https://ipic-bt-2021.herokuapp.com/)
 ### Table of Contents
 <table style="margin-left: auto; margin-right: auto;">
     <tr>
@@ -30,21 +29,24 @@ In het vak Browser Technologies gaan we onderzoeken wat Progressive Enhancement 
 
 ## Assigment 1
 Research to Progressive Enhancement  
-[&rarr; Live link :rocket:](https://ralfz123.github.io/browser-technologies-2021/assignments/assignment-1/index.html)  
+[&rarr; Link to live version :rocket:](https://ralfz123.github.io/iPic-BT-2021/assignments/assignment-1/)  
 [&rarr; More info ](https://github.com/ralfz123/browser-technologies-2021/blob/master/assignments/assignment-1/README.md#opdracht-1--npm-install-progressive--enhancement)   
 
 ## Assigment 2
 Research about features from websites on the web
 [&rarr; Research link :rocket:](https://github.com/ralfz123/browser-technologies-2021/wiki)  
 
+From my _squad_ we gathered all researches and put it in one [wiki :rocket: ](https://github.com/sjagoori/pe/wiki).
 
+
+## Assigment 3
+[&rarr; Link to live version :rocket:](https://ipic-bt-2021.herokuapp.com/)
 ## :heart_eyes: Concept
-[PE examples](https://github.com/cmda-minor-web/browser-technologies-2021/tree/master/docs/examples)
 ### What's it?
-iPic is a online photo album where you can upload photos and it generates a photo album for you. You can make photo series from your album and you can see them in a slideshow and carousel.
+**iPic** is an online photo album where you can upload photos and it generates a photo album for you. You can make photo series from your album and you can see them in a slideshow.
 
-#### Core feature
-The user can upload/add a photo to the online album.
+### Core feature
+The user can upload/add photos to the online album.
 
 ### Wireflow - Best Enhanced way
 
@@ -70,28 +72,24 @@ Here is a list of the pages how they can be build by the layers _functional_, _u
 <img src="assignments/assignment-3/concept/buildlist-2.JPG" width=1000px />
 </details>
 
-#### Browser technology
-
-
-#### Enhancements
-##### 1. [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+### Enhancements
+#### 1. FileReader API
 With the FileReader API, you can preview the uploaded file. In my case, you can preview the uploaded photo. That's an very enhanced way to the user of presenting the uploaded image. But when there is nog JS available, this feature will be turned off and replaced by the default `type=file`. When the file is uploaded, you can see the uploaded file as well in string; the filename will be shown.
 
-
-Resources:
+**Resources**  
+- https://developer.mozilla.org/en-US/docs/Web/API/FileReader
 - https://www.youtube.com/watch?v=w1iJWS6E8lE
-##### 2. SlideShow
+#### 2. SlideShow
 **Functional**  
-All images will be shown in from top to bottom. It's usable and you can see the images too. 
+All photos will be shown in from top to bottom. It's usable and you can see the photos too. 
 
 <details>
 <summary>Example</summary>
   <img src="assignments/assignment-3/concept/slideshow-1.gif" width=300px />
-</details>
-
+</details>  
 
 **Usable**  
-All images are placed in a nice container where you can scroll horizontal through the images. Altough the styling makes it easier to use. It's a nice way of viewing the images.
+All photos are placed in a nice container where you can scroll horizontal through the photos. Altough the styling makes it easier to use. It's a nice way of viewing the photos.
 
 <details>
 <summary>Example</summary>
@@ -99,37 +97,79 @@ All images are placed in a nice container where you can scroll horizontal throug
 </details>
 
 **Pleasurable**  
-Now there are buttons, created with clientside javascript. With these buttons you can interact and decide if you want to see the previous or next image.
+Now there are buttons, created with clientside javascript. With these buttons you can interact and decide if you want to see the previous or next photo.
 
 <details>
 <summary>Example</summary>
   <img src="assignments/assignment-3/concept/slideshow-3.gif" width=300px />
 </details>
 
-##### 3. Grid replaced by flex
+#### 3. CSS Grid replaced by Flexbox
+Although Gridbox is very popular, it's not supported at all browsers (see [here](https://caniuse.com/?search=grid)). Therefore I created an enhancement for users that use a browser that not supports CSS Grid. This is a _feature detection_ which checks if the browser supports CSS Grid. If so not, then the fallback is CSS Flexbox, because almost every browser supports Flexbox (see [here](https://caniuse.com/?search=flexbox)).
 
-<!-- ##### 4. geo loc API
-lorem
-##### 5. Drag & Drop -->
+Although I used two different layout models, I made them so that they look just alike.
+<details>
+<summary>
+  <b>Grid</b>
+</summary>
+  <img src="assignments/assignment-3/concept/grid-box.gif" width=700px />
+  [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L347)
+</details>
 
+<details>
+<summary>
+  <b>Flexbox</b>
+</summary>
+  <img src="assignments/assignment-3/concept/flex-box.gif" width=700px />
+  [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L322)
+</details>
 
-
-
-#### Browser-testing browsers
-##### iOS
-- Chrome
-- Safari
-- (_Some non-chromium browsers?_ )
+### Browser-testing
+1. Chrome (Chromium)
+2. Firefox (non-Chromium)
+3. Safari
+4. Internet Explorer
+##### Desktop
+- Chrome (Chromium)
+- Firefox (non-Chromium)
 - Flow?
-##### Android
-- Chrome
-- Firefox
-- (_Some non-chromium browsers?_ )
+##### mobile - iOS
+- Safari
+##### mobile - Android
+- Internet Explorer
 
-- Results:
+Lijstje met features:
+- Foto uploaden
+- Creating serie
+
+Requirements:
+- Afbeeldingen uitzetten
+- Custom fonts uitzetten
+- Kleur uitzetten & kleurenblindheid instellen
+- Muis/Trackpad werkt niet
+- Breedband internet uitzetten
+- Javascript (volledig)
+- Cookies niet accepteren
+- localStorage doet het niet
 
 
+Result:
+#### Button
+contrast check
+hij heeft de WCAG AAA niet voldaan. Deze ga ik aanpassen.
+Ik heb m aangepast en hij is nu beter. De contrast ratio is stuk hoger nu.
 
+##### Before - ```#008071```
+<img src="assignments/assignment-3/testing/contrast-begin.png" width="100px" />
+<img src="assignments/assignment-3/testing/contrast-button.png" width="600px" />
+
+contrast ratio: 4:84
+
+##### After -  ```#006157```
+<img src="assignments/assignment-3/testing/contrast-after.png" width="100px" />
+<img src="assignments/assignment-3/testing/contrast-button-v2.png" width="600px" />
+
+contrast ratio: 7.37
 
 ### Features
 **Images**  
@@ -209,7 +249,8 @@ This app is built, using:
 
 #### Backlog 
 - [ ] Login, so each user has own pics
-
+- [ ] Geo location API to detect where the user is on browser or he can pick a plot on the map
+- [ ] Drag & Drop API
 </details>
 
 

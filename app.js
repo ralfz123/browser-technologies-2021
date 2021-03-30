@@ -105,10 +105,16 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     });
   }
 
-  res.redirect('/photos');
+  res.redirect('/photos' + Images._id);
 });
 
-app.get('/photos', async function (req, res, next) {
+app.get('/photos', async function (req, res, ) {
+  // render photos with id and serach id and give it classname
+  // last upload
+  // 1. search ID from last object
+  // 2. give class
+
+  console.log(req.query.photos);
   const images = await Images.find().catch((err) => console.log(err));
   // images.reverse();
   console.log('ALL images: ', images);
@@ -233,9 +239,8 @@ app.post('/series/detail/:id/remove', async function (req, res) {
 
 //   await Series.findByIdAndDelete({ id: { $in: series.images } });
 
-
 //   // Splice from array
-  
+
 //   res.redirect('/series/overview');
 // });
 

@@ -105,7 +105,7 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     });
   }
 
-  res.redirect('/photos' + Images._id);
+  res.redirect('/photos');
 });
 
 app.get('/photos', async function (req, res, ) {
@@ -114,7 +114,6 @@ app.get('/photos', async function (req, res, ) {
   // 1. search ID from last object
   // 2. give class
 
-  console.log(req.query.photos);
   const images = await Images.find().catch((err) => console.log(err));
   // images.reverse();
   console.log('ALL images: ', images);

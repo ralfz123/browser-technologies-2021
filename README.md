@@ -101,7 +101,7 @@ All photos will be shown in from top to bottom. It's usable and you can see the 
 
 <details>
 <summary>Example</summary>
-  <img src="assignments/assignment-3/concept/slideshow-1.gif" width=200px />
+  <img src="assignments/assignment-3/concept/slideshow-1.gif" width=200px style="display:block;" />
 </details>  
 
 **Usable**  
@@ -109,7 +109,7 @@ All photos are placed in a nice container where you can scroll horizontal throug
 
 <details>
 <summary>Example</summary>
-  <img src="assignments/assignment-3/concept/slideshow-2.gif" width=200px />
+  <img src="assignments/assignment-3/concept/slideshow-2.gif" width=200px style="display:block;" />
 </details>
 
 **Pleasurable**  
@@ -117,7 +117,7 @@ Now there are buttons, created with clientside javascript. With these buttons yo
 
 <details>
 <summary>Example</summary>
-  <img src="assignments/assignment-3/concept/slideshow-3.gif" width=200px />
+  <img src="assignments/assignment-3/concept/slideshow-3.gif" width=200px style="display:block;" />
 </details>
 
 #### 3. CSS Grid replaced by Flexbox
@@ -221,14 +221,14 @@ Gaat lekker, niks aan de hand. Ziet er mooi uit.
 #### iOS Mobile - Safari
 Upload gaat prima en de safari form default behavior werkt ook lekker. De UI zoomt in en je kan met de pijltjes door de inputs heen 'tabben'. Alleen is de input form styling de default styling van Safari ipv die ik zelf had. Het is overigens niet storend.
 
-<img src="assignments/assignment-3/testing/1-upload/1-mob-ios.PNG" width=200px />
-<img src="assignments/assignment-3/testing/1-upload/1-mob-ios-input.PNG" width=200px />
+<img src="assignments/assignment-3/testing/1-upload/1-mob-ios.PNG" width=200px style="display:block;" />
+<img src="assignments/assignment-3/testing/1-upload/1-mob-ios-input.PNG" width=200px style="display:block;" />
 
 
 #### Android Mobile - Internet
 Overall styling is mooi, is iets van het originele (voor iOS gemaakte) af, maar alsnog erg strak. Op deze mobile heb ik wèl de form input styling van de app in plaats van van de browser default.
 
-<img src="assignments/assignment-3/testing/1-upload/1-mob-and.png" width=200px />
+<img src="assignments/assignment-3/testing/1-upload/1-mob-and.png" width=200px style="display:block;" />
 
 ***
 
@@ -254,17 +254,17 @@ With JavaScript you see the whole implemented feature of the application:
 
 #### Mobile iOS - Safari
 Safari makes his own file preview. That's nice for the user that uses this browser or computer that don't supports JavaScript:
-<img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios.PNG" width=200px />
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios.PNG" width=200px style="display:block;" />
 
 When you turn on JavaScript, the default Safari filepreview stays existed, but the implemented feature of the application comes next to it:
-<img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios-js.PNG" width=200px />
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios-js.PNG" width=200px style="display:block;" />
 
 #### Mobile Android - Internet
 Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):
-<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and.JPG" width=200px />
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and.JPG" width=200px style="display:block;" />
 
 With JavaScript you see the whole implemented feature of the application:
-<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and-js.JPG" width=200px />
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and-js.JPG" width=200px style="display:block;" />
 
 ***
 
@@ -283,11 +283,11 @@ Dit werkt erg smooth en layout is strak.
 
 #### Mobile iOS - Safari
 Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
-<img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=200px />
+<img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=200px style="display:block;" />
 
 #### Mobile Android - Internet
 Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
-<img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=200px />
+<img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=200px style="display:block;" />
 
 ***
 
@@ -313,23 +313,23 @@ Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de geb
 #### Mobile iOS - Safari
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Helemaal op mobiel werkt dit dus echt niet fijn, want het is een relatief klein device als je het vergelijkt met desktop. Je moet helemaal naar beneden om op de submit button te klikken. Dit moet dus echt veranderen. Scrollen gaat prima en animaties werken erg fijn.
 
-<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios.PNG" width=200px />
-<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios-button.PNG" width=200px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios.PNG" width=200px style="display:block;" />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios-button.PNG" width=200px style="display:block;" />
 
 Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de gebruiker veel makkelijker en sneller zijn images kan toevoegen.
 
-<img src="assignments/assignment-3/concept/create-serie-v2.png" width=200px />
+<img src="assignments/assignment-3/concept/create-serie-v2.png" width=200px style="display:block;" />
 
 #### Mobile Android - Firefox
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Hier is ook het probleem dat als je het form wilt submitten, je dan helemaal naar beneden moet scrollen.
 
-<img src="assignments/assignment-3/testing/2-serieNew/2-mob-and.png" width=200px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-and.png" width=200px style="display:block;" />
 
-<img src="assignments/assignment-3/testing/2-serieNew/2-mob-and-button.png" width=200px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-and-button.png" width=200px style="display:block;" />
 
 Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de gebruiker veel makkelijker en sneller zijn images kan toevoegen.
 
-<img src="assignments/assignment-3/concept/create-serie-v2.png" width=200px />
+<img src="assignments/assignment-3/concept/create-serie-v2.png" width=200px style="display:block;" />
 
 ***
 
@@ -358,11 +358,11 @@ De styling van de scrollbar is de default van de browser. Hij heeft niet de styl
 
 #### Mobile iOS - Safari
 Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd.
-<img src="assignments/assignment-3/testing/3-slideshow/3-mob-ios.PNG" width=200px />
+<img src="assignments/assignment-3/testing/3-slideshow/3-mob-ios.PNG" width=200px style="display:block;" />
 
 #### Mobile Android - Internet
 Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd. Precies mooie styling en werkt erg goed.
-<img src="assignments/assignment-3/testing/3-slideshow/3-mob-and.png" width=200px />
+<img src="assignments/assignment-3/testing/3-slideshow/3-mob-and.png" width=200px style="display:block;" />
 
 ***
 

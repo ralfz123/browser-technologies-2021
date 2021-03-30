@@ -196,12 +196,23 @@ app.get('/series/overview', async function (req, res) {
 
 app.get('/series/new', async function (req, res) {
   const images = await Images.find().catch((err) => console.log(err));
+  images.reverse();
   res.render('pages/series/newSerie', { images });
 });
 
+function titleValidator(value) {
+  if (value == '') {
+    console.log(value);
+    const defaultValue = 'New serie';
+    return defaultValue;
+  } else {
+    return value;
+  }
+}
+
 app.post('/series/new', function (req, res) {
   const serieObject = {
-    titleSerie: req.body.titleSerie,
+    titleSerie: titleValidator(req.body.titleSerie),
     images: req.body.selectedPhotos,
   };
 

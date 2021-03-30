@@ -195,6 +195,9 @@ contrast ratio: 4:84
 <img src="assignments/assignment-3/testing/contrast-button-v2.png" width="600px" />
 
 contrast ratio: 7.37
+
+***
+
 </details>
 
 <details>
@@ -224,6 +227,9 @@ Upload gaat prima en de safari form default behavior werkt ook lekker. De UI zoo
 Overall styling is mooi, is iets van het originele (voor iOS gemaakte) af, maar alsnog erg strak. Op deze mobile heb ik wèl de form input styling van de app in plaats van van de browser default.
 
 <img src="assignments/assignment-3/testing/1-upload/1-mob-and.png" width=300px />
+
+***
+
 </details>
 
 <details>
@@ -253,10 +259,12 @@ When you turn on JavaScript, the default Safari filepreview stays existed, but t
 
 #### Mobile Android - Internet
 Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):
-<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and.PNG" width=300px />
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and.JPG" width=300px />
 
 With JavaScript you see the whole implemented feature of the application:
-<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and-js.PNG" width=300px />
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and-js.JPG" width=300px />
+
+***
 
 </details>
 
@@ -279,6 +287,8 @@ Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
 Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
 <img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=300px />
 
+***
+
 </details>
 
 <details>
@@ -294,17 +304,32 @@ Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren,
 
 <img src="assignments/assignment-3/testing/2-serieNew/2-desk-firefox.png" width=500px />
 
+Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de gebruiker veel makkelijker en sneller zijn images kan toevoegen.
+
+<img src="assignments/assignment-3/concept/create-serie-v2-desk.png" width=500px />
+
 #### Mobile iOS - Safari
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Helemaal op mobiel werkt dit dus echt niet fijn, want het is een relatief klein device als je het vergelijkt met desktop. Je moet helemaal naar beneden om op de submit button te klikken. Dit moet dus echt veranderen. Scrollen gaat prima en animaties werken erg fijn.
 
 <img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios.PNG" width=300px />
 <img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios-button.PNG" width=300px />
 
+Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de gebruiker veel makkelijker en sneller zijn images kan toevoegen.
+
+<img src="assignments/assignment-3/concept/create-serie-v2.png" width=300px />
+
 #### Mobile Android - Firefox
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Hier is ook het probleem dat als je het form wilt submitten, je dan helemaal naar beneden moet scrollen.
 
 <img src="assignments/assignment-3/testing/2-serieNew/2-mob-and.png" width=300px />
+
 <img src="assignments/assignment-3/testing/2-serieNew/2-mob-and-button.png" width=300px />
+
+Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de gebruiker veel makkelijker en sneller zijn images kan toevoegen.
+
+<img src="assignments/assignment-3/concept/create-serie-v2.png" width=300px />
+
+***
 
 </details>
 
@@ -337,7 +362,11 @@ Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd.
 Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd. Precies mooie styling en werkt erg goed.
 <img src="assignments/assignment-3/testing/3-slideshow/3-mob-and.png" width=300px />
 
+***
+
 </details>
+
+
 
 ## :1234: Data  
 I used Mongoose data schemas to create schemas before I insert the data.
@@ -361,6 +390,7 @@ I used Mongoose data schemas to create schemas before I insert the data.
 
 ## :nerd_face: Technical summary
 This app is built, using:
+- _Mobile First technique_
 - [npm](https://www.npmjs.com/)
 - [Node.js server](https://nodejs.org/)
 - [Express router](https://expressjs.com/)

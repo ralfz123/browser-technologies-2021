@@ -500,8 +500,8 @@ main section#series-detail figure img {
 
 /* series - overview */
 main section#series-new form {
+  max-width: none;
   width: 80vw;
-  width: 100vw;
   margin: 1em auto 0;
   padding: 0;
 }
@@ -522,6 +522,8 @@ main section#series-new form fieldset p.errorMessage {
   text-align: center;
 }
 
+
+
 main section#series-new form fieldset figure img:hover,
 main section#series-new form fieldset figure img:focus,
 main section#series-new form fieldset figure img:active {
@@ -536,6 +538,10 @@ main section#series-new form fieldset div#imagePicker {
   grid-gap: 1rem;
   justify-items: center;
   /* width: 80vw; */
+}
+
+main section#series-new form fieldset div#imagePicker label {
+  margin: 0;
 }
 
 input:checked ~ p {

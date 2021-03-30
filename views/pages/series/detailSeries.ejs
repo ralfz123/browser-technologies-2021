@@ -11,7 +11,9 @@
       <section id="series-detail">
         <a class="link" href="/series/overview">Back</a>
 
-        <a class="link" href="/series/detail/<%- series._id%>/slideshow">Play slideshow</a>
+        <a class="link" href="/series/detail/<%- series._id%>/slideshow"
+          >Play slideshow</a
+        >
         <!-- <a href="/series/detail/<%- series._id%>/carousel">Carousel</a> -->
 
         <h2><%= series.titleSerie %></h2>
@@ -26,20 +28,22 @@
             </figure>
           </a>
         </article>
+        <!-- <form action="/series/detail/<%=images[i]._id%>/deleteImage" method="POST">
+          <button type="submit">Delete from serie</button>
+        </form> -->
         <% } %> <% }else { %>
 
         <p>No photos in this serie yet 🙁</p>
         <a href="/upload">Upload photos</a>
         <% }%>
 
-        <a href="">Edit</a>
         <form method="POST">
           <button
             formaction="/series/detail/<%= series._id%>/remove"
             type="submit"
             class="deleteBtn"
           >
-            Delete
+            Delete this serie
           </button>
         </form>
       </section>

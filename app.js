@@ -150,10 +150,10 @@ app.post('/photos/:id/remove', async (req, res) => {
   await Images.findByIdAndDelete(req.params.id); // Delete image from Images collection
 
   // Delete image from Series collection (id)
-  const series = await Series.find().catch((err) => console.log(err));
+  // const series = await Series.find().catch((err) => console.log(err));
 
-  const imageObject = series.images;
-  console.log(imageObject)
+  // const imageObject = series.images;
+  // console.log(imageObject);
   // Series.forEach((serie) => console.log('serie data', serie));
   // await Series.findByIdAndDelete({ _id: { $in: req.params.id } });
 
@@ -224,6 +224,20 @@ app.post('/series/detail/:id/remove', async function (req, res) {
   await Series.findByIdAndDelete(req.params.id);
   res.redirect('/series/overview');
 });
+
+// Delete image from serie
+// app.post('/series/detail/:id/deleteImage', async function (req, res) {
+//   // 1. Search ID (req.params.id) in Series collection ($in)
+//   const id = req.params.id;
+//   const series = await Series.find().catch((err) => console.log(err));
+
+//   await Series.findByIdAndDelete({ id: { $in: series.images } });
+
+
+//   // Splice from array
+  
+//   res.redirect('/series/overview');
+// });
 
 app.get('/series/detail/:id/slideshow', async function (req, res) {
   const series = await Series.findOne({

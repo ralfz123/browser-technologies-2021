@@ -120,7 +120,7 @@ main button {
   background: #008071;
   padding: 10px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: 0.3s;
   text-align: center;
   text-transform: uppercase;
@@ -226,7 +226,7 @@ main section form fieldset label input[type='text'] {
 main section form fieldset button[type='submit'] {
   /* margin: 1.2em 0; */
   display: block;
-  width: 7em;
+  width: 10em;
   margin: 0 auto;
   text-align: center;
 }
@@ -245,10 +245,25 @@ main section#home a {
 }
 
 /* upload */
-main section#upload {
+main section#upload form fieldset label[for='image'] {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+main section#upload form fieldset label[for='image'] h3 {
+  margin-bottom: 0.7em;
 }
 
 /* photos - overview */
+
+main section img {
+  border-radius: 10px;
+}
+
+main section article figure img {
+  width: 100%;
+  height: auto;
+}
 
 main section#photos-overview {
   max-width: 90vw;
@@ -263,12 +278,14 @@ a.fixedLink {
 }
 
 main section#photos-overview article {
-  /* margin: 10px; */
   width: 15em;
-  /* width: 22em; */
-  list-style: none;
 }
 
+main section#photos-overview article figure {
+  position: relative;
+}
+
+/* ! Circle effect on article (photos) */
 /* main section#photos-overview article:hover img,
 main section#photos-overview article:focus img,
 main section#photos-overview article:active img {
@@ -277,12 +294,9 @@ main section#photos-overview article:active img {
 
 main section#photos-overview article img {
   clip-path: circle(34%);
-  transition: 1s ease;
+  filter: drop-shadow(0 0 2px #000000);
+  transition: 0.5s ease;
 } */
-
-main section#photos-overview figure {
-  position: relative;
-}
 
 main section#photos-overview article:hover figcaption,
 main section#photos-overview article:focus figcaption,
@@ -304,76 +318,41 @@ main section#photos-overview figure figcaption {
   visibility: hidden;
 }
 
-/* masonry grid */
-@supports (display: grid) {
+/* canIUse: flexbox is supported in each browser, grid not */
+@supports (display: flex) {
   main section#photos-overview {
-    /* margin: 0;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    margin-bottom: 10px;
-    break-inside: avoid;
-    justify-content: center; */
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
+  main section#photos-overview article {
+    padding: 0.5em;
+  }
+
+  @media (max-width: 400px) {
+    main section#photos-overview {
+      display: block;
+    }
+
+    main section#photos-overview article {
+      margin: 0 auto;
+    }
+  }
+}
+
+/* only this is active when grid */
+/* @supports (display: grid) {
+  main section#photos-overview {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: masonry;
     grid-gap: 1rem;
     justify-items: center;
   }
-
-  figure {
-    /* grid-row: 1 / -1;
-    grid-column: 1; */
-  }
-
-  figure > img {
-    /* grid-row: 2;
-    grid-column: 1;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 0.2em 0.5em;
-    justify-self: start; */
-  }
-
-  figcaption {
-    /* grid-row: 2;
-    grid-column: 1;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 0.2em 0.5em;
-    justify-self: start;
-  } */
-  }
-
-  /* @media (min-width: 600px) {
-    .cards { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (min-width: 900px) {
-    .cards { grid-template-columns: repeat(3, 1fr); }
-  } */
-}
-
-/* main section ol li:after {
-  content: '';
-  display: block;
-  background-color: blue;
-  width: 10px;
-  position: absolute;
-  z-index: 1;
 } */
-
-/* main section article figure {
-  width: 100%;
-} */
-
-main section img {
-  border-radius: 10px;
-}
-
-main section article figure img {
-  width: 100%;
-  height: auto;
-  /* width: 150px;
-  height: 150px; */
-}
 
 /* photos - detail */
 
@@ -384,7 +363,8 @@ main section#photos-detail h2 {
 
 main section#photos-detail figure {
   width: 10em;
-  width: clamp(10em, 90%, 25em);
+  /* width: clamp(10em, 90%, 25em); */
+  width: clamp(10em, 63%, 25em);
   margin: 0 auto;
 }
 
@@ -405,7 +385,7 @@ main section#photos-detail form fieldset {
 
 main section#photos-detail form fieldset button {
   display: inline-block;
-  /* margin: 0em 2em; */
+  width: 8em;
 }
 
 .deleteBtn {
@@ -469,6 +449,10 @@ figure img.imageSeries {
   border: 5px solid transparent;
 }
 
+main section#series-new form fieldset p.errorMessage {
+  text-align: center;
+}
+
 main section#series-new form fieldset figure img:hover,
 main section#series-new form fieldset figure img:focus,
 main section#series-new form fieldset figure img:active {
@@ -514,11 +498,16 @@ label input:checked ~ figure img.imageSeries {
   }
 }
 
+main section#series-new form fieldset a.link {
+  margin: 1em auto;
+  display: block;
+}
+
 /* series - slideshow */
 /************* Image slideshow ************************/
 .slideshow {
-  background-color: #131212;
-  background: #dcdcdc;
+  background-color: #101010;
+  /* background: #dcdcdc; */
   height: 70vh;
   width: clamp(15em, 90%, 50em);
   margin: 0 auto;

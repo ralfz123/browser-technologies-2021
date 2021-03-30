@@ -6,6 +6,7 @@
 _Browser Technologies, a course of the minor Web Design & Development. It is a minor of the third year from the study [CMD](https://www.cmd-amsterdam.nl/)._
 
 [Link to live version :rocket:](https://ipic-bt-2021.herokuapp.com/)
+### [Live version here :red_circle:](https://ipic-bt-2021.herokuapp.com/)
 ### Table of Contents
 <table style="margin-left: auto; margin-right: auto;">
     <tr>
@@ -45,6 +46,30 @@ iPic is a online photo album where you can upload photos and it generates a phot
 #### Core feature
 The user can upload/add a photo to the online album.
 
+### Wireflow - Best Enhanced way
+
+<details>
+<summary>Part 1</summary>
+<img src="assignments/assignment-3/concept/sketch-v1-a.JPG" width=1000px />
+</details>
+
+<details>
+<summary>Part 2</summary>
+<img src="assignments/assignment-3/concept/sketch-v1-b.JPG" width=1000px />
+</details>
+
+#### List with layers
+Here is a list of the pages how they can be build by the layers _functional_, _usable_ and _pleasurable_.
+<details>
+<summary>Part 1</summary>
+<img src="assignments/assignment-3/concept/buildlist-1.JPG" width=1000px />
+</details>
+
+<details>
+<summary>Part 2</summary>
+<img src="assignments/assignment-3/concept/buildlist-2.JPG" width=1000px />
+</details>
+
 #### Browser technology
 
 
@@ -55,15 +80,41 @@ With the FileReader API, you can preview the uploaded file. In my case, you can 
 
 Resources:
 - https://www.youtube.com/watch?v=w1iJWS6E8lE
-##### 2. geo loc API
-lorem
-##### 3. Drag & Drop
-##### 4. SlideShow
-1. Show in OL
-2. With styling and horizontal scrolling (slide)
-3. Buttons to interact with
+##### 2. SlideShow
+**Functional**  
+All images will be shown in from top to bottom. It's usable and you can see the images too. 
 
-##### 5. Grid replaced by flex
+<details>
+<summary>Example</summary>
+  <img src="assignments/assignment-3/concept/slideshow-1.gif" width=300px />
+</details>
+
+
+**Usable**  
+All images are placed in a nice container where you can scroll horizontal through the images. Altough the styling makes it easier to use. It's a nice way of viewing the images.
+
+<details>
+<summary>Example</summary>
+  <img src="assignments/assignment-3/concept/slideshow-2.gif" width=300px />
+</details>
+
+**Pleasurable**  
+Now there are buttons, created with clientside javascript. With these buttons you can interact and decide if you want to see the previous or next image.
+
+<details>
+<summary>Example</summary>
+  <img src="assignments/assignment-3/concept/slideshow-3.gif" width=300px />
+</details>
+
+##### 3. Grid replaced by flex
+
+<!-- ##### 4. geo loc API
+lorem
+##### 5. Drag & Drop -->
+
+
+
+
 #### Browser-testing browsers
 ##### iOS
 - Chrome
@@ -78,50 +129,49 @@ lorem
 - Results:
 
 
-### Wireflow - Best Enhanced way
-<img src="assignments/assignment-3/sketch-v1-a.JPG" width=1000px />
-<img src="assignments/assignment-3/sketch-v1-b.JPG" width=1000px />
 
-#### List with layers
-Here is a list of the pages how they can be build by HTML, CSS and JS.
-<img src="assignments/assignment-3/buildlist-1.JPG" width=1000px />
-<img src="assignments/assignment-3/buildlist-2.JPG" width=1000px />
 
 ### Features
--	Foto toevoegen aan een verzameling met meta-info zoals beschrijving, locatie, fotograaf, alt-tekst
--	Detailpagina foto 
--	Overzichtspagina alle foto's
--	Serie samenstellen (welke foto's en in welke volgorde)
--	Overzichtspagina van een serie 
--	Serie als carrousel aanbieden
--	Serie als slideshow aanbieden
+**Images**  
+- Add image to global online album
+- Add information, such as title, description, photographer and location to the image
+- Check one image with his info at the detail page
+- Check all images at the overview page
 
-### [Live version here :red_circle:](https://ipic-bt-2021.herokuapp.com/)
+**Series**  
+- Check all series at the overview page
+- Check one serie at the detail page
+- Show one serie in a slideshow
+- Create new series
+
 ## :1234: Data  
-### APIs are:
-1. lorem
-
-The data variables I used, are:
-#### 1. Lorem
-- `id`
-### Dataset structure
-#### 1. Lorem
-
+I used Mongoose data schemas to create schemas before I insert the data.
+### Image schema
 ```js
-
 {
-    id: "lorem",
+  image: String,
+  title: String,
+  description: String,
+  photographer: String,
+  location: String,
 }
-```
-
+  ```
+### Schema schema
+```js
+{
+  titleSerie: String,
+  images: Array,
+}
+  ```
 
 ## :nerd_face: Technical summary
 This app is built, using:
 - [npm](https://www.npmjs.com/)
 - Nodejs
 - Express
-- Ejs
+- Ejs templating engine
 - MongoDB
+- Mongoose
 
 ## Challenges / Inventions:
 
@@ -164,10 +214,11 @@ This app is built, using:
 
 
 ## :gear: Installation
->⚠️ To use the application in development, you need a MongoDB database and a URI to connect with it!
+>⚠️ To use the application in development, you need a MongoDB database and a URI to connect with it! Contact me please if you want to run the project.
+
 1. Clone the repository:  
 ```
-git clone https://github.com/ralfz123/browser-technologies-2021.git
+git clone https://github.com/ralfz123/iPic-BT-2021.git
 ```
 
 2. Install dependencies   

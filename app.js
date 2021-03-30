@@ -115,7 +115,7 @@ app.get('/photos', async function (req, res, ) {
   // 2. give class
 
   const images = await Images.find().catch((err) => console.log(err));
-  // images.reverse();
+  images.reverse();
   console.log('ALL images: ', images);
   if (images) {
     res.render('pages/photos/overviewPhotos', { images });

@@ -167,6 +167,11 @@ main a.link:active {
   color: #008071;
   background: white;
   border: 1px solid #008071;
+  box-shadow: none;
+}
+
+main a.back {
+  width: 5em;
 }
 
 main section {
@@ -275,6 +280,7 @@ a.fixedLink {
   position: fixed;
   bottom: 4em;
   right: 2em;
+  box-shadow: 0 0 10px -3px #000000;
 }
 
 main section#photos-overview article {
@@ -285,18 +291,31 @@ main section#photos-overview article figure {
   position: relative;
 }
 
-/* ! Circle effect on article (photos) */
-/* main section#photos-overview article:hover img,
-main section#photos-overview article:focus img,
-main section#photos-overview article:active img {
-  clip-path: circle(100%);
+main section#photos-overview article img {
+  /* clip-path: circle(34%); */
+  /* filter: drop-shadow(0 0 2px #000000); */
+  transition: 0.5s ease;
 }
 
-main section#photos-overview article img {
-  clip-path: circle(34%);
-  filter: drop-shadow(0 0 2px #000000);
-  transition: 0.5s ease;
-} */
+/* reduces the animation/shakey elements on the website, so it's accessible for people who are sensitive to movements */
+@media (prefers-reduced-motion) {
+  *,
+  *:hover,
+  *:focus,
+  *:active {
+    transform: none;
+    filter: none;
+    animation: none;
+  }
+}
+
+/* ! Circle effect on article (photos) */
+main section#photos-overview article:hover img,
+main section#photos-overview article:focus img,
+main section#photos-overview article:active img {
+  /* clip-path: circle(100%); */
+  transform: scale(1.01);
+}
 
 main section#photos-overview article:hover figcaption,
 main section#photos-overview article:focus figcaption,
@@ -344,7 +363,7 @@ main section#photos-overview figure figcaption {
 }
 
 /* only this is active when grid */
-/* @supports (display: grid) {
+@supports (display: grid) {
   main section#photos-overview {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -352,20 +371,31 @@ main section#photos-overview figure figcaption {
     grid-gap: 1rem;
     justify-items: center;
   }
-} */
+}
 
 /* photos - detail */
+main section#photos-detail article {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
 
 main section#photos-detail figure,
 main section#photos-detail h2 {
   text-align: center;
 }
 
+main section#photos-detail h2 {
+  margin: 0.5em 0em;
+}
+
 main section#photos-detail figure {
-  width: 10em;
+  /* width: 10em; */
   /* width: clamp(10em, 90%, 25em); */
-  width: clamp(10em, 63%, 25em);
-  margin: 0 auto;
+  /* width: clamp(10em, 63%, 25em); */
+  width: clamp(10em, 63%, 20em);
+  margin: 0;
 }
 
 main section#photos-detail figure img {
@@ -376,7 +406,7 @@ main section#photos-detail form {
   width: 80vw;
   margin: 0;
   padding: 0;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 main section#photos-detail form fieldset {

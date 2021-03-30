@@ -45,6 +45,13 @@ From my _squad_ we gathered all researches and put it in one [wiki :rocket: ](ht
 ### What's it?
 **iPic** is an online photo album where you can upload photos and it generates a photo album for you. You can make photo series from your album and you can see them in a slideshow.
 
+<img src="assignments/assignment-3/concept/app-UI.png" width="700px" />
+
+<!-- <details>
+<summary>Happy flow</summary>
+<img src="assignments/assignment-3/app-flow.gif" width="400px" />
+</details> -->
+
 ### Core feature
 The user can upload/add photos to the online album.
 
@@ -79,6 +86,7 @@ With the FileReader API, you can preview the uploaded file. In my case, you can 
 **Resources**  
 - https://developer.mozilla.org/en-US/docs/Web/API/FileReader
 - https://www.youtube.com/watch?v=w1iJWS6E8lE
+- https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 #### 2. SlideShow
 **Functional**  
 All photos will be shown in from top to bottom. It's usable and you can see the photos too. 
@@ -152,8 +160,21 @@ Requirements:
 - Cookies niet accepteren
 - localStorage doet het niet
 
+@supports voor flex en grid
+@media (prefers-reduced-motion) voor beweeg-gevoelige (epilepsi)
 
-Result:
+Test lijst:
+1. Add image
+2. Create serie
+3. Slideshow (3 layers)
+4. Grid layout
+5. preview image by upload
+
+##### 1. Add image
+##### 2. Create serie
+##### 3. Slideshow (3 layers)
+##### 4. Grid layout
+### Results
 #### Button
 contrast check
 hij heeft de WCAG AAA niet voldaan. Deze ga ik aanpassen.
@@ -170,6 +191,87 @@ contrast ratio: 4:84
 <img src="assignments/assignment-3/testing/contrast-button-v2.png" width="600px" />
 
 contrast ratio: 7.37
+
+## Test rapport
+### 1. Add image
+<details>
+<summary>Desktop - Chrome</summary>
+Gaat goed, lekker invullen en gaan. Nice layout en werkt helemaal zoals ik wil.
+
+<img src="assignments/assignment-3/testing/1-upload/1-desk-chrome.png" width=500px />
+</details>
+
+<details>
+<summary>Desktop - Firefox</summary>
+Gaat lekker, niks aan de hand. Ziet er mooi uit.  
+
+<img src="assignments/assignment-3/testing/1-upload/1-desk-firefox.png" width=500px />
+
+</details>
+
+<details>
+<summary>iOS Mobile - Safari</summary>
+lorem
+
+<img src="assignments/assignment-3/testing/1-upload/1-mob-ios.png" width=500px />
+</details>
+
+<details>
+<summary>Android Mobile - Internet</summary>
+lorem
+
+<img src="assignments/assignment-3/testing/1-upload/1-mob-and.png" width=500px />
+</details>
+
+### 2. Create serie
+#### Desktop - Chrome
+Gaat lekker en animaties werken lekker. Alleen moet ik steeds scrollen voor de hele foto lijst. Ik zou graag in 1 keer alle foto's willen zien, net zoals op de overview photos page. Hierbij denk ik aan een Grid layout. Kleuren komen trouwens mooi naar voren!
+
+<img src="assignments/assignment-3/testing/1.desk-chrome/2.serieNew.png" width=500px />
+
+#### Desktop - Firefox
+Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen.
+
+<img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
+
+#### Desktop - Firefox
+Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen.
+
+<img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
+
+#### Desktop - Firefox
+Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen.
+
+<img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
+
+
+### 3. Slideshow (3 layers)
+#### Desktop - Chrome
+>This means for all 4 browsers, I see after the test:
+**Functional** - _When CSS & JS are turned off_  
+Gaat best en werkt niet super , omdat de images wat groot zijn. Maar het gaat prima.
+
+**Usable** - _When CSS is turned off_  
+Gaat stuk beter en ziet er beter uit. Werkt trouwens erg mooi, want je kunt gewoon horizontaal scrollen.
+
+**Pleasurable** - _Fully enhanced way :sprinkles:_  
+Dit werkt fantastic, omdat je door middel van buttons naar de vorige en volgende foto kunt gaan.
+
+<img src="assignments/assignment-3/testing/3-slideshow/3-desk-chrome-js.png" width=500px />
+
+#### Desktop - Firefox
+De styling van de scrollbar is de default van de browser. Hij heeft niet de styling van de CSS overgenomen.
+<img src="assignments/assignment-3/testing/3-slideshow/3-desk-firefox-js.png" width=500px />
+
+### 4. Grid layout
+#### Desktop - Chrome
+Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.
+<img src="assignments/assignment-3/testing/4-grid/4.desk-chrome.png" width=500px />
+
+#### Desktop - Firefox
+Dit werkt erg smooth en layout is strak.
+<img src="assignments/assignment-3/testing/4-grid/4.desk-firefox.png" width=500px />
+
 
 ### Features
 **Images**  
@@ -251,6 +353,7 @@ This app is built, using:
 - [ ] Login, so each user has own pics
 - [ ] Geo location API to detect where the user is on browser or he can pick a plot on the map
 - [ ] Drag & Drop API
+- [ ] "preview in full size (viewport")
 </details>
 
 

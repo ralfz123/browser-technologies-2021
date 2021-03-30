@@ -6,72 +6,72 @@
   <%- include ('../../partials/header') %>
   <main>
     <section id="photos-detail">
-      <a href="/photos" class="link">Back</a>
+      <a href="/photos" class="link back">Back</a>
       <h2><%= image.title%></h2>
-      <figure>
-        <img
-          src="/uploads/<%= image.image%>"
-          alt="<%=image.title%>"
-        />
-      </figure>
 
-      <form method="POST">
-        <fieldset>
-          <legend>Info photo</legend>
+      <article>
+        <figure>
+          <img src="/uploads/<%= image.image%>" alt="<%=image.title%>" />
+        </figure>
 
-          <label for="title">
-            Title
-            <input
-              id="title"
-              value="<%= image.title%>"
-              name="title"
-              type="text"
-            />
-          </label>
+        <form method="POST">
+          <fieldset>
+            <legend>Info photo</legend>
 
-          <label for="description"
-            >Description
-            <input
-              id="description"
-              value="<%= image.description%>"
-              name="description"
-              type="text"
-            />
-          </label>
+            <label for="title">
+              Title
+              <input
+                id="title"
+                value="<%= image.title%>"
+                name="title"
+                type="text"
+              />
+            </label>
 
-          <label for="photographer"
-            >Photographer
-            <input
-              id="photographer"
-              name="photographer"
-              value="<%= image.photographer%>"
-              type="text"
-            />
-          </label>
+            <label for="description"
+              >Description
+              <input
+                id="description"
+                value="<%= image.description%>"
+                name="description"
+                type="text"
+              />
+            </label>
 
-          <label for="location"
-            >Location
-            <input
-              id="location"
-              value="<%= image.location%>"
-              name="location"
-              type="text"
-            />
-          </label>
+            <label for="photographer"
+              >Photographer
+              <input
+                id="photographer"
+                name="photographer"
+                value="<%= image.photographer%>"
+                type="text"
+              />
+            </label>
 
-          <button formaction="/photos/<%= image._id%>/edit" type="submit">
-            Update
-          </button>
+            <label for="location"
+              >Location
+              <input
+                id="location"
+                value="<%= image.location%>"
+                name="location"
+                type="text"
+              />
+            </label>
 
-          <!-- <button
+            <button formaction="/photos/<%= image._id%>/edit" type="submit">
+              Update
+            </button>
+
+            <!-- <button
             formaction="/photos/<%= image._id%>/remove"
             type="submit"
             class="deleteBtn"
           >
             Delete
           </button> -->
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
+      </article>
     </section>
   </main>
 

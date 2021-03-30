@@ -464,6 +464,7 @@ main section#series-detail figure img {
 /* series - overview */
 main section#series-new form {
   width: 80vw;
+  width: 100vw;
   margin: 1em auto 0;
   padding: 0;
 }
@@ -474,6 +475,7 @@ main section#series-new form input[type='checkbox'] {
 
 figure img.imageSeries {
   width: 10em;
+  width:5em;
   opacity: 0.5;
   transition: 0.2s;
   border: 5px solid transparent;
@@ -488,6 +490,15 @@ main section#series-new form fieldset figure img:focus,
 main section#series-new form fieldset figure img:active {
   cursor: pointer;
   opacity: 1;
+}
+
+main section#series-new form fieldset div#imagePicker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /* grid-template-rows: masonry; */
+  grid-gap: 1rem;
+  justify-items: center;
+  /* width: 80vw; */
 }
 
 input:checked ~ p {

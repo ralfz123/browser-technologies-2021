@@ -27,28 +27,31 @@
             </label>
 
             <h3>Choose images</h3>
-            <% images.forEach(({image, title, description, photographer,
-            location, _id}) => { %>
+            <div id="imagePicker">
+              <% images.forEach(({image, title, description, photographer,
+              location, _id}) => { %>
 
-            <label for="<%- _id%>">
-              <input
-                type="checkbox"
-                value="<%- _id%>"
-                name="selectedPhotos"
-                id="<%- _id%>"
-              />
-              <p><%= title%></p>
-              <figure>
-                <img
-                  src="/uploads/<%= image%>"
-                  alt="<%- title%>"
-                  class="imageSeries"
+              <label for="<%- _id%>">
+                <input
+                  type="checkbox"
+                  value="<%- _id%>"
+                  name="selectedPhotos"
+                  id="<%- _id%>"
                 />
-              </figure>
-            </label>
+                <p><%= title%></p>
+                <figure>
+                  <img
+                    src="/uploads/<%= image%>"
+                    alt="<%- title%>"
+                    class="imageSeries"
+                  />
+                </figure>
+              </label>
 
-            <% }) %> <% }else{ %>
-            <p class="errorMessage" >You have no photos yet 🙁</p>
+              <% }) %>
+            </div>
+            <% }else{ %>
+            <p class="errorMessage">You have no photos yet 🙁</p>
             <a href="/upload" class="link">Add photo</a>
             <% }%>
 

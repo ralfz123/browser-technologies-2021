@@ -129,7 +129,8 @@ Although I used two different layout models, I made them so that they look just 
   <b>Grid</b>
 </summary>
   <img src="assignments/assignment-3/concept/grid-box.gif" width=700px />
-  [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L347)
+
+  [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L403-L419)
 </details>
 
 <details>
@@ -137,7 +138,8 @@ Although I used two different layout models, I made them so that they look just 
   <b>Flexbox</b>
 </summary>
   <img src="assignments/assignment-3/concept/flex-box.gif" width=700px />
-  [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L322)
+
+  [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L378-L389)
 </details>
 
 #### 4. prefers-reduced-motion

@@ -211,7 +211,7 @@ Gaat lekker, niks aan de hand. Ziet er mooi uit.
 
 <details>
 <summary>iOS Mobile - Safari</summary>
-lorem
+Upload ging prima en de safari form default behavior werkt ook lekker. Door de tabjes kan je zo door 'tabben' naar de volgende form input. Alleen is de input form styling de default styling van Safari ipv die ik zelf had. Het is overigens niet storend.
 
 <img src="assignments/assignment-3/testing/1-upload/1-mob-ios.png" width=500px />
 </details>
@@ -234,12 +234,12 @@ Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren,
 
 <img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
 
-#### Desktop - Firefox
-Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen.
+#### Mobile iOS - Safari
+Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Helemaal op mobiel werkt dit dus echt niet fijn, want het is een relatief klein device als je het vergelijkt met desktop. Je moet helemaal naar beneden om op de submit button te klikken. Dit moet dus echt veranderen. Scrollen gaat prima en animaties werken erg fijn.
 
 <img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
 
-#### Desktop - Firefox
+#### Mobile Android - Firefox
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen.
 
 <img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
@@ -262,6 +262,9 @@ Dit werkt fantastic, omdat je door middel van buttons naar de vorige en volgende
 #### Desktop - Firefox
 De styling van de scrollbar is de default van de browser. Hij heeft niet de styling van de CSS overgenomen.
 <img src="assignments/assignment-3/testing/3-slideshow/3-desk-firefox-js.png" width=500px />
+
+#### Mobile - iOS
+Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd.
 
 ### 4. Grid layout
 #### Desktop - Chrome

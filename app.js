@@ -108,7 +108,7 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
   res.redirect('/photos');
 });
 
-app.get('/photos', async function (req, res, ) {
+app.get('/photos', async function (req, res) {
   // render photos with id and serach id and give it classname
   // last upload
   // 1. search ID from last object
@@ -148,7 +148,11 @@ app.post('/photos/:id/edit', async (req, res) => {
     updatedValues
   ).catch((err) => console.log(err));
 
-  res.redirect('/photos');
+  const image = await Images.findOne({
+    _id: req.params.id,
+  }).catch((err) => console.log(err));
+
+  res.render('pages/photos/detailPhotos', { image });
 });
 
 app.post('/photos/:id/remove', async (req, res) => {

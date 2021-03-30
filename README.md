@@ -239,31 +239,39 @@ Overall styling is mooi, is iets van het originele (voor iOS gemaakte) af, maar 
 
 
 ### Desktop - Chrome
-Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input);
+Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input);  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-desk-chrome.png" width=500px />
 
-With JavaScript you see the whole implemented feature of the application:
+With JavaScript you see the whole implemented feature of the application:  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-desk-chrome-js.png" width=500px />
 
 ### Desktop - Firefox
-Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):
+Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-desk-firefox.png" width=500px />
 
-With JavaScript you see the whole implemented feature of the application:
+With JavaScript you see the whole implemented feature of the application:  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-desk-firefox-js.png" width=500px />
 
 ### Mobile iOS - Safari
-Safari makes his own file preview. That's nice for the user that uses this browser or computer that don't supports JavaScript:
+Safari makes his own file preview. That's nice for the user that uses this browser or computer that don't supports JavaScript:  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios.PNG" width=200px style="display:block;" />
 
-When you turn on JavaScript, the default Safari filepreview stays existed, but the implemented feature of the application comes next to it:
+When you turn on JavaScript, the default Safari filepreview stays existed, but the implemented feature of the application comes next to it:  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios-js.PNG" width=200px style="display:block;" />
 
 ### Mobile Android - Internet
-Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):
+Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-mob-and.JPG" width=200px style="display:block;" />
 
-With JavaScript you see the whole implemented feature of the application:
+With JavaScript you see the whole implemented feature of the application:  
+
 <img src="assignments/assignment-3/testing/5-filepreview/5-mob-and-js.JPG" width=200px style="display:block;" />
 
 ***

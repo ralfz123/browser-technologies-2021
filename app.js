@@ -86,6 +86,7 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
   };
 
   createImage(imageObject);
+  console.log('uploaded image', imageObject.image);
 
   function createImage({
     image,
@@ -116,7 +117,6 @@ app.get('/photos', async function (req, res) {
 
   const images = await Images.find().catch((err) => console.log(err));
   images.reverse();
-  console.log('ALL images: ', images);
   if (images) {
     res.render('pages/photos/overviewPhotos', { images });
   } else {

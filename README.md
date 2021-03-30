@@ -291,6 +291,23 @@ Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
 Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
 <img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=300px />
 
+### 5. File preview
+#### Desktop - Chrome
+Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.
+<img src="assignments/assignment-3/testing/4-grid/4-desk-chrome.png" width=500px />
+
+#### Desktop - Firefox
+Dit werkt erg smooth en layout is strak.
+<img src="assignments/assignment-3/testing/4-grid/4-desk-firefox.png" width=500px />
+
+#### Mobile iOS - Safari
+Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
+<img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=300px />
+
+#### Mobile Android - Internet
+Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
+<img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=300px />
+
 
 ### Features
 **Images**  

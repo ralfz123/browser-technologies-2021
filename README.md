@@ -282,15 +282,19 @@ With JavaScript you see the whole implemented feature of the application:
 <summary>3. Grid layout</summary>
 
 ### Desktop - Chrome
-Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.
+Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.  
+
 <img src="assignments/assignment-3/testing/4-grid/4-desk-chrome.png" width=500px />
 
 ### Desktop - Firefox
-Dit werkt erg smooth en layout is strak.
+Dit werkt erg smooth en layout is strak.  
+
 <img src="assignments/assignment-3/testing/4-grid/4-desk-firefox.png" width=500px />
 
 ### Mobile iOS - Safari
-Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
+Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik.  
+
+
 <img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=200px style="display:block;" />
 
 ### Mobile Android - Internet
@@ -322,7 +326,8 @@ Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de geb
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Helemaal op mobiel werkt dit dus echt niet fijn, want het is een relatief klein device als je het vergelijkt met desktop. Je moet helemaal naar beneden om op de submit button te klikken. Dit moet dus echt veranderen. Scrollen gaat prima en animaties werken erg fijn.
 
 <img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios.PNG" width=200px style="display:block;" />
-<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios-button.PNG" width=200px style="display:block;" />
+
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios-button.jpg" width=200px style="display:block;" />
 
 Ik heb het probleem aangepakt en verandert naar een Grid layout, waardoor de gebruiker veel makkelijker en sneller zijn images kan toevoegen.
 
@@ -365,7 +370,9 @@ De styling van de scrollbar is de default van de browser. Hij heeft niet de styl
 <img src="assignments/assignment-3/testing/3-slideshow/3-desk-firefox-js.png" width=500px />
 
 ### Mobile iOS - Safari
-Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd.
+Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd.  
+
+
 <img src="assignments/assignment-3/testing/3-slideshow/3-mob-ios.PNG" width=200px style="display:block;" />
 
 ### Mobile Android - Internet

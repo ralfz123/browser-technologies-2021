@@ -55,6 +55,19 @@ From my _squad_ we gathered all researches and put it in one [wiki :rocket: ](ht
 ### Core feature
 The user can upload/add photos to the online album.
 
+### Features
+**Images**  
+- Add image to global online album
+- Add information such as title, description, photographer and location of the image
+- Check one image with his info at the detail page
+- Check all images at the overview page
+
+**Series**  
+- Check all series at the overview page
+- Check one serie at the detail page
+- Show one serie in a slideshow
+- Create new series
+
 ### Wireflow - Best Enhanced way
 
 <details>
@@ -82,11 +95,6 @@ Here is a list of the pages how they can be build by the layers _functional_, _u
 ### Enhancements
 #### 1. FileReader API
 With the FileReader API, you can preview the uploaded file. In my case, you can preview the uploaded photo. That's an very enhanced way to the user of presenting the uploaded photo. But when there is no JS available, this feature will be turned off and the default `type=file` content will be presented. When the file is uploaded, you can see the uploaded file as well in string; the filename will be shown.
-
-**Resources**  
-- https://developer.mozilla.org/en-US/docs/Web/API/FileReader
-- https://www.youtube.com/watch?v=w1iJWS6E8lE
-- https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 #### 2. SlideShow
 **Functional**  
 All photos will be shown in from top to bottom. It's usable and you can see the photos too. 
@@ -132,49 +140,45 @@ Although I used two different layout models, I made them so that they look just 
   [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L322)
 </details>
 
-### Browser-testing
-1. Chrome (Chromium)
-2. Firefox (non-Chromium)
-3. Safari
-4. Internet Explorer
-##### Desktop
-- Chrome (Chromium)
-- Firefox (non-Chromium)
-- Flow?
-##### mobile - iOS
-- Safari
-##### mobile - Android
-- Internet Explorer
+#### 4. prefers-reduced-motion
+@media (prefers-reduced-motion) voor beweeg-gevoelige (epilepsi)
+I wanted to implement an enhancement so browsers can detect if the user prefers a reduced motion on the websites he visits. So the users don't want to be harmed with the (in my experience) cool, fancy, crazy and shaky animations. I did this with `@media (prefers-reduced-motion)`. Check the code [here]().
 
-Lijstje met features:
-- Foto uploaden
-- Creating serie
+## Browser-testing
+Browsers I tested are:
 
-Requirements:
+| Device                |      Browser    
+|-----------------------|:-------------:
+| 1. Desktop            |  Chrome
+| 2. Desktop            |  Firefox
+| 3. Mobile - iOS       |  Safari
+| 4. Mobile - Android   |  Internet
+
+
+<!-- Requirements:
 - Afbeeldingen uitzetten
 - Custom fonts uitzetten
 - Kleur uitzetten & kleurenblindheid instellen
 - Muis/Trackpad werkt niet
 - Breedband internet uitzetten
-- Javascript (volledig)
-- Cookies niet accepteren
-- localStorage doet het niet
+- √ Javascript (volledig)
+- √ Cookies niet accepteren
+- √ localStorage doet het niet -->
 
-@supports voor flex en grid
-@media (prefers-reduced-motion) voor beweeg-gevoelige (epilepsi)
 
-Test lijst:
-1. Add image
-2. Create serie
-3. Slideshow (3 layers)
-4. Grid layout
-5. Preview image by upload - FileReader API
 
-##### 1. Add image
-##### 2. Create serie
-##### 3. Slideshow (3 layers)
-##### 4. Grid layout
-### Results
+Test list:
+1. Upload image
+2. File preview
+3. Grid layout
+4. Create serie
+5. Slideshow
+
+
+### Test rapport
+<details>
+<summary>Color test</summary>
+
 #### Button
 contrast check
 hij heeft de WCAG AAA niet voldaan. Deze ga ik aanpassen.
@@ -191,40 +195,95 @@ contrast ratio: 4:84
 <img src="assignments/assignment-3/testing/contrast-button-v2.png" width="600px" />
 
 contrast ratio: 7.37
-
-## Test rapport
-### 1. Add image
-<details>
-<summary>Desktop - Chrome</summary>
-Gaat goed, lekker invullen en gaan. Nice layout en werkt helemaal zoals ik wil.
-
-<img src="assignments/assignment-3/testing/1-upload/1-desk-chrome.png" width=500px />
 </details>
 
 <details>
-<summary>Desktop - Firefox</summary>
+<summary>1. Upload image</summary>
+
+#### Desktop - Chrome
+
+Gaat goed, lekker invullen en gaan. Nice layout en werkt helemaal zoals ik wil.
+
+<img src="assignments/assignment-3/testing/1-upload/1-desk-chrome.png" width=500px />
+
+
+
+#### Desktop - Firefox
 Gaat lekker, niks aan de hand. Ziet er mooi uit.  
 
 <img src="assignments/assignment-3/testing/1-upload/1-desk-firefox.png" width=500px />
 
-</details>
-
-<details>
-<summary>iOS Mobile - Safari</summary>
+#### iOS Mobile - Safari
 Upload gaat prima en de safari form default behavior werkt ook lekker. De UI zoomt in en je kan met de pijltjes door de inputs heen 'tabben'. Alleen is de input form styling de default styling van Safari ipv die ik zelf had. Het is overigens niet storend.
 
 <img src="assignments/assignment-3/testing/1-upload/1-mob-ios.PNG" width=300px />
 <img src="assignments/assignment-3/testing/1-upload/1-mob-ios-input.PNG" width=300px />
-</details>
 
-<details>
-<summary>Android Mobile - Internet</summary>
+
+#### Android Mobile - Internet
 Overall styling is mooi, is iets van het originele (voor iOS gemaakte) af, maar alsnog erg strak. Op deze mobile heb ik wèl de form input styling van de app in plaats van van de browser default.
 
 <img src="assignments/assignment-3/testing/1-upload/1-mob-and.png" width=300px />
 </details>
 
-### 2. Create serie
+<details>
+<summary>2. File preview</summary>
+
+
+#### Desktop - Chrome
+Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input);
+<img src="assignments/assignment-3/testing/5-filepreview/5-desk-chrome.png" width=500px />
+
+With JavaScript you see the whole implemented feature of the application:
+<img src="assignments/assignment-3/testing/5-filepreview/5-desk-chrome-js.png" width=500px />
+
+#### Desktop - Firefox
+Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):
+<img src="assignments/assignment-3/testing/5-filepreview/5-desk-firefox.png" width=500px />
+
+With JavaScript you see the whole implemented feature of the application:
+<img src="assignments/assignment-3/testing/5-filepreview/5-desk-firefox-js.png" width=500px />
+
+#### Mobile iOS - Safari
+Safari makes his own file preview. That's nice for the user that uses this browser or computer that don't supports JavaScript:
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios.PNG" width=300px />
+
+When you turn on JavaScript, the default Safari filepreview stays existed, but the implemented feature of the application comes next to it:
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-ios-js.PNG" width=300px />
+
+#### Mobile Android - Internet
+Without JavaScript you see the uploaded file name (default browser feature for the `type=file` input):
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and.PNG" width=300px />
+
+With JavaScript you see the whole implemented feature of the application:
+<img src="assignments/assignment-3/testing/5-filepreview/5-mob-and-js.PNG" width=300px />
+
+</details>
+
+<details>
+<summary>3. Grid layout</summary>
+
+#### Desktop - Chrome
+Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.
+<img src="assignments/assignment-3/testing/4-grid/4-desk-chrome.png" width=500px />
+
+#### Desktop - Firefox
+Dit werkt erg smooth en layout is strak.
+<img src="assignments/assignment-3/testing/4-grid/4-desk-firefox.png" width=500px />
+
+#### Mobile iOS - Safari
+Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
+<img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=300px />
+
+#### Mobile Android - Internet
+Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
+<img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=300px />
+
+</details>
+
+<details>
+<summary>4. Create serie</summary>
+
 #### Desktop - Chrome
 Gaat lekker en animaties werken lekker. Alleen moet ik steeds scrollen voor de hele foto lijst. Ik zou graag in 1 keer alle foto's willen zien, net zoals op de overview photos page. Hierbij denk ik aan een Grid layout. Kleuren komen trouwens mooi naar voren!
 
@@ -247,10 +306,14 @@ Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren,
 <img src="assignments/assignment-3/testing/2-serieNew/2-mob-and.png" width=300px />
 <img src="assignments/assignment-3/testing/2-serieNew/2-mob-and-button.png" width=300px />
 
+</details>
 
-### 3. Slideshow (3 layers)
+
+<details>
+<summary>5. Slideshow</summary>
+
 #### Desktop - Chrome
->This means for all 4 browsers, I see after the test:
+This means for all 4 browsers, I see after the test:
 **Functional** - _When CSS & JS are turned off_  
 Gaat best en werkt niet super , omdat de images wat groot zijn. Maar het gaat prima.
 
@@ -274,53 +337,7 @@ Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd.
 Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd. Precies mooie styling en werkt erg goed.
 <img src="assignments/assignment-3/testing/3-slideshow/3-mob-and.png" width=300px />
 
-### 4. Grid layout
-#### Desktop - Chrome
-Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.
-<img src="assignments/assignment-3/testing/4-grid/4-desk-chrome.png" width=500px />
-
-#### Desktop - Firefox
-Dit werkt erg smooth en layout is strak.
-<img src="assignments/assignment-3/testing/4-grid/4-desk-firefox.png" width=500px />
-
-#### Mobile iOS - Safari
-Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
-<img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=300px />
-
-#### Mobile Android - Internet
-Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
-<img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=300px />
-
-### 5. File preview
-#### Desktop - Chrome
-Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.
-<img src="assignments/assignment-3/testing/4-grid/4-desk-chrome.png" width=500px />
-
-#### Desktop - Firefox
-Dit werkt erg smooth en layout is strak.
-<img src="assignments/assignment-3/testing/4-grid/4-desk-firefox.png" width=500px />
-
-#### Mobile iOS - Safari
-Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
-<img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=300px />
-
-#### Mobile Android - Internet
-Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
-<img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=300px />
-
-
-### Features
-**Images**  
-- Add image to global online album
-- Add information, such as title, description, photographer and location to the image
-- Check one image with his info at the detail page
-- Check all images at the overview page
-
-**Series**  
-- Check all series at the overview page
-- Check one serie at the detail page
-- Show one serie in a slideshow
-- Create new series
+</details>
 
 ## :1234: Data  
 I used Mongoose data schemas to create schemas before I insert the data.
@@ -345,11 +362,11 @@ I used Mongoose data schemas to create schemas before I insert the data.
 ## :nerd_face: Technical summary
 This app is built, using:
 - [npm](https://www.npmjs.com/)
-- Nodejs
-- Express
-- Ejs templating engine
-- MongoDB
-- Mongoose
+- [Node.js server](https://nodejs.org/)
+- [Express router](https://expressjs.com/)
+- [EJS Templating engine](https://ejs.co/)
+- [Mongoose](https://mongoosejs.com/)
+- [Heroku deployment](https://www.heroku.com/nodejs)
 
 ## Challenges / Inventions:
 
@@ -417,12 +434,16 @@ http://localhost:5000/
 ```
 
 ## :file_folder: Sources
-Credits to [Koop](https://github.com/KoopReynders) && [Peter Paul Koch](https://www.quirksmode.org/about/) && [Aaron Gustafson](https://github.com/aarongustafson) && [Heydon Pickering](https://github.com/Heydon) && [Ischa Gast](https://ischagast.nl/)for giving interesting lectures about Browser Technologies and Progressive Enhancement and how to deal with it.
+Credits to [Koop](https://github.com/KoopReynders) && [Peter Paul Koch](https://www.quirksmode.org/about/) && [Aaron Gustafson](https://github.com/aarongustafson) && [Heydon Pickering](https://github.com/Heydon) && [Ischa Gast](https://ischagast.nl/) for giving interesting lectures about Browser Technologies and Progressive Enhancement and how to deal with it.
 
 ### Code sources
 - Stackoverflow (n.d.). Searching for answers on dev questions - Stackoverflow. Retrieved 8 March 2021 from https://www.stackoverflow.com
 
 - npm (n.d.). Package manager with many packages - npm. Retrieved 8 March 2021 from https://www.npmjs.com
+
+- FileReader API (n.d.). MDN. Retrieved 25 March 2021 from https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+
+- readAsDataURL (n.d.). MDN. Retrieved 25 March 2021 from https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 
 ## :cop: License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  

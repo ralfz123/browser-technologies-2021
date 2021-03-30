@@ -81,7 +81,7 @@ Here is a list of the pages how they can be build by the layers _functional_, _u
 
 ### Enhancements
 #### 1. FileReader API
-With the FileReader API, you can preview the uploaded file. In my case, you can preview the uploaded photo. That's an very enhanced way to the user of presenting the uploaded image. But when there is nog JS available, this feature will be turned off and replaced by the default `type=file`. When the file is uploaded, you can see the uploaded file as well in string; the filename will be shown.
+With the FileReader API, you can preview the uploaded file. In my case, you can preview the uploaded photo. That's an very enhanced way to the user of presenting the uploaded photo. But when there is no JS available, this feature will be turned off and the default `type=file` content will be presented. When the file is uploaded, you can see the uploaded file as well in string; the filename will be shown.
 
 **Resources**  
 - https://developer.mozilla.org/en-US/docs/Web/API/FileReader
@@ -168,7 +168,7 @@ Test lijst:
 2. Create serie
 3. Slideshow (3 layers)
 4. Grid layout
-5. preview image by upload
+5. Preview image by upload - FileReader API
 
 ##### 1. Add image
 ##### 2. Create serie

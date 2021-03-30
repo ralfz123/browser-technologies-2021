@@ -15,6 +15,7 @@ html {
   font-weight: 300;
   /* --font-header: 'Pacifico', cursive; */
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 /* ------------------------------------------- */
@@ -48,6 +49,7 @@ header {
   margin: 0 auto;
   text-align: center;
   margin: 1em 0;
+  margin: 0.4em 0;
 }
 
 header > a {
@@ -135,7 +137,6 @@ main button:active {
   /* transform: scale(1.05); */
   /* transform: translateY(5px); */
   cursor: pointer;
-  background: #1074c5;
   background: white;
   color: #008071;
   border: 1px solid #008071;
@@ -185,7 +186,7 @@ main section {
 /*                   HOME                      */
 /* ------------------------------------------- */
 
-main section h1.hide {
+main section .hide {
   display: none;
 }
 
@@ -193,8 +194,8 @@ main section form {
   /* width: 26em; */
   max-width: 22em;
   /* margin: 2em auto 0; */
-  margin: 0em auto 0;
-  padding: 1em;
+  margin: 1em auto 0;
+  /* padding: 1em; */
 }
 
 main section form fieldset {
@@ -213,10 +214,6 @@ main section form fieldset label {
   display: block;
   margin: 1em 0em;
   width: 100%;
-}
-
-input#file-upload-button {
-  font-size: 3rem;
 }
 
 main section form fieldset label input[type='text'] {
@@ -250,9 +247,49 @@ main section#home a {
 }
 
 /* upload */
-main section#upload form fieldset label[for='image'] {
-  margin: 0;
-  margin-bottom: 0.5em;
+
+main section#upload {
+  padding: 0;
+}
+
+main section#upload form fieldset input[type='file'] {
+  /* margin: 0.5em auto 0.5em;
+  display: block;
+  width: 58%; */
+}
+
+main section#upload form fieldset img {
+  width: 5em;
+  height: 5em;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 0em;
+  background: grey;
+  color: white;
+}
+
+main section#upload form fieldset img.uploaded {
+  animation: preview 2.5s ease-in-out;
+  transition: 0.2s;
+}
+
+@keyframes preview {
+  0% {
+    transform: scale(4);
+    box-shadow: 0 0 20px #008071;
+  }
+  90% {
+    transform: scale(1);
+    box-shadow: 0 0 0px #008071;
+  }
+  95% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #008071;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px #008071;
+  }
 }
 
 main section#upload form fieldset label[for='image'] h3 {
@@ -475,7 +512,7 @@ main section#series-new form input[type='checkbox'] {
 
 figure img.imageSeries {
   width: 10em;
-  width:5em;
+  width: 5em;
   opacity: 0.5;
   transition: 0.2s;
   border: 5px solid transparent;

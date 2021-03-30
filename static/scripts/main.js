@@ -1,7 +1,7 @@
-import { previewImage } from './previewImage.js';
+import { previewFile } from './previewImage.js';
 import { slideshow } from './slideshow.js';
 
-// previewImage();
+previewFile();
 slideshow();
 
 // if ('serviceWorker' in navigator) {

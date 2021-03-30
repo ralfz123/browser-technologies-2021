@@ -211,38 +211,41 @@ Gaat lekker, niks aan de hand. Ziet er mooi uit.
 
 <details>
 <summary>iOS Mobile - Safari</summary>
-Upload ging prima en de safari form default behavior werkt ook lekker. Door de tabjes kan je zo door 'tabben' naar de volgende form input. Alleen is de input form styling de default styling van Safari ipv die ik zelf had. Het is overigens niet storend.
+Upload gaat prima en de safari form default behavior werkt ook lekker. De UI zoomt in en je kan met de pijltjes door de inputs heen 'tabben'. Alleen is de input form styling de default styling van Safari ipv die ik zelf had. Het is overigens niet storend.
 
-<img src="assignments/assignment-3/testing/1-upload/1-mob-ios.png" width=500px />
+<img src="assignments/assignment-3/testing/1-upload/1-mob-ios.PNG" width=300px />
+<img src="assignments/assignment-3/testing/1-upload/1-mob-ios-input.PNG" width=300px />
 </details>
 
 <details>
 <summary>Android Mobile - Internet</summary>
-lorem
+Overall styling is mooi, is iets van het originele (voor iOS gemaakte) af, maar alsnog erg strak. Op deze mobile heb ik wèl de form input styling van de app in plaats van van de browser default.
 
-<img src="assignments/assignment-3/testing/1-upload/1-mob-and.png" width=500px />
+<img src="assignments/assignment-3/testing/1-upload/1-mob-and.png" width=300px />
 </details>
 
 ### 2. Create serie
 #### Desktop - Chrome
 Gaat lekker en animaties werken lekker. Alleen moet ik steeds scrollen voor de hele foto lijst. Ik zou graag in 1 keer alle foto's willen zien, net zoals op de overview photos page. Hierbij denk ik aan een Grid layout. Kleuren komen trouwens mooi naar voren!
 
-<img src="assignments/assignment-3/testing/1.desk-chrome/2.serieNew.png" width=500px />
+<img src="assignments/assignment-3/testing//2-serieNew/2-desk-chrome.png" width=500px />
 
 #### Desktop - Firefox
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen.
 
-<img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-desk-firefox.png" width=500px />
 
 #### Mobile iOS - Safari
 Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Helemaal op mobiel werkt dit dus echt niet fijn, want het is een relatief klein device als je het vergelijkt met desktop. Je moet helemaal naar beneden om op de submit button te klikken. Dit moet dus echt veranderen. Scrollen gaat prima en animaties werken erg fijn.
 
-<img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios.PNG" width=300px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-ios-button.PNG" width=300px />
 
 #### Mobile Android - Firefox
-Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen.
+Het werkt top, alleen is het natuurlijk dat wanneer je een foto wilt selecteren, dat je dan moet scrollen. Hier is ook het probleem dat als je het form wilt submitten, je dan helemaal naar beneden moet scrollen.
 
-<img src="assignments/assignment-3/testing/2.serieNew/2-desk-firefox.png" width=500px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-and.png" width=300px />
+<img src="assignments/assignment-3/testing/2-serieNew/2-mob-and-button.png" width=300px />
 
 
 ### 3. Slideshow (3 layers)
@@ -263,17 +266,30 @@ Dit werkt fantastic, omdat je door middel van buttons naar de vorige en volgende
 De styling van de scrollbar is de default van de browser. Hij heeft niet de styling van de CSS overgenomen.
 <img src="assignments/assignment-3/testing/3-slideshow/3-desk-firefox-js.png" width=500px />
 
-#### Mobile - iOS
+#### Mobile iOS - Safari
 Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd.
+<img src="assignments/assignment-3/testing/3-slideshow/3-mob-ios.PNG" width=300px />
+
+#### Mobile Android - Internet
+Werkt erg fijn, verrassend! Werkt mooi en alles is ook goed uitgelijnd. Precies mooie styling en werkt erg goed.
+<img src="assignments/assignment-3/testing/3-slideshow/3-mob-and.png" width=300px />
 
 ### 4. Grid layout
 #### Desktop - Chrome
 Dit werkt top. Het werkt erg fijn en ziet er ook nog is overzichtelijk uit.
-<img src="assignments/assignment-3/testing/4-grid/4.desk-chrome.png" width=500px />
+<img src="assignments/assignment-3/testing/4-grid/4-desk-chrome.png" width=500px />
 
 #### Desktop - Firefox
 Dit werkt erg smooth en layout is strak.
-<img src="assignments/assignment-3/testing/4-grid/4.desk-firefox.png" width=500px />
+<img src="assignments/assignment-3/testing/4-grid/4-desk-firefox.png" width=500px />
+
+#### Mobile iOS - Safari
+Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik
+<img src="assignments/assignment-3/testing/4-grid/4-mob-ios.PNG" width=300px />
+
+#### Mobile Android - Internet
+Alles is mooi 1-koloms en goed overzichtelijk voor mobiel gebruik. Strak design op dit device.
+<img src="assignments/assignment-3/testing/4-grid/4-mob-and.PNG" width=300px />
 
 
 ### Features

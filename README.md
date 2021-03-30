@@ -144,7 +144,7 @@ Although I used two different layout models, I made them so that they look just 
 
 #### 4. prefers-reduced-motion
 @media (prefers-reduced-motion) voor beweeg-gevoelige (epilepsi)
-I wanted to implement an enhancement so browsers can detect if the user prefers a reduced motion on the websites he visits. So the users don't want to be harmed with the (in my experience) cool, fancy, crazy and shaky animations. I did this with `@media (prefers-reduced-motion)`. Check the code [here]().
+I wanted to implement an enhancement so browsers can detect if the user prefers a reduced motion on the websites he visits. So the users don't want to be harmed with the (in my experience) cool, fancy, crazy and shaky animations. I did this with `@media (prefers-reduced-motion)`. Check the code [here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L338-L347).
 
 ## Browser-testing
 Browsers I tested are:

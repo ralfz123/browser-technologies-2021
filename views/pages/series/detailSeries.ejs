@@ -14,23 +14,19 @@
         <a class="link" href="/series/detail/<%- series._id%>/slideshow"
           >Play slideshow</a
         >
-        <!-- <a href="/series/detail/<%- series._id%>/carousel">Carousel</a> -->
 
         <h2><%= series.titleSerie %></h2>
 
         <% if(series.images.length > 0){ %> <% for (let i = 0; i <
         series.images.length; i++) { %>
         <article>
-          <a href="/photos/<%= series.images[i]%>">
+          <a href="/photos/<%= images[i]._id%>">
             <figure>
-              <img src="/uploads/<%= images[i].image%>" alt="" width="300" />
+              <img src="/uploads/<%= images[i].image%>" alt="<%= images[i].description%>" width="300" />
               <figcaption><%=images[i].title%></figcaption>
             </figure>
           </a>
         </article>
-        <!-- <form action="/series/detail/<%=images[i]._id%>/deleteImage" method="POST">
-          <button type="submit">Delete from serie</button>
-        </form> -->
         <% } %> <% }else { %>
 
         <p>No photos in this serie yet 🙁</p>

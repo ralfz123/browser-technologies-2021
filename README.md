@@ -95,7 +95,32 @@ Here is a list of the pages how they can be build by the layers _functional_, _u
 ### Enhancements
 #### 1. FileReader API
 With the FileReader API, you can preview the uploaded file. In my case, you can preview the uploaded photo. That's an very enhanced way to the user of presenting the uploaded photo. But when there is no JS available, this feature will be turned off and the default `type=file` content will be presented. When the file is uploaded, you can see the uploaded file as well in string; the filename will be shown.
-#### 2. SlideShow
+
+**Functional**  
+The default `type=input` API feature shows the user the filename. Scanty, but fine.
+
+<details>
+<summary>Example</summary>
+  <img src="assignments/assignment-3/concept/filepreview-1.gif" width=500px style="display:block;" />
+</details>  
+
+**Usable**  
+There is more styling and visual hierarchy. The 'Choose file' button is visually more available.
+
+<details>
+<summary>Example</summary>
+  <img src="assignments/assignment-3/concept/filepreview-2.gif" width=500px style="display:block;" />
+</details>
+
+**Pleasurable**  
+There is now an `img` tag created via JavaScript, so when the user has uploaded a file, the file will be shown in the `img` tag. This is called a File Previewer.
+
+<details>
+<summary>Example</summary>
+  <img src="assignments/assignment-3/concept/filepreview-3.gif" width=500px style="display:block;" />
+</details>
+
+#### 2. Slideshow
 **Functional**  
 All photos will be shown in from top to bottom. It's usable and you can see the photos too. 
 

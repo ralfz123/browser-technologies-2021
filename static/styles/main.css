@@ -193,17 +193,15 @@ main section .hide {
 main section form {
   /* width: 26em; */
   max-width: 22em;
-  /* margin: 2em auto 0; */
   margin: 1em auto 0;
   /* padding: 1em; */
 }
 
 main section form fieldset {
   padding: 1em;
-  /* padding-left: 2em; */
   border: none;
   box-shadow: 0px 0px 13px -1px #8c8c8c;
-  border-radius: 28px;
+  border-radius: 10px;
 }
 
 main section form fieldset legend {
@@ -500,10 +498,9 @@ main section#series-detail figure img {
 
 /* series - overview */
 main section#series-new form {
-  max-width: none;
-  width: 80vw;
-  margin: 1em auto 0;
-  padding: 0;
+  max-width: 70em;
+  margin: 1em 1em 0;
+  margin: 0 auto;
 }
 
 main section#series-new form input[type='checkbox'] {
@@ -521,8 +518,6 @@ figure img.imageSeries {
 main section#series-new form fieldset p.errorMessage {
   text-align: center;
 }
-
-
 
 main section#series-new form fieldset figure img:hover,
 main section#series-new form fieldset figure img:focus,
@@ -554,6 +549,7 @@ label input:checked ~ figure img.imageSeries {
   border-radius: 50%;
   animation: party 1s ease-in-out;
 }
+
 @keyframes party {
   0% {
     transform: scale(1, 1) translateY(0);
@@ -562,19 +558,19 @@ label input:checked ~ figure img.imageSeries {
     transform: scale(1.1, 0.9) translateY(0);
   }
   30% {
-    transform: scale(0.9, 1.1) translateY(-50px);
+    transform: scale(0.9, 1.1) translateY(-10px);
   }
   50% {
     transform: scale(1, 1) translateY(0);
-    filter: drop-shadow(0 0 20px green);
+    filter: drop-shadow(0 0 15px green);
   }
   57% {
-    transform: scale(1, 1) translateY(-7px);
-    filter: drop-shadow(0 0 15px green);
+    transform: scale(1, 1) translateY(-2px);
+    filter: drop-shadow(0 0 10px green);
   }
   64% {
     transform: scale(1, 1) translateY(0);
-    filter: drop-shadow(0 0 10px green);
+    filter: drop-shadow(0 0 5px green);
   }
   100% {
     transform: scale(1, 1) translateY(0);

@@ -92,11 +92,11 @@ Here is a list of the pages how they can be build by the layers _functional_, _u
 <img src="assignments/assignment-3/concept/buildlist-2.JPG" width=1000px />
 </details>
 
-### Enhancements
-#### 1. FileReader API
+## Enhancements
+### 1. FileReader API
 With the FileReader API, you can preview the uploaded file. In my case, you can preview the uploaded photo. That's an very enhanced way to the user of presenting the uploaded photo. But when there is no JS available, this feature will be turned off and the default `type=file` content will be presented. When the file is uploaded, you can see the uploaded file as well in string; the filename will be shown.
 
-##### Functional  
+#### Functional  
 The default `type=input` API feature shows the user the filename. Scanty, but fine.
 
 <details>
@@ -104,7 +104,7 @@ The default `type=input` API feature shows the user the filename. Scanty, but fi
   <img src="assignments/assignment-3/concept/filepreview-1.gif" width=500px style="display:block;" />
 </details>  
 
-##### Usable  
+#### Usable  
 There is more styling and visual hierarchy. The 'Choose file' button is visually more available.
 
 <details>
@@ -112,7 +112,7 @@ There is more styling and visual hierarchy. The 'Choose file' button is visually
   <img src="assignments/assignment-3/concept/filepreview-2.gif" width=500px style="display:block;" />
 </details>
 
-##### Pleasurable  
+#### Pleasurable  
 There is now an `img` tag created via JavaScript, so when the user has uploaded a file, the file will be shown in the `img` tag. This is called a File Previewer.
 
 <details>
@@ -120,8 +120,8 @@ There is now an `img` tag created via JavaScript, so when the user has uploaded 
   <img src="assignments/assignment-3/concept/filepreview-3.gif" width=500px style="display:block;" />
 </details>
 
-#### 2. Slideshow
-##### Functional
+### 2. Slideshow
+#### Functional
 All photos will be shown in from top to bottom. It's usable and you can see the photos too. 
 
 <details>
@@ -129,7 +129,7 @@ All photos will be shown in from top to bottom. It's usable and you can see the 
   <img src="assignments/assignment-3/concept/slideshow-1.gif" width=200px style="display:block;" />
 </details>  
 
-##### Usable
+#### Usable
 All photos are placed in a nice container where you can scroll horizontal through the photos. Altough the styling makes it easier to use. It's a nice way of viewing the photos.
 
 <details>
@@ -137,7 +137,7 @@ All photos are placed in a nice container where you can scroll horizontal throug
   <img src="assignments/assignment-3/concept/slideshow-2.gif" width=200px style="display:block;" />
 </details>
 
-##### Pleasurable
+#### Pleasurable
 Now there are buttons, created with clientside javascript. With these buttons you can interact and decide if you want to see the previous or next photo.
 
 <details>
@@ -145,7 +145,7 @@ Now there are buttons, created with clientside javascript. With these buttons yo
   <img src="assignments/assignment-3/concept/slideshow-3.gif" width=200px style="display:block;" />
 </details>
 
-#### 3. CSS Grid replaced by Flexbox
+### 3. CSS Grid replaced by Flexbox
 Although Gridbox is very popular, it's not supported at all browsers (see [here](https://caniuse.com/?search=grid)). Therefore I created an enhancement for users that use a browser that not supports CSS Grid. This is a _feature detection_ which checks if the browser supports CSS Grid. If so not, then the fallback is CSS Flexbox, because almost every browser supports Flexbox (see [here](https://caniuse.com/?search=flexbox)).
 
 Although I used two different layout models, I made them so that they look just alike.
@@ -167,7 +167,7 @@ Although I used two different layout models, I made them so that they look just 
   [Code here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L378-L389)
 </details>
 
-#### 4. prefers-reduced-motion
+### 4. prefers-reduced-motion
 @media (prefers-reduced-motion) voor beweeg-gevoelige (epilepsi)
 I wanted to implement an enhancement so browsers can detect if the user prefers a reduced motion on the websites he visits. So the users don't want to be harmed with the (in my experience) cool, fancy, crazy and shaky animations. I did this with `@media (prefers-reduced-motion)`. Check the code [here](https://github.com/ralfz123/iPic-BT-2021/blob/master/static/styles/main.css#L338-L347).
 

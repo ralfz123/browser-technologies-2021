@@ -701,25 +701,32 @@ footer p a:focus {
 
 /* --/* ----- SCROLLBAR ---/* - */
 
-::-webkit-scrollbar {
+::-webkit-scrollbar,
+::-moz-scrollbar {
   width: 8px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track,
+::-moz-scrollbar-track {
   box-shadow: inset 0 0 5px #2d28bb91;
   border-radius: 10px;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb,
+::-moz-scrollbar-thumb {
   background: #2c28bb;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:focus ::-webkit-scrollbar-thumb:active {
+::-webkit-scrollbar-thumb:focus,
+::-webkit-scrollbar-thumb:active,
+::-moz-scrollbar-thumb:hover,
+::-moz-scrollbar-thumb:focus,
+::-moz-scrollbar-thumb:active {
   background: #2c28bb;
 }
 
